@@ -78,7 +78,7 @@ const cssLoaders = () => {
     {
       loader: 'css-loader',
       options: {
-        importLoaders: 3,
+        importLoaders: 1,
         modules: {
           auto: true,
           localIdentName: isDevelopment ? '[path][name][ext]__[local]' : '[hash:base64]',
@@ -98,13 +98,6 @@ const cssLoaders = () => {
           ],
         }
       }
-    },
-    'resolve-url-loader',
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true,
-      },
     },
   ];
 
