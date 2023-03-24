@@ -1,3 +1,54 @@
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+}
+
+:root {
+	--light-color-100:hsl(220deg, 14%, 96%);
+	--dark-color-100:hsl(0deg, 0%, 0%);
+	--brand-color-100:hsl(20deg, 19%, 65%);
+	--brand-color-200:hsl(20deg, 19%, 45%);
+	--secondary-color-100:hsl(20deg, 100%, 86%);
+	--disabled-color-100:hsl(20deg, 10%, 35%);
+	--disabled-color-200:hsl(20deg, 10%, 85%);
+	--font-size-title-1:78px;
+	--font-size-title-2:60px;
+	--font-size-title-3:48px;
+	--font-size-title-4:34px;
+	--font-size-title-5:24px;
+	--font-size-title-6:20px;
+}
+
 body{
 	font-size: 16px;
+}
+
+
+*:focus{
+	outline: none;
+}
+
+*:focus-visible{
+	outline: 1px solid var(--brand-color-200);
+	outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible){
+	*:focus{
+		outline: 1px solid var(--brand-color-200);
+		outline-offset: 2px;
+	}
+}
+
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
 }
