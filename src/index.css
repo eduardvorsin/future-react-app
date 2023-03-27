@@ -47,17 +47,52 @@
 :root {
 	--light-color-100:hsl(220deg, 14%, 96%);
 	--dark-color-100:hsl(0deg, 0%, 0%);
+	--dark-color-100-30:hsla(0deg, 0%, 0%, 30%);
 	--brand-color-100:hsl(20deg, 19%, 65%);
 	--brand-color-200:hsl(20deg, 19%, 45%);
 	--secondary-color-100:hsl(20deg, 100%, 86%);
 	--disabled-color-100:hsl(20deg, 10%, 35%);
 	--disabled-color-200:hsl(20deg, 10%, 85%);
-	--font-size-title-1:78px;
-	--font-size-title-2:60px;
-	--font-size-title-3:48px;
-	--font-size-title-4:34px;
-	--font-size-title-5:24px;
-	--font-size-title-6:20px;
+	--error-color-100: hsl(1deg, 50%, 25%);
+	--error-color-200: hsl(0deg, 65%, 51%);
+	--error-color-300: hsl(0deg, 80%, 96%);
+	--font-size-title-1:48px;
+	--font-size-title-2:36px;
+	--font-size-title-3:28px;
+	--font-size-title-4:22px;
+	--font-size-title-5:20px;
+	--font-size-title-6:18px;
+}
+
+@media (min-width:768px) {
+	:root {
+		--font-size-title-1:52px;
+		--font-size-title-2:40px;
+		--font-size-title-3:32px;
+		--font-size-title-4:24px;
+		--font-size-title-5:21px;
+	}
+}
+
+@media (min-width:992px) {
+	:root {
+		--font-size-title-1:56px;
+		--font-size-title-2:44px;
+		--font-size-title-3:36px;
+		--font-size-title-4:28px;
+		--font-size-title-5:23px;
+	}
+}
+
+@media(min-width:1200px){
+	:root{
+		--font-size-title-1:60px;
+		--font-size-title-2:48px;
+		--font-size-title-3:40px;
+		--font-size-title-4:32px;
+		--font-size-title-5:24px;
+		--font-size-title-6:20px;
+	}
 }
 
 body{
