@@ -96,7 +96,9 @@
 }
 
 body{
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	margin: 0;
 }
 
 
@@ -105,17 +107,16 @@ body{
 }
 
 *:focus-visible{
-	outline: 1px solid var(--brand-color-200);
-	outline-offset: 2px;
+	outline: 2px solid var(--light-color-100);
+	outline-offset: 3px;
 }
 
 @supports not selector(:focus-visible){
 	*:focus{
-		outline: 1px solid var(--brand-color-200);
-		outline-offset: 2px;
+		outline: 2px solid var(--light-color-100);
+		outline-offset: 3px;
 	}
 }
-
 
 .sr-only {
 	position: absolute;
@@ -126,4 +127,10 @@ body{
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+}
+
+.container{
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
 }
