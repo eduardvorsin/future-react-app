@@ -12,6 +12,7 @@ const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const WebpackBundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const DotenvWebpack = require('dotenv-webpack');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = !isDevelopment;
@@ -166,6 +167,8 @@ const plugins = () => {
     new WebpackBundleAnalyzerPlugin({
       openAnalyzer: false,
     }),
+
+    new DotenvWebpack(),
   ];
 
   if (isDevelopment) {
