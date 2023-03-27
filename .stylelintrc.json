@@ -2,7 +2,8 @@
 	"extends": "stylelint-config-standard-scss",
 	"rules": {
 		"color-function-notation": "legacy",
-		"selector-class-pattern": null
+		"selector-class-pattern": null,
+		"function-url-quotes": "never"
 	},
 	"ignoreFiles": [
 		"./dist/**/*.css"
