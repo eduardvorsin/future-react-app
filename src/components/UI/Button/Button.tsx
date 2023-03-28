@@ -14,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   iconButton,
   className,
   onClick,
+  ...props
 }) => {
   const buttonClasses = [
     iconButton ? classes['button--icon-button'] : classes.button,
@@ -23,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       className={buttonClasses}
       onClick={onClick}
+      {...props}
     >
       {children}
     </button>
@@ -30,3 +32,4 @@ const Button: React.FC<ButtonProps> = ({
 };
 
 export default Button;
+
