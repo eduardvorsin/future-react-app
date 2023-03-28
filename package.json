@@ -31,6 +31,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-webpack": "^0.13.2",
@@ -73,11 +74,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
+    "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/jest": "^29.4.0",
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.9.0"
   },
   "browserslist": {
     "production": [
