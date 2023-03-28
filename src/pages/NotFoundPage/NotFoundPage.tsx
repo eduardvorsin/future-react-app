@@ -7,7 +7,7 @@ const NotFoundPage = () => (
     className={classes['not-found']}
   >
     <Title
-      className={classes['nout-found__title']}
+      className={classes['not-found__title']}
       variant='dark'
       level={4}
       component={'h1'}
