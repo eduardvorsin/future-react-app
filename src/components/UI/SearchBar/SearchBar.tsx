@@ -20,14 +20,15 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onClear,
   onChange,
   onSearch,
+  ...props
 }) => {
   const SearchFormClasses = [
+    className,
     classes['search-form'],
     classes['search-form__search-bar'],
   ].join(' ');
 
   const SearchBarClasses = [
-    className,
     classes['search-bar'],
   ].join(' ');
 
@@ -68,6 +69,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onKeyDown={keydownHandler}
           value={value}
           placeholder='books search'
+          {...props}
         />
         <Button
           iconButton
