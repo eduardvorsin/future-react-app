@@ -1,0 +1,51 @@
+.card{
+	border-radius: 4px;
+	padding:15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: var(--brand-color-100);
+	transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+}
+
+.card:hover{
+	background-color: var(--brand-color-200);
+	transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card__img{
+	align-self: center;
+	margin-bottom: 30px;
+}
+
+.card__category{
+	text-decoration: underline;
+	margin: 0;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.card__title{
+	margin: 0;
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+.card__authors{
+	margin: 0;
+}
+
+.card__link{
+	display: inline-block;
+	color:var(--dark-color-100);
+}
+
+.card__link::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
