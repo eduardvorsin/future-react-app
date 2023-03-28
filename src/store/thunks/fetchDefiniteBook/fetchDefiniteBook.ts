@@ -10,7 +10,7 @@ const fetchDefiniteBook = createAsyncThunk<BookInfo, string, { rejectValue: stri
       const response = await BooksAPI.getDefiniteBook(id);
 
       if (!response.ok) {
-        throw new Error('can\'t fetch current book');
+        throw new Error('Не удалось загрузить данную книгу');
       }
 
       const data = await response.json();

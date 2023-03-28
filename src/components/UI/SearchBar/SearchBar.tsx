@@ -68,7 +68,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onChange={onChange}
           onKeyDown={keydownHandler}
           value={value}
-          placeholder='books search'
+          placeholder='найти книгу...'
           {...props}
         />
         <Button

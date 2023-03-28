@@ -27,42 +27,42 @@ type SorterOrderOption = {
 const categoriesOptions: CategoryOption[] = [
   {
     value: 'all',
-    label: 'All',
+    label: 'Все',
   },
   {
     value: 'art',
-    label: 'Art',
+    label: 'Исскуство',
   },
   {
     value: 'biography',
-    label: 'Biography',
+    label: 'Биография',
   },
   {
     value: 'computers',
-    label: 'Computers',
+    label: 'Компьютеры',
   },
   {
     value: 'history',
-    label: 'History',
+    label: 'История',
   },
   {
     value: 'medical',
-    label: 'Medical',
+    label: 'Медицина',
   },
   {
     value: 'poetry',
-    label: 'Poetry',
+    label: 'Поэзия',
   },
 ];
 
 const sortOrderOptions: SorterOrderOption[] = [
   {
     value: 'relevance',
-    label: 'Relevance',
+    label: 'Релевантности',
   },
   {
     value: 'newest',
-    label: 'Newest',
+    label: 'Новейшим',
   },
 ];
 
@@ -113,7 +113,7 @@ const HomePage = () => {
     navigate('/');
   };
 
-  const currentError = error || 'failed to load data about books try again';
+  const currentError = error || 'Не удалось загрузить книги попробуйте еще раз';
 
   return (
     <div
@@ -131,7 +131,7 @@ const HomePage = () => {
             variant='light'
             level={2}
           >
-            Search for books
+            Поиск книг
           </Title>
 
           <div
@@ -148,7 +148,7 @@ const HomePage = () => {
             <Select
               className={classes['hero-section__category-select']}
               value={category}
-              labelText='Categories'
+              labelText='Категории'
               id='categories'
               onChange={categoryChangeHandler}
               options={categoriesOptions}
@@ -157,7 +157,7 @@ const HomePage = () => {
             <Select
               className={classes['hero-section__sort-select']}
               value={sortOrder}
-              labelText='Sorting by'
+              labelText='Отсортировать по'
               id='sortingBy'
               onChange={sortOrderChangeHandler}
               options={sortOrderOptions}

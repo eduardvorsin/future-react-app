@@ -16,7 +16,7 @@ const fetchBooks = createAsyncThunk<BooksData, getBooksOptions, { rejectValue: s
       const response = await BooksAPI.getBooks(options);
 
       if (!response.ok) {
-        throw new Error('can\'t fetch books');
+        throw new Error('Не удалось загрузить книи');
       }
 
       const data = await response.json();
