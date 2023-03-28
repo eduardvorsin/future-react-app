@@ -24,6 +24,9 @@ const router = createBrowserRouter(
       ),
     },
   ],
+  {
+    basename: process.env.NODE_ENV === 'development' ? '' : 'future-react-app',
+  },
 );
 
 const AppRouter = () => (
