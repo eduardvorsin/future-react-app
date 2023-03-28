@@ -7,5 +7,9 @@ export type IBook = {
   imageLinks: {
     smallThumbnail: string,
     thumbnail: string,
+    extraLarge?: string,
+    large?: string,
+    medium?: string,
+    small?: string,
   }
 }
