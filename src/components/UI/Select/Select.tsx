@@ -1,4 +1,4 @@
-import React, { SelectHTMLAttributes } from 'react';
+import React, { SelectHTMLAttributes, memo } from 'react';
 import classes from './Select.module.css';
 
 type SelectOption = {
@@ -64,5 +64,7 @@ const Select: React.FC<SelectProps> = ({
     </div>
   );
 };
+
+export const MemoSelect = memo(Select);
 
 export default Select;
