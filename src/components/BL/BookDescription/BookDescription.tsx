@@ -5,6 +5,7 @@ import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import fetchDefiniteBook from '../../../store/thunks/fetchDefiniteBook/fetchDefiniteBook';
 import Title from '../../UI/Title/Title';
 import classes from './BookDescription.module.css';
+import PlaceholderImage from '../../../assets/images/placeholder388x613-ru.jpeg';
 
 const BookDescription = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const BookDescription = () => {
 
   const categories = data.currentBook?.categories?.join(', ') ?? 'Неизвестно';
   const authors = data.currentBook?.authors?.join(', ') ?? 'Неизвестно';
-  const imageSrc = data.currentBook?.imageLinks?.medium ?? 'https://via.placeholder.com/404x576?text=Not+found';
+  const imageSrc = data.currentBook?.imageLinks?.medium ?? PlaceholderImage;
 
   return (
     <div
