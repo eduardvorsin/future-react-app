@@ -22,9 +22,9 @@ const BookDescription = () => {
     fetchBookDescription();
   }, [id]);
 
-  const categories = data.currentBook?.categories?.join(', ') || 'Неизвестно';
-  const authors = data.currentBook?.authors?.join(', ') || 'Неизвестно';
-  const imageSrc = data.currentBook?.imageLinks?.medium || 'https://via.placeholder.com/404x576?text=Not+found';
+  const categories = data.currentBook?.categories?.join(', ') ?? 'Неизвестно';
+  const authors = data.currentBook?.authors?.join(', ') ?? 'Неизвестно';
+  const imageSrc = data.currentBook?.imageLinks?.medium ?? 'https://via.placeholder.com/404x576?text=Not+found';
 
   return (
     <div
