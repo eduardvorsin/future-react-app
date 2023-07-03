@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Title from '../Title/Title';
 import classes from './Card.module.css';
+import PlaceholderImage from '../../../assets/images/placeholder128x185-ru.jpeg';
 
 type CardProps = {
   id: string,
@@ -29,7 +30,7 @@ const Card: React.FC<CardProps> = ({
 
   const currentAuthors = authors?.join(', ') ?? 'Неизвестно';
   const currentCategory = category ?? 'Незвестно';
-  const currentImage = src ?? 'https://via.placeholder.com/128x180?text=Not+found';
+  const currentImage = src ?? PlaceholderImage;
 
   return (
     <article
