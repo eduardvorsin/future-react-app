@@ -27,10 +27,9 @@ const Card: React.FC<CardProps> = ({
     classes.card,
   ].join(' ');
 
-  const currentAuthors = authors?.join(', ') || 'Неизвестно';
-  const currentCategory = category || 'Незвестно';
-  const currentImage = src || 'https://via.placeholder.com/128x180?text=Not+found';
-
+  const currentAuthors = authors?.join(', ') ?? 'Неизвестно';
+  const currentCategory = category ?? 'Незвестно';
+  const currentImage = src ?? 'https://via.placeholder.com/128x180?text=Not+found';
 
   return (
     <article
