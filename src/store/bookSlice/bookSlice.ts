@@ -4,20 +4,7 @@ import { IBook } from '../../model/IBook';
 import fetchBooks from '../thunks/fetchBooks/fetchBooks';
 import fetchDefiniteBook from '../thunks/fetchDefiniteBook/fetchDefiniteBook';
 
-export type BookCategories = 'all' | 'art' | 'biography' | 'computers' | 'history' | 'medical' | 'poetry';
-export type BookSortOrder = 'relevance' | 'newest';
 
-export type BookInfo = {
-  id: string,
-  volumeInfo: IBook,
-}
-
-type StateData = {
-  page: number,
-  totalItems: number,
-  currentBook: IBook | null,
-  items: [] | IBook[],
-}
 
 type BooksState = {
   status: 'loading' | 'resolved' | 'rejected' | null,
