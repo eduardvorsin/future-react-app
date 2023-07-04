@@ -1,0 +1,84 @@
+.home-page {
+	position: relative;
+}
+
+.home-page__hero {
+	/* .home-page__hero styles */
+}
+
+.hero-section {
+	display: flex;
+	align-items: center;
+	padding: 30px 0;
+	background-image: url(../../../assets/images/books-bg.webp);
+	background-color: var(--dark-color-100-40);
+	background-position: 0 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: color;
+	width: 100%;
+	min-height: 400px;
+
+	/* возможно стоит добавить адаптивности для этого свойства */
+	overflow: hidden;
+}
+
+.hero-section__container {
+	flex-grow: 1;
+}
+
+.hero-section__title {
+	color: var(--light-color-200);
+	margin-bottom: 25px;
+}
+
+.hero-section__content {
+	max-width: 350px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.books-section {
+	padding: 30px 0;
+	position: relative;
+}
+
+.books-section__error {
+	margin: 0 auto;
+}
+
+.books-section__container {
+	display: flex;
+	flex-direction: column;
+}
+
+.books-section__button.books-section__button {
+	align-self: center;
+	margin-top: 30px;
+}
+
+@media (min-width:576px) {
+	.books-section {
+		padding: 40px 0;
+	}
+
+	.hero-section {
+		padding: 40px 0;
+	}
+
+	.hero-section__content {
+		max-width: 530px;
+	}
+
+	.hero-section__title {
+		margin-bottom: 40px;
+	}
+
+	.hero-section__search {
+		margin-bottom: 20px;
+	}
+
+	.hero-section__category-select {
+		margin-bottom: 20px;
+	}
+}
