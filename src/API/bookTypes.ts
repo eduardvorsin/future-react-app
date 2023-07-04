@@ -34,6 +34,20 @@ export interface SaleInfo {
     currencyCode: string,
   },
 }
+
+export interface BookInfo {
+  id: string,
+  volumeInfo: VolumeInfo,
+  accessInfo: AccessInfo,
+  saleInfo: SaleInfo,
+}
+
+export interface BookPartialInfo {
+  id: string,
+  saleInfo: Pick<SaleInfo, 'retailPrice'>,
+  volumeInfo: Pick<VolumeInfo, 'title' | 'authors' | 'categories' | 'maturityRating' | 'imageLinks'>;
+}
+
 export type BookCategories = 'all' | 'art' | 'biography' | 'computers' | 'history' | 'medical' | 'poetry';
 export type BookSortOrder = 'relevance' | 'newest';
 
