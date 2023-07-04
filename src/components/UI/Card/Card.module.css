@@ -1,51 +1,101 @@
-.card{
+.card {
 	border-radius: 4px;
-	padding:15px;
+	padding: 15px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	background-color: var(--brand-color-100);
-	transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color var(--transition-time) var(--transition-easing);
 	position: relative;
 }
 
-.card:hover{
-	background-color: var(--brand-color-200);
-	transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card__img{
+.card__img-wrapper {
 	align-self: center;
 	margin-bottom: 30px;
+	position: relative;
 }
 
-.card__category{
-	text-decoration: underline;
-	margin: 0;
-	font-size: 18px;
-	margin-bottom: 15px;
-}
-
-.card__title{
-	margin: 0;
-	text-align: left;
-	margin-bottom: 15px;
-}
-
-.card__authors{
-	margin: 0;
-}
-
-.card__link{
-	display: inline-block;
-	color:var(--dark-color-100);
-}
-
-.card__link::after{
-	content: '';
+.card__img-wrapper--mature::after {
+	content: '18+';
+	color: var(--error-color-200);
+	font-size: 28px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	background: hsla(0deg, 0%, 100%, 20%);
+	backdrop-filter: blur(7px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card__img-wrapper>a {
+	font-size: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+.card__img {
+	object-fit: cover;
+}
+
+.card__content {
+	margin-bottom: 20px;
+	flex-grow: 1;
+}
+
+.card__category {
+	margin: 0;
+	font-size: 16px;
+	margin-bottom: 15px;
+	-webkit-line-clamp: 2;
+}
+
+.card__category>span {
+	font-weight: 700;
+}
+
+.card__title {
+	margin: 0;
+	text-align: left;
+	margin-bottom: 15px;
+	-webkit-line-clamp: 3;
+}
+
+.card__title>a {}
+
+.card__authors {
+	margin: 0;
+	-webkit-line-clamp: 2;
+}
+
+.card__category,
+.card__title,
+.card__authors {
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card__more-link {
+	justify-content: center;
+}
+
+@media(min-width:576px) {
+	.card::after {
+		content: '';
+		bottom: -20px;
+		left: 0;
+		width: 120%;
+		height: 1px;
+		background-color: var(--light-color-300);
+		position: absolute;
+	}
 }
