@@ -7,11 +7,11 @@ import PlaceholderImage from '../../../assets/images/placeholder128x185-ru.jpeg'
 type CardProps = {
   id: string,
   className?: string,
-  category: string,
+  category?: string,
   title: string,
-  src: string,
+  src?: string,
   alt: string,
-  authors: string[],
+  authors?: string[],
 }
 
 const Card: React.FC<CardProps> = ({
