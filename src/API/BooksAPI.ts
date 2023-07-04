@@ -1,18 +1,12 @@
 import { getPageIndex } from '../helpers/helpers';
-
-export type getBooksOptions = {
-  page: number,
-  name: string,
-  sortOrder: string,
-  category: string,
-}
+import { SearchOptions } from './bookTypes';
 
 export default class BooksAPI {
   private static url = 'https://www.googleapis.com/books/v1/volumes';
 
-  static async getBooks(options: getBooksOptions) {
+  static async getBooks(options: SearchOptions) {
     const {
-      name,
+      bookName,
       sortOrder = 'relevance',
       category = 'all',
       page,
