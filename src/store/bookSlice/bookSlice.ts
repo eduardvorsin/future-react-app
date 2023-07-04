@@ -32,22 +32,34 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
+    setSearchPage: (state, action) => {
+      state.searchOptions.page = action.payload;
+    },
+    setSearchSortOrder: (state, action) => {
+      state.searchOptions.sortOrder = action.payload;
+    },
+    setSearchBookName: (state, action) => {
+      state.searchOptions.bookName = action.payload;
+    },
+    setSearchCategory: (state, action) => {
+      state.searchOptions.category = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state, action) => {
         state.error = null;
         state.status = 'loading';
-        state.data.totalItems = 0;
+        state.totalItems = 0;
 
         if (action.meta.arg.page === 0) {
-          state.data.items = [];
+          state.data = [];
         }
       })
       .addCase(fetchBooks.rejected, (state, action) => {
         state.status = 'rejected';
-        state.data.totalItems = 0;
-        state.data.items = [];
+        state.totalItems = 0;
+        state.data = [];
         if (action.payload) {
           state.error = action.payload;
         }
@@ -61,26 +73,27 @@ const booksSlice = createSlice({
 
         const items = action.payload.items.map((item) => ({
           ...item.volumeInfo,
+          ...item.saleInfo,
           id: item.id,
         }));
 
-        if (action.payload.page === 0) {
-          state.data.items = items;
+        if (action.meta.arg.page === 0) {
+          state.data = items;
         } else {
-          state.data.items = [...state.data.items, ...items];
+          state.data = [...state.data, ...items];
         }
 
-        state.data.page = action.payload.page;
-        state.data.totalItems = action.payload.totalItems;
+        state.searchOptions.page = action.meta.arg.page;
+        state.totalItems = action.payload.totalItems;
       })
       .addCase(fetchDefiniteBook.pending, (state) => {
         state.error = null;
         state.status = 'loading';
-        state.data.currentBook = null;
+        state.currentBook = null;
       })
       .addCase(fetchDefiniteBook.rejected, (state, action) => {
         state.status = 'rejected';
-        state.data.currentBook = null;
+        state.currentBook = null;
 
         if (action.payload) {
           state.error = action.payload;
@@ -93,12 +106,20 @@ const booksSlice = createSlice({
           return;
         }
 
-        state.data.currentBook = {
+        state.currentBook = {
           ...action.payload.volumeInfo,
-          id: action.payload.id,
+          ...action.payload.saleInfo,
+          ...action.payload.accessInfo,
         };
       });
   },
 });
+
+export const {
+  setSearchPage,
+  setSearchBookName,
+  setSearchCategory,
+  setSearchSortOrder,
+} = booksSlice.actions;
 
 export default booksSlice.reducer;
