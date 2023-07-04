@@ -65,14 +65,16 @@
 }
 
 :root {
-	--light-color-100:hsl(220deg, 14%, 96%);
-	--dark-color-100:hsl(0deg, 0%, 0%);
-	--dark-color-100-30:hsla(0deg, 0%, 0%, 30%);
-	--brand-color-100:hsl(20deg, 19%, 65%);
-	--brand-color-200:hsl(20deg, 19%, 45%);
-	--secondary-color-100:hsl(20deg, 100%, 86%);
-	--disabled-color-100:hsl(20deg, 10%, 35%);
-	--disabled-color-200:hsl(20deg, 10%, 85%);
+	--light-color-100: hsl(220deg, 14%, 100%);
+	--light-color-200: hsl(220deg, 14%, 95%);
+	--light-color-300: hsl(220deg, 14%, 90%);
+	--dark-color-100: hsl(0deg, 0%, 0%);
+	--dark-color-100-40: hsla(0deg, 0%, 0%, 40%);
+	--brand-color-100: hsl(20deg, 100%, 71%);
+	--brand-color-200: hsl(20deg, 100%, 60%);
+	--brand-color-300: hsl(20deg, 100%, 39%);
+	--disabled-color-100: hsl(20deg, 10%, 35%);
+	--disabled-color-200: hsl(20deg, 10%, 85%);
 	--error-color-100: hsl(1deg, 50%, 25%);
 	--error-color-200: hsl(0deg, 65%, 51%);
 	--error-color-300: hsl(0deg, 80%, 96%);
