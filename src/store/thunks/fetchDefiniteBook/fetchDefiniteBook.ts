@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BookInfo } from '../../bookSlice/bookSlice';
+import { BookInfo } from '../../../API/bookTypes';
 import BooksAPI from '../../../API/BooksAPI';
 
 const fetchDefiniteBook = createAsyncThunk<BookInfo, string, { rejectValue: string }>(
