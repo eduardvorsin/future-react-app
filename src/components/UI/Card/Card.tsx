@@ -9,6 +9,7 @@ type CardProps = {
   className?: string,
   category?: string,
   title: string,
+  maturityRating: 'NOT_MATURE' | 'MATURE',
   src?: string,
   alt: string,
   authors?: string[],
@@ -19,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   className,
   category,
   title,
-  src,
+  maturityRating,
   alt,
   authors,
 }) => {
