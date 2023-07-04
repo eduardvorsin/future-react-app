@@ -60,7 +60,7 @@
 
 *,
 *::after,
-*::before{
+*::before {
 	box-sizing: border-box;
 }
 
@@ -121,7 +121,7 @@
 	}
 }
 
-body{
+body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	margin: 0;
@@ -139,7 +139,7 @@ body{
 	clip: rect(0 0 0 0);
 }
 
-.container{
+.container {
 	max-width: 1230px;
 	padding: 0 15px;
 	margin: 0 auto;
