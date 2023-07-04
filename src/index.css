@@ -78,42 +78,46 @@
 	--error-color-100: hsl(1deg, 50%, 25%);
 	--error-color-200: hsl(0deg, 65%, 51%);
 	--error-color-300: hsl(0deg, 80%, 96%);
-	--font-size-title-1:48px;
-	--font-size-title-2:36px;
-	--font-size-title-3:28px;
-	--font-size-title-4:22px;
-	--font-size-title-5:20px;
-	--font-size-title-6:18px;
+	--font-size-title-1: clamp(48px, 0.7vw + 46.4px, 60px);
+	--font-size-title-2: clamp(36px, 0.7vw + 33.6px, 48px);
+	--font-size-title-3: clamp(28px, 0.5vw + 27.2px, 36px);
+	--font-size-title-4: clamp(24px, 0.2vw + 24px, 28px);
+	--font-size-title-5: clamp(20px, 0.2vw + 19.2px, 24px);
+	--font-size-title-6: clamp(18px, 0.1vw + 17.6px, 20px);
+	--transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-time: 0.2s
 }
 
-@media (min-width:768px) {
-	:root {
-		--font-size-title-1:52px;
-		--font-size-title-2:40px;
-		--font-size-title-3:32px;
-		--font-size-title-4:24px;
-		--font-size-title-5:21px;
+@supports not (font-size: clamp(1px, 1vw, 10px)) {
+	@media (min-width:768px) {
+		:root {
+			--font-size-title-1: 52px;
+			--font-size-title-2: 40px;
+			--font-size-title-3: 32px;
+			--font-size-title-4: 24px;
+			--font-size-title-5: 21px;
+		}
 	}
-}
 
-@media (min-width:992px) {
-	:root {
-		--font-size-title-1:56px;
-		--font-size-title-2:44px;
-		--font-size-title-3:36px;
-		--font-size-title-4:28px;
-		--font-size-title-5:23px;
+	@media (min-width:992px) {
+		:root {
+			--font-size-title-1: 56px;
+			--font-size-title-2: 44px;
+			--font-size-title-3: 36px;
+			--font-size-title-4: 28px;
+			--font-size-title-5: 23px;
+		}
 	}
-}
 
-@media(min-width:1200px){
-	:root{
-		--font-size-title-1:60px;
-		--font-size-title-2:48px;
-		--font-size-title-3:40px;
-		--font-size-title-4:32px;
-		--font-size-title-5:24px;
-		--font-size-title-6:20px;
+	@media(min-width:1200px) {
+		:root {
+			--font-size-title-1: 60px;
+			--font-size-title-2: 48px;
+			--font-size-title-3: 40px;
+			--font-size-title-4: 32px;
+			--font-size-title-5: 24px;
+			--font-size-title-6: 20px;
+		}
 	}
 }
 
