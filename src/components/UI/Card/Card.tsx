@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import Title from '../Title/Title';
 import classes from './Card.module.css';
 import PlaceholderImage from '../../../assets/images/placeholder128x185-ru.jpeg';
+import Link from '../Link/Link';
 
 type CardProps = {
   id: string,
@@ -18,9 +19,10 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({
   id,
   className,
-  category,
+  category = 'Незвестно',
   title,
   maturityRating,
+  src = PlaceholderImage,
   alt,
   authors,
 }) => {
@@ -29,40 +31,64 @@ const Card: React.FC<CardProps> = ({
     classes.card,
   ].join(' ');
 
+  const imgWrapperClasses = [
+    classes['card__img-wrapper'],
+    maturityRating === 'MATURE' ? classes['card__img-wrapper--mature'] : '',
+
+  ].join(' ');
+
   const currentAuthors = authors?.join(', ') ?? 'Неизвестно';
-  const currentCategory = category ?? 'Незвестно';
-  const currentImage = src ?? PlaceholderImage;
 
   return (
     <article
       className={cardClasses}
     >
-      <img
-        className={classes.card__img}
-        src={currentImage}
-        alt={alt}
+      <div
+        className={imgWrapperClasses}
       >
-      </img>
-      <p
-        className={classes.card__category}
+        <img
+          width={128}
+          height={185}
+          className={classes.card__img}
+          src={src}
+          alt={alt}
+        />
+        <RouterLink
+          to={`/books/${id}`}
+        >
+          Подробнее
+        </RouterLink>
+      </div>
+      <div
+        className={classes.card__content}
       >
-        Категория: {currentCategory}
-      </p>
-      <Title
-        className={classes.card__title}
-        level={6}
-        component='h3'
-      >
-        {title}
-      </Title>
-      <p
-        className={classes.card__authors}
-      >
-        Авторы: {currentAuthors}
-      </p>
+        <p
+          className={classes.card__category}
+        >
+          Категория: <span>{category}</span>
+        </p>
+        <Title
+          className={classes.card__title}
+          level={6}
+          component='h3'
+        >
+          <RouterLink
+            to={`/books/${id}`}
+          >
+            {title}
+          </RouterLink>
+        </Title>
+        <p
+          className={classes.card__authors}
+        >
+          Авторы: {currentAuthors}
+        </p>
+      </div>
       <Link
-        className={classes.card__link}
-        to={`/${id}`}
+        className={classes['card__more-link']}
+        variant='secondary'
+        isRouterLink
+        path={`/books/${id}`}
       >
         Подробнее
       </Link>
