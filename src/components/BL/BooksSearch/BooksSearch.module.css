@@ -1,0 +1,20 @@
+.books-search {
+	/* .books-search styles */
+}
+
+.books-search__search-bar {
+	margin-bottom: 20px;
+	max-width: 100%;
+}
+
+.books-search__select {
+	margin-bottom: 15px;
+}
+
+.books-search__category-select {
+	/* .books-search__category-select styles */
+}
+
+.books-search__sort-select {
+	/* .books-search__sort-select styles */
+}
