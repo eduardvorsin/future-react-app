@@ -1,25 +1,30 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IBook } from '../../model/IBook';
+import { IBook, IBookPartial } from '../../model/IBook';
 import fetchBooks from '../thunks/fetchBooks/fetchBooks';
 import fetchDefiniteBook from '../thunks/fetchDefiniteBook/fetchDefiniteBook';
-
-
+import { SearchOptions } from '../../API/bookTypes';
 
 type BooksState = {
   status: 'loading' | 'resolved' | 'rejected' | null,
   error: string | null,
-  data: StateData,
+  searchOptions: SearchOptions,
+  totalItems: number,
+  data: [] | IBookPartial[],
+  currentBook: IBook | null,
 }
 
 const initialState: BooksState = {
+  data: [],
+  totalItems: 0,
   status: null,
   error: null,
-  data: {
+  currentBook: null,
+  searchOptions: {
     page: 0,
-    totalItems: 0,
-    currentBook: null,
-    items: [],
+    bookName: '',
+    sortOrder: 'relevance',
+    category: 'all',
   },
 };
 
