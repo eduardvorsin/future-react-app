@@ -23,8 +23,9 @@ const BooksList: React.FC<BooksListProps> = ({
     >
       {data.map((item) => (
         <Card
-          key={item.id}
           id={item.id}
+          key={item.id}
+          maturityRating={item.maturityRating}
           className={classes['books-list__item']}
           category={item.categories?.[0]}
           title={item.title}
