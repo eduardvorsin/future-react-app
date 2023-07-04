@@ -1,17 +1,17 @@
 /* eslint-disable consistent-return */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BookInfo } from '../../bookSlice/bookSlice';
-import BooksAPI, { getBooksOptions } from '../../../API/BooksAPI';
+import BooksAPI from '../../../API/BooksAPI';
+import { BookPartialInfo, SearchOptions } from '../../../API/bookTypes';
 
 type BooksData = {
   totalItems: number,
-  items: BookInfo[],
+  items: BookPartialInfo[],
   page: number,
 }
 
-const fetchBooks = createAsyncThunk<BooksData, getBooksOptions, { rejectValue: string }>(
+const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: string }>(
   'books/fetchBooks',
-  async (options: getBooksOptions, { rejectWithValue }) => {
+  async (options: SearchOptions, { rejectWithValue }) => {
     try {
       const response = await BooksAPI.getBooks(options);
 
