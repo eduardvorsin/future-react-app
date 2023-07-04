@@ -21,10 +21,7 @@ const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: str
 
       const data = await response.json();
 
-      return {
-        ...data,
-        page: options.page,
-      };
+      return data;
     } catch (err) {
       if (err instanceof Error) {
         return rejectWithValue(err.message);
