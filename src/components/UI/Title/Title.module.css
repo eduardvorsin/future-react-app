@@ -5,6 +5,11 @@
 	margin: 0;
 }
 
+.title>a {
+	color: currentcolor;
+	text-decoration: none;
+}
+
 .title--dark {
 	color: var(--dark-color-100);
 }
