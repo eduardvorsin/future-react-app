@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import classes from './Card.module.css';
 import PlaceholderImage from '../../../assets/images/placeholder128x185-ru.jpeg';
 import Link from '../Link/Link';
+import currencyFormat from '../../../localization/formatting/numbers';
 
 type CardProps = {
   id: string,
@@ -13,6 +14,10 @@ type CardProps = {
   src?: string,
   alt: string,
   authors?: string[],
+  price?: {
+    amount: number,
+    currencyCode: string,
+  }
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,6 +28,7 @@ const Card: React.FC<CardProps> = ({
   src = PlaceholderImage,
   alt,
   authors,
+  price,
 }) => {
   const cardClasses = [
     className,
@@ -36,7 +42,13 @@ const Card: React.FC<CardProps> = ({
   ].join(' ');
 
   const currentAuthors = authors?.join(', ') ?? 'Неизвестно';
+  let formattedPrice = price?.amount ?? 'Нет в наличии';
 
+  if (typeof formattedPrice === 'number') {
+    formattedPrice = currencyFormat(formattedPrice, {
+      currency: price?.currencyCode,
+    });
+  }
   return (
     <article
       className={cardClasses}
@@ -61,9 +73,10 @@ const Card: React.FC<CardProps> = ({
         className={classes.card__content}
       >
         <p
-          className={classes.card__category}
+          className={classes.card__price}
         >
-          Категория: <span>{category}</span>
+          <span className='sr-only'>Цена книги:</span>
+          {formattedPrice}
         </p>
         <Title
           className={classes.card__title}

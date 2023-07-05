@@ -45,6 +45,13 @@
 	object-fit: cover;
 }
 
+.card__price {
+	margin: 0;
+	font-weight: 700;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
 .card__content {
 	margin-bottom: 20px;
 	flex-grow: 1;
