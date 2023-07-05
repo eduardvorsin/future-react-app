@@ -73,8 +73,8 @@
 	--brand-color-100: hsl(20deg, 100%, 71%);
 	--brand-color-200: hsl(20deg, 100%, 60%);
 	--brand-color-300: hsl(20deg, 100%, 39%);
-	--disabled-color-100: hsl(20deg, 10%, 35%);
-	--disabled-color-200: hsl(20deg, 10%, 85%);
+	--disabled-color-100: hsl(0deg, 0%, 80%);
+	--disabled-color-200: hsl(0deg, 0%, 58.43%);
 	--error-color-100: hsl(1deg, 50%, 25%);
 	--error-color-200: hsl(0deg, 65%, 51%);
 	--error-color-300: hsl(0deg, 80%, 96%);
