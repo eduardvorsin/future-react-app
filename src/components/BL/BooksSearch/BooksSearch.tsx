@@ -10,7 +10,6 @@ import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import { resetVerticalScrollPosition } from '../../../helpers/helpers';
 import { BookCategories, BookSortOrder } from '../../../API/bookTypes';
 
-//! вынести эти данные в какой то отдельный файл, пока не придумал куда, и стоит ли
 type CategoryOption = {
   value: BookCategories,
   label: string
