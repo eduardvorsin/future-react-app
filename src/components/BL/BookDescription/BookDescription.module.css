@@ -1,71 +1,137 @@
-.book-description{
-	flex-wrap: wrap;
-	display: flex;
+.book-description {
+	display: grid;
+	grid-template-rows: min-content;
+	grid-auto-rows: min-content;
+	align-items: start;
+	gap: 30px;
 }
 
-.book-description__img-box{
-	position: relative;
-	padding-bottom: 58%;
-	flex: 0 1 40%;
-	margin:0 auto 20px;
+.book-description__main-title {
+	grid-column: -1/1;
+}
+
+.book-description__img-box {
+	max-width: 300px;
+	height: auto;
+	width: 100%;
+	justify-self: center;
+}
+
+.book-description__img {
 	background-color: var(--brand-color-100);
-}
-
-.book-description__img{
-	position: absolute;
-	top: 0;
-	left: 0;
+	border: 2px solid var(--brand-color-100);
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.book-description__content{
-	flex: 0 1 100%;
+.book-description__content {
+	/* styles for .book-description__content */
 }
 
-.book-description__category{
-	text-decoration: underline;
-	font-size: 18px;
-	margin-bottom: 30px;
-	
-}
-
-.book-description__title{
+.book-description__title {
 	text-align: left;
-	margin-bottom: 10px;
-
+	margin-bottom: 15px;
 }
 
-.book-description__authors{
+.book-description__category {
+	margin: 0;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.book-description__category>span {
+	font-weight: 700;
+}
+
+.book-description__preview-link {
+	margin-bottom: 15px;
+}
+
+.book-description__authors {
 	margin: 0;
 	margin-bottom: 25px;
-
 }
 
-.book-description__text{
+.book-description__text {
 	margin: 0;
+}
+
+.book-description__buying {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-radius: 8px;
+	box-shadow: hsla(240deg, 5%, 41%, 20%) 0 7px 29px 0;
+	padding: 15px;
+	max-width: 250px;
+}
+
+.book-description__price {
+	margin: 0;
+	font-size: 26px;
+	margin-bottom: 10px;
+}
+
+.book-description__buying-btn {
+	/* styles for .book-description__buying-btn */
+}
+
+.book-description__describing {
+	grid-column: 1/-1;
+}
+
+@media (min-width:576px) {
+	.book-description__img-box {
+		max-width: 400px;
+	}
+
+	.book-description {
+		grid-template-columns: 1fr;
+	}
 }
 
 @media (min-width:768px) {
-	.book-description{
-		flex-wrap: nowrap;
+	.book-description {
+		grid-template-columns: 1fr 1.5fr;
 	}
 
-	.book-description__img-box{
-		margin: 0;
-		padding-bottom: 48%;
-		flex: 0 1 35%;
-		margin-right: 25px;
+	.book-description__buying {
+		grid-column: 1/2;
 	}
 
-	.book-description__content{
-		flex: 0 1 65%;
+	.book-description__describing {
+		grid-column: 2/3;
+	}
+
+	.book-description__img-box {
+		max-width: none;
+		justify-self: auto;
 	}
 }
 
 @media (min-width:992px) {
-	.book-description__img-box{
-		margin-right: 45px;
+	.book-description {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+
+@media(min-width:1200px) {
+	.book-description {
+		grid-template-columns: 1.5fr 1.5fr 250px;
+		gap: 30px 20px;
+	}
+
+	.book-description__describing {
+		grid-column: 1/-1;
+	}
+
+	.book-description__img-box {
+		width: auto;
+		margin-right: 20px;
+	}
+
+	.book-description__buying {
+		grid-column: 3/4;
 	}
 }
