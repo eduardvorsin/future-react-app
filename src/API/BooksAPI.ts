@@ -16,9 +16,9 @@ export default class BooksAPI {
     const startIndex = getPageIndex(page);
 
     const searchParams = [
-      `q=intitle:${name}${currentCategory}`,
+      `q=intitle:${bookName}${currentCategory}`,
       `orderBy=${sortOrder}`,
-      'fields=totalItems,items(id,volumeInfo/authors,volumeInfo/title,volumeInfo/description,volumeInfo/categories,volumeInfo/imageLinks)',
+      'fields=totalItems,items(id,volumeInfo/authors,volumeInfo/title,volumeInfo/imageLinks,volumeInfo/maturityRating,saleInfo/retailPrice)',
       'langRestrict=ru',
       'maxResults=40',
       `startIndex=${startIndex}`,
@@ -32,7 +32,7 @@ export default class BooksAPI {
 
   static async getDefiniteBook(id: string) {
     const searchParams = [
-      'fields=id,volumeInfo(authors,title,description,categories,imageLinks)',
+      'fields=id,volumeInfo(authors,title,description,categories,imageLinks,language,maturityRating,pageCount,publishedDate,publisher,industryIdentifiers),accessInfo(webReaderLink),saleInfo(buyLink,isEbook,retailPrice)',
       `key=${process.env.API_KEY as string}`,
     ].join('&');
 
