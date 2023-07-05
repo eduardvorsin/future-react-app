@@ -10,7 +10,7 @@ import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import bookDescriptionLoader from '../loaders/bookDescriptionLoader';
 
 export type bookDescriptionPathName = '/:id';
-const basename = process.env.NODE_ENV === 'production' ? 'future-react-app' : '';
+const basename = process.env.NODE_ENV === 'production' ? '/future-react-app' : '';
 
 const router = createBrowserRouter(
   [
