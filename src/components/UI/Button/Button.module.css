@@ -10,6 +10,7 @@
 	padding: 10px 18px;
 	text-align: center;
 	border: 2px solid var(--brand-color-100);
+	transform: translateY(0);
 	transition: background-color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
 }
 
