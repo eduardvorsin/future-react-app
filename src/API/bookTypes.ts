@@ -1,18 +1,18 @@
 export interface VolumeInfo {
-  authors: string[],
-  categories: string[],
-  description: string,
+  authors?: string[],
+  categories?: string[],
+  description?: string,
   language: string,
   maturityRating: 'NOT_MATURE' | 'MATURE',
   pageCount: number,
   publishedDate: string,
   publisher: string,
   title: string,
-  industryIdentifiers: {
+  industryIdentifiers?: {
     type: string,
     identifier: number,
   }[],
-  imageLinks: {
+  imageLinks?: {
     smallThumbnail: string,
     thumbnail: string,
     extraLarge?: string,
@@ -29,7 +29,7 @@ export interface AccessInfo {
 export interface SaleInfo {
   buyLink: string,
   isEbook: boolean,
-  retailPrice: {
+  retailPrice?: {
     amount: number,
     currencyCode: string,
   },
