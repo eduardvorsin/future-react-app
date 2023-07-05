@@ -8,7 +8,6 @@ import Link from '../Link/Link';
 type CardProps = {
   id: string,
   className?: string,
-  category?: string,
   title: string,
   maturityRating: 'NOT_MATURE' | 'MATURE',
   src?: string,
@@ -19,7 +18,6 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({
   id,
   className,
-  category = 'Незвестно',
   title,
   maturityRating,
   src = PlaceholderImage,
