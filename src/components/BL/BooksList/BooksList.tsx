@@ -1,11 +1,11 @@
 import React from 'react';
-import { IBook } from '../../../model/IBook';
+import { IBookPartial } from '../../../model/IBook';
 import Card from '../../UI/Card/Card';
 import classes from './BooksList.module.css';
 
 type BooksListProps = {
   className?: string,
-  data: IBook[],
+  data: IBookPartial[],
 }
 
 const BooksList: React.FC<BooksListProps> = ({
