@@ -66,6 +66,7 @@
 	text-align: left;
 	margin-bottom: 15px;
 	-webkit-line-clamp: 3;
+	font-size: 18px;
 }
 
 .card__authors {
