@@ -9,6 +9,8 @@ type BooksData = {
   page: number,
 }
 
+const fetchBooksError = 'Не удалось загрузить книги, попробуйте еще раз';
+
 const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: string }>(
   'books/fetchBooks',
   async (options: SearchOptions, { rejectWithValue }) => {
@@ -16,7 +18,7 @@ const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: str
       const response = await BooksAPI.getBooks(options);
 
       if (!response.ok) {
-        throw new Error('Не удалось загрузить книи');
+        throw new Error(fetchBooksError);
       }
 
       const data = await response.json();
@@ -24,7 +26,7 @@ const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: str
       return data;
     } catch (err) {
       if (err instanceof Error) {
-        return rejectWithValue(err.message);
+        return rejectWithValue(fetchBooksError);
       }
     }
   },
