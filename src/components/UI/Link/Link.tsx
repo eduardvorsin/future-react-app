@@ -13,7 +13,7 @@ interface ButtonProps extends BaseLinkProps {
   icon?: FunctionComponent<SVGAndHTMLProps>,
   iconPosition?: 'left' | 'right',
   isRouterLink?: boolean,
-  variant?: 'primary' | 'secondary',
+  variant?: 'primary' | 'secondary' | 'tertiary',
 }
 
 const Link: FC<ButtonProps> = ({
@@ -29,9 +29,9 @@ const Link: FC<ButtonProps> = ({
 }) => {
   const linkClasses = [
     classes.link,
-    !path ? classes['link--disabled'] : '',
-    variant === 'secondary' ? classes['link--secondary'] : classes['link--primary'],
     className,
+    !path ? classes['link--disabled'] : '',
+    classes[`link--${variant}`],
   ].join(' ');
 
   const iconClasses = [
