@@ -1,0 +1,38 @@
+.characteristic-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.characteristic-list__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.characteristic-list__item:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.characteristic-list__property {
+	position: relative;
+}
+
+.characteristic-list__property::before {
+	border-bottom: 1px dotted var(--brand-color-100);
+	bottom: 0;
+	content: '';
+	display: block;
+	left: 0;
+	position: absolute;
+	width: calc(100% - 10px);
+}
+
+.characteristic-list__value {
+	color: var(--brand-color-200);
+}
+
+.characteristic-list__value,
+.characteristic-list__property {
+	flex: 0 1 50%;
+}
