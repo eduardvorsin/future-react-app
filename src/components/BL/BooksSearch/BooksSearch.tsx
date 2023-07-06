@@ -2,13 +2,13 @@ import React, { FC, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
 import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
-import { setSearchBookName, setSearchCategory, setSearchSortOrder } from '../../../store/bookSlice/bookSlice';
+import { setSearchBookName, setSearchCategory, setSearchSortOrder, setSearchBy } from '../../../store/bookSlice/bookSlice';
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import classes from './BooksSearch.module.css';
 import { MemoSelect } from '../../UI/Select/Select';
 import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import { resetVerticalScrollPosition } from '../../../helpers/helpers';
-import { BookCategories, BookSortOrder } from '../../../API/bookTypes';
+import { BookCategories, BookSearchBy, BookSortOrder } from '../../../API/bookTypes';
 
 type CategoryOption = {
   value: BookCategories,
@@ -18,6 +18,11 @@ type CategoryOption = {
 type SorterOrderOption = {
   value: BookSortOrder,
   label: string
+}
+
+type SearchByOption = {
+  value: BookSearchBy,
+  label: string,
 }
 
 const categoriesOptions: CategoryOption[] = [
@@ -62,6 +67,25 @@ const sortOrderOptions: SorterOrderOption[] = [
   },
 ];
 
+const searchByOptions: SearchByOption[] = [
+  {
+    value: 'intitle',
+    label: 'По заголовку',
+  },
+  {
+    value: 'inauthor',
+    label: 'По автору',
+  },
+  {
+    value: 'inpublisher',
+    label: 'По издателю',
+  },
+  {
+    value: 'isbn',
+    label: 'По ISBN',
+  },
+];
+
 type BooksSearchProps = {
   className?: string,
 }
@@ -76,6 +100,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
   const [searchValue, setSearchValue] = useState<string>('');
   const [category, setCategory] = useState<BookCategories>(searchOptions.category);
   const [sortOrder, setSortOrder] = useState<BookSortOrder>(searchOptions.sortOrder);
+  const [findBy, setFindBy] = useState<BookSearchBy>(searchOptions.searchBy);
 
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearchValue(e.target.value);
@@ -88,6 +113,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
       bookName: searchValue,
       sortOrder,
       category,
+      searchBy: findBy,
     }));
 
     resetVerticalScrollPosition();
@@ -111,6 +137,13 @@ const BooksSearch: FC<BooksSearchProps> = ({
     dispatch(setSearchCategory(value));
     setCategory(value);
   }, [category]);
+
+  const searchByChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = useCallback((e) => {
+    const value = e.currentTarget.value as BookSearchBy;
+
+    dispatch(setSearchBy(value));
+    setFindBy(value);
+  }, [setFindBy]);
 
   const booksSearchClasses = [
     classes['books-search'],
@@ -145,6 +178,15 @@ const BooksSearch: FC<BooksSearchProps> = ({
         id='sortingBy'
         onChange={sortOrderChangeHandler}
         options={sortOrderOptions}
+      />
+
+      <MemoSelect
+        className={`${classes['books-search__find-by-select']} ${classes['books-search__select']}`}
+        value={findBy}
+        labelText='Искать по'
+        id='findBy'
+        onChange={searchByChangeHandler}
+        options={searchByOptions}
       />
     </div>
   );

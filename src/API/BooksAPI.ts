@@ -10,13 +10,14 @@ export default class BooksAPI {
       sortOrder = 'relevance',
       category = 'all',
       page,
+      searchBy = 'intitle',
     } = options;
 
     const currentCategory = category === 'all' ? '' : `+subject:${category}`;
     const startIndex = getPageIndex(page);
 
     const searchParams = [
-      `q=intitle:${bookName}${currentCategory}`,
+      `q=${searchBy}:${bookName}${currentCategory}`,
       `orderBy=${sortOrder}`,
       'fields=totalItems,items(id,volumeInfo/authors,volumeInfo/title,volumeInfo/imageLinks,volumeInfo/maturityRating,saleInfo/retailPrice)',
       'langRestrict=ru',

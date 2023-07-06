@@ -35,6 +35,7 @@ const HomePage = () => {
       bookName,
       sortOrder,
       category,
+      searchBy,
     } = searchOptions;
 
     dispatch(fetchBooks({
@@ -42,6 +43,7 @@ const HomePage = () => {
       bookName,
       sortOrder,
       category,
+      searchBy,
     }));
 
     setSearchPage(page + 1);

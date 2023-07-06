@@ -25,6 +25,7 @@ const initialState: BooksState = {
     bookName: '',
     sortOrder: 'relevance',
     category: 'all',
+    searchBy: 'intitle',
   },
 };
 
@@ -43,6 +44,9 @@ const booksSlice = createSlice({
     },
     setSearchCategory: (state, action) => {
       state.searchOptions.category = action.payload;
+    },
+    setSearchBy: (state, action) => {
+      state.searchOptions.searchBy = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -120,6 +124,7 @@ export const {
   setSearchBookName,
   setSearchCategory,
   setSearchSortOrder,
+  setSearchBy,
 } = booksSlice.actions;
 
 export default booksSlice.reducer;
