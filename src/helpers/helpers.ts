@@ -75,7 +75,7 @@ export const createCharacteristicsData = (bookData: IBook): Characteristic[] => 
       }
       case 'maturityRating': {
         data.name = '18+';
-        data.value = bookData[key] ? 'Да' : 'Нет';
+        data.value = bookData[key] === 'MATURE' ? 'Да' : 'Нет';
         break;
       }
       case 'language': {
