@@ -7,6 +7,7 @@
 }
 
 .book-description__main-title {
+	line-height: 1.25;
 	grid-column: -1/1;
 }
 
@@ -31,7 +32,7 @@
 
 .book-description__title {
 	text-align: left;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .book-description__category {
@@ -88,6 +89,10 @@
 
 	.book-description {
 		grid-template-columns: 1fr;
+	}
+
+	.book-description__title {
+		margin-bottom: 15px;
 	}
 }
 
