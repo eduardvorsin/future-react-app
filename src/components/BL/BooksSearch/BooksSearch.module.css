@@ -7,7 +7,7 @@
 	max-width: 100%;
 }
 
-.books-search__select {
+.books-search__select:not(:last-child) {
 	margin-bottom: 15px;
 }
 
