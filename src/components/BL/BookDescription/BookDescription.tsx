@@ -31,7 +31,7 @@ const BookDescription = () => {
         className={classes['book-description__main-title']}
         component='h2'
         variant='dark'
-        level={2}
+        level={3}
       >
         {title}
       </Title>
