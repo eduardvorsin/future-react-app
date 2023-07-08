@@ -91,7 +91,25 @@
 	--font-size-title-5: clamp(20px, 0.2vw + 19.2px, 24px);
 	--font-size-title-6: clamp(18px, 0.1vw + 17.6px, 20px);
 	--transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
-	--transition-time: 0.2s
+	--transition-time: 0.2s;
+
+	color-scheme: light;
+}
+
+@media(prefers-color-scheme:dark) {
+	:root {
+		--background-color: #2d3434;
+		--text-color-primary: var(--light-color-300);
+		--text-color-secondary: var(--dark-color-100);
+		--brand-color-100: #ffa676;
+		--brand-color-200: #ffa676;
+		--secondary-color-100: var(--dark-color-100);
+		--secondary-color-200: var(--dark-color-200);
+		--secondary-color-300: var(--dark-color-300);
+		--error-color-200: hsl(349deg, 52%, 61%);
+
+		color-scheme: dark;
+	}
 }
 
 @supports not (font-size: clamp(1px, 1vw, 10px)) {
@@ -132,6 +150,8 @@ body {
 	font-size: 16px;
 	margin: 0;
 	overflow-wrap: break-word;
+	background-color: var(--background-color);
+	transition: background-color var(--transition-time) var(--transition-easing)
 }
 
 .sr-only {

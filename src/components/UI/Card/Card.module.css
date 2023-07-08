@@ -51,6 +51,7 @@
 	margin-bottom: 10px;
 	font-size: 20px;
 	color: var(--text-color-primary);
+	transition: color var(--transition-time) var(--transition-easing);
 }
 
 .card__content {
@@ -106,5 +107,17 @@
 		height: 1px;
 		background-color: var(--secondary-color-300);
 		position: absolute;
+	}
+}
+
+@media(prefers-color-scheme:dark) {
+	.card {
+		background-color: var(--secondary-color-200);
+		transition: background-color var(--transition-time) var(--transition-easing);
+	}
+
+	.card__price {
+		color: var(--brand-color-200);
+		transition: color var(--transition-time) var(--transition-easing);
 	}
 }

@@ -9,7 +9,12 @@
 	border-color: var(--brand-color-200);
 	padding: 8px;
 	text-decoration: none;
-	transition: background-color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
+	transition:
+		background-color var(--transition-time) var(--transition-easing),
+		border var(--transition-time) var(--transition-easing),
+		color var(--transition-time) var(--transition-easing),
+		transform var(--transition-time) var(--transition-easing),
+		opacity var(--transition-time) var(--transition-easing);
 }
 
 .link--primary {
@@ -52,14 +57,10 @@
 }
 
 .link--disabled {
-	pointer-events: none;
-	color: var(--disabled-color-100);
-	border: 2px solid var(--disabled-color-100);
-	background-color: var(--disabled-color-200);
 	cursor: not-allowed;
 	transition:
 		color var(--transition-time) var(--transition-easing),
-		border var(--transition-time) var(--transition-easing),
+		border-color var(--transition-time) var(--transition-easing),
 		background-color var(--transition-time) var(--transition-easing);
 }
 
@@ -76,13 +77,47 @@
 }
 
 .link--tertiary:hover:not(.link--disabled) {
-	background-color: var(--light-color-100);
+	background-color: var(--secondary-color-100);
 	transform: translateY(2px);
 	color: var(--brand-color-100);
-	transition: background-color var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
+	transition:
+		background-color var(--transition-time) var(--transition-easing),
+		color var(--transition-time) var(--transition-easing),
+		transform var(--transition-time) var(--transition-easing);
 }
 
+@media(prefers-color-scheme:dark) {
+	.link--primary:hover:not(.link--disabled) {
+		background-color: var(--secondary-color-300);
+		transition:
+			background-color var(--transition-time) var(--transition-easing);
+	}
 
-/*
-! Добавить состояния: focus
-*/
+	.link--secondary:hover:not(.link--disabled) {
+		background-color: var(--secondary-color-200);
+		color: var(--light-color-300);
+		transition:
+			background-color var(--transition-time) var(--transition-easing),
+			color var(--transition-time) var(--transition-easing);
+	}
+}
+
+@media(prefers-color-scheme:light) {
+	.link--disabled {
+		color: var(--disabled-color-200);
+		border-color: var(--disabled-color-200);
+		background-color: var(--disabled-color-100);
+		transition:
+			color var(--transition-time) var(--transition-easing),
+			border-color var(--transition-time) var(--transition-easing),
+			background-color var(--transition-time) var(--transition-easing);
+	}
+}
+
+@media(prefers-color-scheme:dark) {
+	.link--disabled {
+		opacity: 0.5;
+		transition:
+			opacity var(--transition-time) var(--transition-easing);
+	}
+}

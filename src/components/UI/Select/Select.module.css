@@ -26,6 +26,7 @@
 	cursor: pointer;
 	line-height: 1.1;
 	background-color: var(--secondary-color-200);
+	transition: background-color var(--transition-time) var(--transition-easing);
 }
 
 .select-wrapper::after {
@@ -39,6 +40,7 @@
 	background-color: var(--brand-color-200);
 	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 	background-color: var(--brand-color-200);
+	transition: background-color var(--transition-time) var(--transition-easing);
 }
 
 .select-wrapper__select {
@@ -56,8 +58,15 @@
 	cursor: inherit;
 	line-height: inherit;
 	height: 100%;
+	transition:
+		border-color var(--transition-time) var(--transition-easing),
+		background-color var(--transition-time) var(--transition-easing),
+		color var(--transition-time) var(--transition-easing);
+}
+
 .select-wrapper__select:hover:not([disabled]) {
 	border-color: var(--brand-color-200);
+	transition: border-color var(--transition-time) var(--transition-easing);
 }
 
 @media(min-width:576px) {

@@ -9,6 +9,8 @@
 .book-description__main-title {
 	line-height: 1.25;
 	grid-column: -1/1;
+	transition:
+		color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__img-box {
@@ -33,6 +35,8 @@
 .book-description__title {
 	text-align: left;
 	margin-bottom: 10px;
+	transition:
+		color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__category {
@@ -40,6 +44,8 @@
 	font-size: 18px;
 	margin-bottom: 20px;
 	color: var(--text-color-primary);
+	transition:
+		color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__category>span {
@@ -58,6 +64,8 @@
 .book-description__text {
 	color: var(--text-color-primary);
 	margin: 0;
+	transition:
+		color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__buying {
@@ -68,6 +76,9 @@
 	box-shadow: hsla(240deg, 5%, 41%, 20%) 0 7px 29px 0;
 	padding: 15px;
 	max-width: 250px;
+	transition:
+		box-shadow var(--transition-time) var(--transition-easing),
+		background-color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__price {
@@ -75,6 +86,8 @@
 	font-size: 26px;
 	margin-bottom: 10px;
 	color: var(--text-color-primary);
+	transition:
+		color var(--transition-time) var(--transition-easing);
 }
 
 .book-description__buying-btn {
@@ -141,5 +154,15 @@
 
 	.book-description__buying {
 		grid-column: 3/4;
+	}
+}
+
+@media(prefers-color-scheme:dark) {
+	.book-description__buying {
+		box-shadow: none;
+		background-color: var(--secondary-color-200);
+		transition:
+			box-shadow var(--transition-time) var(--transition-easing),
+			background-color var(--transition-time) var(--transition-easing);
 	}
 }

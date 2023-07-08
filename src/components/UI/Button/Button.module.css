@@ -13,20 +13,20 @@
 	border-style: solid;
 	border-color: var(--brand-color-100);
 	transform: translateY(0);
-	transition: background-color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
+	transition:
+		background-color var(--transition-time) var(--transition-easing), border-color var(--transition-time) var(--transition-easing),
+		color var(--transition-time) var(--transition-easing),
+		transform var(--transition-time) var(--transition-easing),
+		opacity var(--transition-time) var(--transition-easing);
 }
 
 .button:focus {
 	border-color: var(--brand-color-100);
-	transition: border var(--transition-time) var(--transition-easing);
+	transition: border-color var(--transition-time) var(--transition-easing);
 }
 
 .button:disabled {
 	cursor: not-allowed;
-	background-color: var(--disabled-color-100);
-	color: var(--disabled-color-200);
-	border: 2px solid var(--disabled-color-100);
-	transition: background-color var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing);
 }
 
 .button:hover:not([disabled]) {
@@ -69,4 +69,24 @@
 .button--icon-button:hover:not([disabled]) {
 	color: var(--brand-color-200);
 	transition: color var(--transition-time) var(--transition-easing);
+}
+
+@media(prefers-color-scheme:light) {
+	.button:disabled {
+		background-color: var(--disabled-color-100);
+		color: var(--disabled-color-200);
+		border-color: var(--disabled-color-100);
+		transition:
+			background-color var(--transition-time) var(--transition-easing),
+			color var(--transition-time) var(--transition-easing),
+			border-color var(--transition-time) var(--transition-easing);
+	}
+}
+
+@media(prefers-color-scheme:dark) {
+	.button:disabled {
+		opacity: 0.5;
+		transition:
+			opacity var(--transition-time) var(--transition-easing);
+	}
 }

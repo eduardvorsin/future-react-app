@@ -17,6 +17,7 @@
 .characteristic-list__property {
 	position: relative;
 	color: var(--text-color-primary);
+	transition: color var(--transition-time) var(--transition-easing);
 }
 
 .characteristic-list__property::before {
