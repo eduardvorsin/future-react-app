@@ -100,6 +100,12 @@
 			background-color var(--transition-time) var(--transition-easing),
 			color var(--transition-time) var(--transition-easing);
 	}
+
+	.link--disabled {
+		opacity: 0.5;
+		transition:
+			opacity var(--transition-time) var(--transition-easing);
+	}
 }
 
 @media(prefers-color-scheme:light) {
@@ -111,13 +117,5 @@
 			color var(--transition-time) var(--transition-easing),
 			border-color var(--transition-time) var(--transition-easing),
 			background-color var(--transition-time) var(--transition-easing);
-	}
-}
-
-@media(prefers-color-scheme:dark) {
-	.link--disabled {
-		opacity: 0.5;
-		transition:
-			opacity var(--transition-time) var(--transition-easing);
 	}
 }
