@@ -16,6 +16,7 @@
 
 .characteristic-list__property {
 	position: relative;
+	color: var(--text-color-primary);
 }
 
 .characteristic-list__property::before {

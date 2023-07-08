@@ -50,6 +50,7 @@
 	font-weight: 700;
 	margin-bottom: 10px;
 	font-size: 20px;
+	color: var(--text-color-primary);
 }
 
 .card__content {
@@ -74,10 +75,12 @@
 	margin-bottom: 15px;
 	-webkit-line-clamp: 3;
 	font-size: 18px;
+	color: var(--text-color-primary);
 }
 
 .card__authors {
 	margin: 0;
+	color: var(--text-color-primary);
 	-webkit-line-clamp: 2;
 }
 
@@ -101,7 +104,7 @@
 		left: 0;
 		width: 120%;
 		height: 1px;
-		background-color: var(--light-color-300);
+		background-color: var(--secondary-color-300);
 		position: absolute;
 	}
 }

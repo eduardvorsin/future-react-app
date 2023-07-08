@@ -65,19 +65,25 @@
 }
 
 :root {
-	--light-color-100: hsl(220deg, 14%, 100%);
+	--light-color-100: hsl(220deg, 0%, 100%);
 	--light-color-200: hsl(220deg, 14%, 95%);
 	--light-color-300: hsl(220deg, 14%, 90%);
-	--dark-color-100: hsl(0deg, 0%, 0%);
-	--dark-color-100-40: hsla(0deg, 0%, 0%, 40%);
+	--dark-color-100: hsl(180deg, 7%, 19%);
+	--dark-color-200: #414848;
+	--dark-color-300: #565c5c;
 	--brand-color-100: hsl(20deg, 100%, 71%);
 	--brand-color-200: hsl(20deg, 100%, 60%);
-	--brand-color-300: hsl(20deg, 100%, 39%);
-	--disabled-color-100: hsl(0deg, 0%, 80%);
-	--disabled-color-200: hsl(0deg, 0%, 58.43%);
+	--secondary-color-100: var(--light-color-100);
+	--secondary-color-200: var(--light-color-200);
+	--secondary-color-300: var(--light-color-300);
+	--overlay-color-100-40: hsla(0deg, 0%, 0%, 40%);
+	--disabled-color-100: hsla(0deg, 0%, 80%, 80%);
+	--disabled-color-200: hsla(0deg, 0%, 58.43%, 60%);
 	--error-color-100: hsl(1deg, 50%, 25%);
-	--error-color-200: hsl(0deg, 65%, 51%);
-	--error-color-300: hsl(0deg, 80%, 96%);
+	--error-color-200: hsl(0deg, 80%, 90%);
+	--background-color: var(--light-color-100);
+	--text-color-primary: var(--dark-color-100);
+	--text-color-secondary: var(--secondary-color-100);
 	--font-size-title-1: clamp(48px, 0.7vw + 46.4px, 60px);
 	--font-size-title-2: clamp(36px, 0.7vw + 33.6px, 48px);
 	--font-size-title-3: clamp(28px, 0.5vw + 27.2px, 36px);

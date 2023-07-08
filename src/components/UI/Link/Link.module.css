@@ -4,14 +4,16 @@
 	border-radius: 4px;
 	font-size: 14px;
 	color: var(--brand-color-200);
-	border: 2px solid var(--brand-color-200);
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--brand-color-200);
 	padding: 8px;
 	text-decoration: none;
 	transition: background-color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
 }
 
 .link--primary {
-	background-color: var(--light-color-100);
+	background-color: transparent;
 }
 
 .link--secondary {
@@ -24,7 +26,7 @@
 .link--tertiary {
 	transform: translateY(0);
 	background: var(--brand-color-100);
-	color: var(--light-color-100);
+	color: var(--secondary-color-100);
 	border-color: var(--brand-color-100);
 	line-height: 1.5;
 	font-size: 16px;
@@ -62,13 +64,13 @@
 }
 
 .link--primary:hover:not(.link--disabled) {
-	background-color: var(--light-color-200);
+	background-color: var(--secondary-color-200);
 	transition:
 		background-color var(--transition-time) var(--transition-easing);
 }
 
 .link--secondary:hover:not(.link--disabled) {
-	background-color: var(--light-color-200);
+	background-color: var(--secondary-color-200);
 	transition:
 		background-color var(--transition-time) var(--transition-easing);
 }

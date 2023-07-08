@@ -2,20 +2,22 @@
 	cursor: pointer;
 	background: var(--brand-color-100);
 	border-radius: 8px;
-	color: var(--light-color-100);
+	color: var(--secondary-color-100);
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.5;
 	margin: 0;
 	padding: 10px 18px;
 	text-align: center;
-	border: 2px solid var(--brand-color-100);
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--brand-color-100);
 	transform: translateY(0);
 	transition: background-color var(--transition-time) var(--transition-easing), border var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);
 }
 
 .button:focus {
-	border: 2px solid var(--brand-color-100);
+	border-color: var(--brand-color-100);
 	transition: border var(--transition-time) var(--transition-easing);
 }
 
@@ -28,7 +30,7 @@
 }
 
 .button:hover:not([disabled]) {
-	background-color: var(--light-color-100);
+	background-color: var(--secondary-color-100);
 	transform: translateY(2px);
 	color: var(--brand-color-100);
 	transition: background-color var(--transition-time) var(--transition-easing), color var(--transition-time) var(--transition-easing), transform var(--transition-time) var(--transition-easing);

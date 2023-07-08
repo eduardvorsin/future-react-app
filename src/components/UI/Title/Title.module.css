@@ -11,11 +11,11 @@
 }
 
 .title--dark {
-	color: var(--dark-color-100);
+	color: var(--text-color-primary);
 }
 
 .title--light {
-	color: var(--light-color-200);
+	color: var(--text-color-secondary);
 }
 
 .title--error {
