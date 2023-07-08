@@ -17,11 +17,10 @@
 }
 
 .select-wrapper {
+	border-radius: 4px;
 	position: relative;
-	border: 2px solid transparent;
 	width: 100%;
 	height: 38px;
-	border-radius: 4px;
 	font-size: 18px;
 	cursor: pointer;
 	line-height: 1.1;
@@ -30,6 +29,7 @@
 }
 
 .select-wrapper::after {
+	pointer-events: none;
 	position: absolute;
 	top: 50%;
 	right: 6px;
@@ -37,13 +37,13 @@
 	content: "";
 	width: 13px;
 	height: 6px;
-	background-color: var(--brand-color-200);
 	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 	background-color: var(--brand-color-200);
 	transition: background-color var(--transition-time) var(--transition-easing);
 }
 
 .select-wrapper__select {
+	border-radius: 4px;
 	appearance: none;
 	background-color: var(--secondary-color-200);
 	border-width: 2px;
