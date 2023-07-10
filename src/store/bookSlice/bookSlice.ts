@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IBook, IBookPartial } from '../../model/IBook';
 import fetchBooks from '../thunks/fetchBooks/fetchBooks';
 import fetchDefiniteBook from '../thunks/fetchDefiniteBook/fetchDefiniteBook';
-import { SearchOptions } from '../../API/bookTypes';
+import { BookCategories, BookSearchBy, BookSortOrder, SearchOptions } from '../../API/bookTypes';
 
 type BooksState = {
   status: 'loading' | 'resolved' | 'rejected' | null,
@@ -33,25 +33,25 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    setSearchPage: (state, action) => {
+    setSearchPage: (state: BooksState, action: PayloadAction<number>) => {
       state.searchOptions.page = action.payload;
     },
-    setSearchSortOrder: (state, action) => {
+    setSearchSortOrder: (state: BooksState, action: PayloadAction<BookSortOrder>) => {
       state.searchOptions.sortOrder = action.payload;
     },
-    setSearchBookName: (state, action) => {
+    setSearchBookName: (state: BooksState, action: PayloadAction<string>) => {
       state.searchOptions.bookName = action.payload;
     },
-    setSearchCategory: (state, action) => {
+    setSearchCategory: (state: BooksState, action: PayloadAction<BookCategories>) => {
       state.searchOptions.category = action.payload;
     },
-    setSearchBy: (state, action) => {
+    setSearchBy: (state: BooksState, action: PayloadAction<BookSearchBy>) => {
       state.searchOptions.searchBy = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBooks.pending, (state, action) => {
+      .addCase(fetchBooks.pending, (state: BooksState, action) => {
         state.error = null;
         state.status = 'loading';
         state.totalItems = 0;
@@ -60,7 +60,7 @@ const booksSlice = createSlice({
           state.data = [];
         }
       })
-      .addCase(fetchBooks.rejected, (state, action) => {
+      .addCase(fetchBooks.rejected, (state: BooksState, action) => {
         state.status = 'rejected';
         state.totalItems = 0;
         state.data = [];
@@ -68,7 +68,7 @@ const booksSlice = createSlice({
           state.error = action.payload;
         }
       })
-      .addCase(fetchBooks.fulfilled, (state, action) => {
+      .addCase(fetchBooks.fulfilled, (state: BooksState, action) => {
         state.status = 'resolved';
 
         if (!action.payload.items) {
@@ -90,12 +90,12 @@ const booksSlice = createSlice({
         state.searchOptions.page = action.meta.arg.page;
         state.totalItems = action.payload.totalItems;
       })
-      .addCase(fetchDefiniteBook.pending, (state) => {
+      .addCase(fetchDefiniteBook.pending, (state: BooksState) => {
         state.error = null;
         state.status = 'loading';
         state.currentBook = null;
       })
-      .addCase(fetchDefiniteBook.rejected, (state, action) => {
+      .addCase(fetchDefiniteBook.rejected, (state: BooksState, action) => {
         state.status = 'rejected';
         state.currentBook = null;
 
@@ -103,7 +103,7 @@ const booksSlice = createSlice({
           state.error = action.payload;
         }
       })
-      .addCase(fetchDefiniteBook.fulfilled, (state, action) => {
+      .addCase(fetchDefiniteBook.fulfilled, (state: BooksState, action) => {
         state.status = 'resolved';
 
         if (!action.payload) {
