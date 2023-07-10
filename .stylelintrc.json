@@ -6,6 +6,7 @@
 		"function-url-quotes": "never"
 	},
 	"ignoreFiles": [
-		"./dist/**/*.css"
+		"./dist/**/*.css",
+		"./docs/**/*.css"
 	]
 }
