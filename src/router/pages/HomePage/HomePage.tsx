@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useOutlet } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
 import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
 import Title from '../../../components/UI/Title/Title';
@@ -16,7 +15,6 @@ import { setSearchPage } from '../../../store/bookSlice/bookSlice';
 import { getVerticalScrollPosition, saveVerticalScrollPosition } from '../../../helpers/helpers';
 
 const HomePage = () => {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const outlet = useOutlet();
   const navigate = useNavigate();
@@ -55,7 +53,7 @@ const HomePage = () => {
     window.scrollTo(0, Number(getVerticalScrollPosition()));
   }, [data]);
 
-  const currentError = error ?? t('fetchBooksError', { ns: 'common' });
+  const currentError = error ?? 'Не удалось загрузить книги, попробуйте еще раз';
 
   return (
     <div
@@ -81,7 +79,6 @@ const HomePage = () => {
           />
         </div>
       </section>
-
       <section
         className={classes['books-section']}
       >
