@@ -13,6 +13,7 @@ import Button from '../../../components/UI/Button/Button';
 import BooksSearch from '../../../components/BL/BooksSearch/BooksSearch';
 import { setSearchPage } from '../../../store/bookSlice/bookSlice';
 import { getVerticalScrollPosition, saveVerticalScrollPosition } from '../../../helpers/helpers';
+import ThemeSwitcher from '../../../components/UI/ThemeSwitcher/ThemeSwitcher';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -59,6 +60,12 @@ const HomePage = () => {
     <div
       className={`${classes['home-page']}`}
     >
+      <div
+        className={classes['home-page__theme-switcher-wrapper']}
+      >
+        <ThemeSwitcher />
+      </div>
+
       <section
         className={`${classes['home-page__hero']} ${classes['hero-section']}`}
       >
