@@ -118,3 +118,22 @@ export const getVerticalScrollPosition = (): string | null => sessionStorage.get
 export const resetVerticalScrollPosition = (): void => {
   sessionStorage.setItem('scrollY', '0');
 };
+
+export const setColorTheme = (theme: 'dark' | 'light'): void => {
+  localStorage.setItem('colorTheme', theme);
+};
+
+export const getSystemColorTheme = (): 'dark' | 'light' => {
+  const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
+  return isDarkTheme ? 'dark' : 'light';
+};
+
+export const getColorTheme = (): 'dark' | 'light' => {
+  const currentTheme = localStorage.getItem('colorTheme');
+
+  if (!currentTheme) {
+    return getSystemColorTheme();
+  }
+
+  return currentTheme as 'dark' | 'light';
+};
