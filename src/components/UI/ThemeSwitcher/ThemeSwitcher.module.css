@@ -1,0 +1,42 @@
+.theme-switcher {
+	/* styles for .theme-switcher */
+}
+
+.theme-switcher>input {
+	background-size: 24px;
+	background-repeat: no-repeat;
+}
+
+.theme-switcher>input:first-of-type {
+	background-image: url(../../../assets/images/icons/sun.svg);
+	background-position: 2px 50%;
+}
+
+.theme-switcher>input:last-of-type {
+	background-image: url(../../../assets/images/icons/moon.svg);
+	background-position: calc(100% - 2px) 50%;
+}
+
+.theme-switcher>input:not(:checked) {
+	filter: invert(0);
+}
+
+.theme-switcher>span {
+	filter: invert(0);
+}
+
+.theme-switcher>input:checked {
+	filter: invert(1);
+}
+
+[data-theme='dark'] .theme-switcher>input:not(:checked) {
+	filter: invert(1);
+}
+
+[data-theme='dark'] .theme-switcher>span {
+	filter: invert(0);
+}
+
+[data-theme='dark'] .theme-switcher>input:checked {
+	filter: invert(0);
+}
