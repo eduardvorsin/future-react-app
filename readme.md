@@ -1,9 +1,9 @@
 # 📖 Приложение по поиску книг
 [Cсылка на демо](https://eduardvorsin.github.io/future-react-app/)
 
-![Поиск книг](./docs/assets/static/book-app1.png)
+![Поиск книг](./docs/assets/static/book-app2.png)
 
-![Найденные книги](./docs/assets/static/book-app2.png)
+![Найденные книги](./docs/assets/static/book-app1.png)
 
 ## Технологии которые использовались при написании
 ![javascript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
