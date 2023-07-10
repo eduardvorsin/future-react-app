@@ -110,14 +110,13 @@
 	}
 }
 
-@media(prefers-color-scheme:dark) {
-	.card {
-		background-color: var(--secondary-color-200);
-		transition: background-color var(--transition-time) var(--transition-easing);
-	}
 
-	.card__price {
-		color: var(--brand-color-200);
-		transition: color var(--transition-time) var(--transition-easing);
-	}
+[data-theme='dark'] .card {
+	background-color: var(--secondary-color-200);
+	transition: background-color var(--transition-time) var(--transition-easing);
+}
+
+[data-theme='dark'] .card__price {
+	color: var(--brand-color-200);
+	transition: color var(--transition-time) var(--transition-easing);
 }

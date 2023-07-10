@@ -45,11 +45,9 @@
 	}
 }
 
-@media(prefers-color-scheme:dark) {
-	.error {
-		color: var(--light-color-200);
-		border-color: var(--error-color-200);
-		transition:
-			background-color var(--transition-time) var(--transition-easing);
-	}
+[data-theme='dark'] .error {
+	color: var(--light-color-200);
+	border-color: var(--error-color-200);
+	transition:
+		background-color var(--transition-time) var(--transition-easing);
 }

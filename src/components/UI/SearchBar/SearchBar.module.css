@@ -62,9 +62,7 @@
 	height: 25px;
 }
 
-@media(prefers-color-scheme:dark) {
-	.search-bar__input::placeholder {
-		color: var(--brand-color-100);
-		transition: color var(--transition-time) var(--transition-easing);
-	}
+[data-theme='dark'] .search-bar__input::placeholder {
+	color: var(--brand-color-100);
+	transition: color var(--transition-time) var(--transition-easing);
 }

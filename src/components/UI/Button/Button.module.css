@@ -71,22 +71,19 @@
 	transition: color var(--transition-time) var(--transition-easing);
 }
 
-@media(prefers-color-scheme:light) {
-	.button:disabled {
-		background-color: var(--disabled-color-100);
-		color: var(--disabled-color-200);
-		border-color: var(--disabled-color-100);
-		transition:
-			background-color var(--transition-time) var(--transition-easing),
-			color var(--transition-time) var(--transition-easing),
-			border-color var(--transition-time) var(--transition-easing);
-	}
+[data-theme='light'] .button:disabled {
+	background-color: var(--disabled-color-100);
+	color: var(--disabled-color-200);
+	border-color: var(--disabled-color-100);
+	transition:
+		background-color var(--transition-time) var(--transition-easing),
+		color var(--transition-time) var(--transition-easing),
+		border-color var(--transition-time) var(--transition-easing);
 }
 
-@media(prefers-color-scheme:dark) {
-	.button:disabled {
-		opacity: 0.5;
-		transition:
-			opacity var(--transition-time) var(--transition-easing);
-	}
+
+[data-theme='dark'] .button:disabled {
+	opacity: 0.5;
+	transition:
+		opacity var(--transition-time) var(--transition-easing);
 }

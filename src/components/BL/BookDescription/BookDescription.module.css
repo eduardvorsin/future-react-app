@@ -157,12 +157,10 @@
 	}
 }
 
-@media(prefers-color-scheme:dark) {
-	.book-description__buying {
-		box-shadow: none;
-		background-color: var(--secondary-color-200);
-		transition:
-			box-shadow var(--transition-time) var(--transition-easing),
-			background-color var(--transition-time) var(--transition-easing);
-	}
+[data-theme='dark'] .book-description__buying {
+	box-shadow: none;
+	background-color: var(--secondary-color-200);
+	transition:
+		box-shadow var(--transition-time) var(--transition-easing),
+		background-color var(--transition-time) var(--transition-easing);
 }
