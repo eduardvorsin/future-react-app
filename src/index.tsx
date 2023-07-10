@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './store/store';
 import './index.css';
+import { defaultTheme } from './contexts/ThemeContext';
+
+document.documentElement.setAttribute('data-theme', defaultTheme);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement);
 root.render(
