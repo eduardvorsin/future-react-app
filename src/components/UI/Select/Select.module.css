@@ -56,7 +56,6 @@
 	font-family: inherit;
 	font-size: inherit;
 	cursor: inherit;
-	line-height: inherit;
 	height: 100%;
 	transition:
 		border-color var(--transition-time) var(--transition-easing),
