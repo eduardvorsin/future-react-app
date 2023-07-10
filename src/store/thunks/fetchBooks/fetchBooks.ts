@@ -6,7 +6,6 @@ import { BookPartialInfo, SearchOptions } from '../../../API/bookTypes';
 type BooksData = {
   totalItems: number,
   items: BookPartialInfo[],
-  page: number,
 }
 
 const fetchBooksError = 'Не удалось загрузить книги, попробуйте еще раз';
