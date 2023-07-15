@@ -5,7 +5,7 @@ import fetchBooks from '../thunks/fetchBooks/fetchBooks';
 import fetchDefiniteBook from '../thunks/fetchDefiniteBook/fetchDefiniteBook';
 import { BookCategories, BookSearchBy, BookSortOrder, SearchOptions } from '../../API/bookTypes';
 
-type BooksState = {
+export type BooksState = {
   status: 'loading' | 'resolved' | 'rejected' | null,
   error: string | null,
   searchOptions: SearchOptions,
