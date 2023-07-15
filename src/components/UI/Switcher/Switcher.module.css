@@ -23,6 +23,10 @@
 	/* styles for .switcher__label */
 }
 
+.switcher__input-label {
+	/* styles for .switcher__input-label */
+}
+
 .switcher__radio {
 	cursor: pointer;
 	margin: 0;
