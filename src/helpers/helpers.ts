@@ -1,12 +1,6 @@
 import getLanguageName from '../localization/formatting/languageNames';
 import { IBook } from '../model/IBook';
-
-export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 7;
-
-export const getPageIndex = (page: number) => {
-  const booksPerPage = 40;
-  return page * booksPerPage;
-};
+import i18n from '../localization/i18next';
 
 type Characterstics = {
   authors: string,
@@ -18,6 +12,18 @@ type Characterstics = {
   isEbook: boolean,
   industryIdentifiers: string,
 }
+
+type Characteristic = {
+  name: string,
+  value: string | number,
+}
+
+export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 7;
+
+export const getPageIndex = (page: number) => {
+  const booksPerPage = 40;
+  return page * booksPerPage;
+};
 
 const isCharacteristicField = (field: string): field is keyof Characterstics => {
   const characteristicFields = new Set([
@@ -34,11 +40,6 @@ const isCharacteristicField = (field: string): field is keyof Characterstics => 
   return characteristicFields.has(field);
 };
 
-type Characteristic = {
-  name: string,
-  value: string | number,
-}
-
 export const createCharacteristicsData = (bookData: IBook): Characteristic[] => {
   const characteristics = [] as Characteristic[];
   const fields = Object.keys(bookData) as (keyof IBook)[];
@@ -47,21 +48,19 @@ export const createCharacteristicsData = (bookData: IBook): Characteristic[] => 
     if (!isCharacteristicField(key)) return;
 
     const data: {
-      name: string,
+      name: keyof Characterstics,
       value: string | number,
     } = {
-      name: '',
+      name: i18n.t(`characteristics.${key}` as const, { ns: 'bookDescription' }),
       value: '',
     };
 
     switch (key) {
       case 'authors': {
         data.value = bookData[key]?.join(', ') ?? '';
-        data.name = 'Авторы';
         break;
       }
       case 'industryIdentifiers': {
-        data.name = 'ISBN';
         const identificators = bookData[key];
         if (identificators) {
           data.value = identificators[identificators.length - 1].identifier.toString();
@@ -69,32 +68,24 @@ export const createCharacteristicsData = (bookData: IBook): Characteristic[] => 
         break;
       }
       case 'isEbook': {
-        data.name = 'Электронная книга';
-        data.value = bookData[key] ? 'Да' : 'Нет';
+        data.name = i18n.t(`characteristics.${key}.name`, { ns: 'bookDescription' });
+        const currentValue = bookData[key] ? 'trueValue' : 'falseValue';
+        data.value = i18n.t(`characteristics.${key}.${currentValue}` as const, { ns: 'bookDescription' });
         break;
       }
       case 'maturityRating': {
-        data.name = '18+';
-        data.value = bookData[key] === 'MATURE' ? 'Да' : 'Нет';
+        data.name = i18n.t(`characteristics.${key}.name`, { ns: 'bookDescription' });
+        const currentValue = bookData[key] ? 'trueValue' : 'falseValue';
+        data.value = i18n.t(`characteristics.${key}.${currentValue}` as const, { ns: 'bookDescription' });
         break;
       }
       case 'language': {
-        data.name = 'Язык';
         data.value = getLanguageName(bookData[key]);
         break;
       }
-      case 'pageCount': {
-        data.name = 'Количество страниц';
-        data.value = bookData[key];
-        break;
-      }
-      case 'publishedDate': {
-        data.name = 'Дата публикации';
-        data.value = bookData[key];
-        break;
-      }
+      case 'pageCount':
+      case 'publishedDate':
       case 'publisher': {
-        data.name = 'Издатель';
         data.value = bookData[key];
         break;
       }
