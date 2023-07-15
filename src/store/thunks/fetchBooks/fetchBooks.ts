@@ -2,13 +2,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import BooksAPI from '../../../API/BooksAPI';
 import { BookPartialInfo, SearchOptions } from '../../../API/bookTypes';
+import i18n from '../../../localization/i18next';
 
 type BooksData = {
   totalItems: number,
   items: BookPartialInfo[],
 }
 
-const fetchBooksError = 'Не удалось загрузить книги, попробуйте еще раз';
+const fetchBooksError = i18n.t('fetchBooksError');
 
 const fetchBooks = createAsyncThunk<BooksData, SearchOptions, { rejectValue: string }>(
   'books/fetchBooks',

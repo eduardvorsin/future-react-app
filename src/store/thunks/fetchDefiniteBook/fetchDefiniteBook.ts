@@ -2,8 +2,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { BookInfo } from '../../../API/bookTypes';
 import BooksAPI from '../../../API/BooksAPI';
+import i18n from '../../../localization/i18next';
 
-const fetchDefiniteBookError = 'Не удалось загрузить книгу, попробуйте еще раз';
+const fetchDefiniteBookError = i18n.t('fetchDefiniteBookError');
 
 const fetchDefiniteBook = createAsyncThunk<BookInfo, string, { rejectValue: string }>(
   'books/fetchDefiniteBook',
