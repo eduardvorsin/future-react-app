@@ -1,8 +1,10 @@
-const getLanguageName = (countryLocale: string): string => {
-  const locale = navigator.language;
-  const formatter = new Intl.DisplayNames(locale, { type: 'language' });
+import i18n from '../i18next';
 
-  const language = formatter.of(countryLocale) ?? 'неизвестно';
+const getLanguageName = (countryLocale: string): string => {
+  const locale = i18n.language;
+  const formatter = new Intl.DisplayNames(locale, { type: 'language' });
+  const language = formatter.of(countryLocale) ?? i18n.t('unknown');
+
   return `${language[0].toUpperCase()}${language.slice(1)}`;
 };
 
