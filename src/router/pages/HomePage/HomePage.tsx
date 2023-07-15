@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useNavigate, useOutlet } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
 import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
 import Title from '../../../components/UI/Title/Title';
@@ -14,8 +13,10 @@ import BooksSearch from '../../../components/BL/BooksSearch/BooksSearch';
 import { setSearchPage } from '../../../store/bookSlice/bookSlice';
 import { getVerticalScrollPosition, saveVerticalScrollPosition } from '../../../helpers/helpers';
 import ThemeSwitcher from '../../../components/UI/ThemeSwitcher/ThemeSwitcher';
+import LanguageSelect from '../../../components/UI/LanguageSelect/LanguageSelect';
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const outlet = useOutlet();
   const navigate = useNavigate();
@@ -54,16 +55,26 @@ const HomePage = () => {
     window.scrollTo(0, Number(getVerticalScrollPosition()));
   }, [data]);
 
-  const currentError = error ?? 'Не удалось загрузить книги, попробуйте еще раз';
+  const currentError = error ?? t('fetchBooksError');
 
   return (
     <div
       className={`${classes['home-page']}`}
     >
       <div
-        className={classes['home-page__theme-switcher-wrapper']}
+        className={classes['home-page__quick-menu']}
       >
-        <ThemeSwitcher />
+        <div
+          className={classes['home-page__quick-menu-item']}
+        >
+          <ThemeSwitcher />
+        </div>
+        <div
+          className={classes['home-page__quick-menu-item']}
+        >
+          <LanguageSelect
+          />
+        </div>
       </div>
 
       <section
@@ -78,7 +89,7 @@ const HomePage = () => {
             component='h2'
             level={2}
           >
-            Поиск книг
+            {t('mainTitle', { ns: 'homePage' })}
           </Title>
 
           <BooksSearch
@@ -108,7 +119,11 @@ const HomePage = () => {
           {status === 'resolved' && outlet === null && (
             <>
               <BooksCount>
-                Представлено {data.length} (из {totalItems}) книг
+                {t('booksCount', {
+                  count: totalItems,
+                  currentBooksCount: data.length,
+                  ns: 'homePage',
+                })}
               </BooksCount>
               <BooksList
                 data={data}
@@ -118,7 +133,7 @@ const HomePage = () => {
                   className={classes['books-section__button']}
                   onClick={loadMoreBooks}
                 >
-                  Смотреть еще
+                  {t('showMore')}
                 </Button>
               )}
             </>
