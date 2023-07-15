@@ -36,7 +36,6 @@ const Error: React.FC<ErrorProps> = ({
       <Title
         level={5}
         component='h4'
-        variant='error'
         className={classes.error__title}
       >
         {message}
