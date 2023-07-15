@@ -18,10 +18,6 @@
 	color: var(--text-color-secondary);
 }
 
-.title--error {
-	color: var(--error-color);
-}
-
 .title--level-1 {
 	font-size: var(--font-size-title-1);
 }
