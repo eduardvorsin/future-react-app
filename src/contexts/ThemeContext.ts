@@ -1,8 +1,10 @@
 import { createContext } from 'react';
 import { getColorTheme } from '../helpers/helpers';
 
+export type Theme = 'light' | 'dark';
+
 type ThemeContextValue = {
-  value: 'light' | 'dark';
+  value: Theme;
   toggleTheme: () => void;
 }
 
