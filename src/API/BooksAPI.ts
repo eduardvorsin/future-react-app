@@ -4,7 +4,7 @@ import { SearchOptions } from './bookTypes';
 export default class BooksAPI {
   private static url = 'https://www.googleapis.com/books/v1/volumes';
 
-  static async getBooks(options: SearchOptions) {
+  static async getBooks(options: SearchOptions): Promise<Response> {
     const {
       bookName,
       sortOrder = 'relevance',
@@ -38,7 +38,6 @@ export default class BooksAPI {
     ].join('&');
 
     const response = await fetch(`${BooksAPI.url}/${id}?${searchParams}`);
-
     return response;
   }
 }
