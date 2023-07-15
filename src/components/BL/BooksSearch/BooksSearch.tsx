@@ -1,90 +1,20 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useCallback, useContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
 import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
 import { setSearchBookName, setSearchCategory, setSearchSortOrder, setSearchBy } from '../../../store/bookSlice/bookSlice';
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import classes from './BooksSearch.module.css';
-import { MemoSelect } from '../../UI/Select/Select';
 import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
-import { resetVerticalScrollPosition } from '../../../helpers/helpers';
-import { BookCategories, BookSearchBy, BookSortOrder } from '../../../API/bookTypes';
+import { createOptionsFromValues, resetVerticalScrollPosition } from '../../../helpers/helpers';
+import { BookCategories, BookSearchBy, BookSortOrder, CategoryOption, SearchByOption, SorterOrderOption } from '../../../API/bookTypes';
+import { LanguageContext } from '../../../contexts/LanguageContext';
+import { MemoSelect } from '../../UI/Select/Select';
 
-type CategoryOption = {
-  value: BookCategories,
-  label: string
-}
-
-type SorterOrderOption = {
-  value: BookSortOrder,
-  label: string
-}
-
-type SearchByOption = {
-  value: BookSearchBy,
-  label: string,
-}
-
-const categoriesOptions: CategoryOption[] = [
-  {
-    value: 'all',
-    label: 'Все',
-  },
-  {
-    value: 'art',
-    label: 'Исскуство',
-  },
-  {
-    value: 'biography',
-    label: 'Биография',
-  },
-  {
-    value: 'computers',
-    label: 'Компьютеры',
-  },
-  {
-    value: 'history',
-    label: 'История',
-  },
-  {
-    value: 'medical',
-    label: 'Медицина',
-  },
-  {
-    value: 'poetry',
-    label: 'Поэзия',
-  },
-];
-
-const sortOrderOptions: SorterOrderOption[] = [
-  {
-    value: 'relevance',
-    label: 'Релевантности',
-  },
-  {
-    value: 'newest',
-    label: 'Новейшим',
-  },
-];
-
-const searchByOptions: SearchByOption[] = [
-  {
-    value: 'intitle',
-    label: 'По заголовку',
-  },
-  {
-    value: 'inauthor',
-    label: 'По автору',
-  },
-  {
-    value: 'inpublisher',
-    label: 'По издателю',
-  },
-  {
-    value: 'isbn',
-    label: 'По ISBN',
-  },
-];
+const categories: BookCategories[] = ['all', 'art', 'biography', 'computers', 'history', 'medical', 'poetry'];
+const sortingOrder: BookSortOrder[] = ['relevance', 'newest'];
+const searchBy: BookSearchBy[] = ['intitle', 'inauthor', 'inpublisher', 'isbn'];
 
 type BooksSearchProps = {
   className?: string,
@@ -93,9 +23,15 @@ type BooksSearchProps = {
 const BooksSearch: FC<BooksSearchProps> = ({
   className,
 }) => {
+  const { value: language } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { searchOptions } = useAppSelector((state) => state.books);
+
+  const categoriesOptions = useMemo(() => createOptionsFromValues(categories, 'bookSearch.categories') as CategoryOption[], [language]);
+  const sortOrderOptions = useMemo(() => createOptionsFromValues(sortingOrder, 'bookSearch.sortOrder') as SorterOrderOption[], [language]);
+  const searchByOptions = useMemo(() => createOptionsFromValues(searchBy, 'bookSearch.searchBy') as SearchByOption[], [language]);
 
   const [searchValue, setSearchValue] = useState<string>('');
   const [category, setCategory] = useState<BookCategories>(searchOptions.category);
@@ -165,7 +101,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
       <MemoSelect
         className={`${classes['books-search__category-select']} ${classes['books-search__select']}`}
         value={category}
-        labelText='Категории'
+        labelText={t('bookSearch.categoriesLabel', { ns: 'homePage' })}
         id='categories'
         onChange={categoryChangeHandler}
         options={categoriesOptions}
@@ -174,7 +110,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
       <MemoSelect
         className={`${classes['books-search__sort-select']} ${classes['books-search__select']}`}
         value={sortOrder}
-        labelText='Отсортировать по'
+        labelText={t('bookSearch.sortOrderLabel', { ns: 'homePage' })}
         id='sortingBy'
         onChange={sortOrderChangeHandler}
         options={sortOrderOptions}
@@ -183,7 +119,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
       <MemoSelect
         className={`${classes['books-search__find-by-select']} ${classes['books-search__select']}`}
         value={findBy}
-        labelText='Искать по'
+        labelText={t('bookSearch.searchByLabel', { ns: 'homePage' })}
         id='findBy'
         onChange={searchByChangeHandler}
         options={searchByOptions}
