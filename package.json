@@ -81,6 +81,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "i18next": "^23.2.6",
+    "i18next-browser-languagedetector": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
