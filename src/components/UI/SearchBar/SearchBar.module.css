@@ -41,7 +41,7 @@
 	transition: border-color var(--transition-time) var(--transition-easing);
 }
 
-.search-bar__close {
+.search-bar__clear {
 	left: 0;
 }
 
@@ -49,14 +49,14 @@
 	right: 0;
 }
 
-.search-bar__close,
+.search-bar__clear,
 .search-bar__find {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-.search-bar__close>svg,
+.search-bar__clear>svg,
 .search-bar__find>svg {
 	width: 25px;
 	height: 25px;
