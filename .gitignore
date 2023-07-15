@@ -3,4 +3,4 @@ node_modules
 .vscode
 .stylelintcache
 .env
-.txt
+*.txt
