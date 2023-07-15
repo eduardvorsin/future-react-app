@@ -60,3 +60,18 @@ export type SearchOptions = {
   category: BookCategories,
   searchBy: BookSearchBy
 }
+
+export type CategoryOption = {
+  value: BookCategories,
+  label: string
+}
+
+export type SorterOrderOption = {
+  value: BookSortOrder,
+  label: string
+}
+
+export type SearchByOption = {
+  value: BookSearchBy,
+  label: string,
+}
