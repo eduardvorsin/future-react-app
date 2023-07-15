@@ -7,7 +7,7 @@ type SwitcherProps = {
   checked: boolean,
   inputLabels: [string, string],
   name: string,
-  value: string[],
+  value: [string, string],
   onChange: ChangeEventHandler<HTMLInputElement>,
 }
 
