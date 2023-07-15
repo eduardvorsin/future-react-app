@@ -5,6 +5,7 @@ import App from './App';
 import store from './store/store';
 import './index.css';
 import { defaultTheme } from './contexts/ThemeContext';
+import './localization/i18next';
 
 document.documentElement.setAttribute('data-theme', defaultTheme);
 
