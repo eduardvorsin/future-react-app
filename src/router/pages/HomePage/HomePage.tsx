@@ -1,3 +1,5 @@
+import React, { ChangeEventHandler, useEffect } from 'react';
+import { useMatch, useOutlet, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
 import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
@@ -14,41 +16,46 @@ import { setSearchPage } from '../../../store/bookSlice/bookSlice';
 import { getVerticalScrollPosition, saveVerticalScrollPosition } from '../../../helpers/helpers';
 import ThemeSwitcher from '../../../components/UI/ThemeSwitcher/ThemeSwitcher';
 import LanguageSelect from '../../../components/UI/LanguageSelect/LanguageSelect';
+import fetchDefiniteBook from '../../../store/thunks/fetchDefiniteBook/fetchDefiniteBook';
 
 const HomePage = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const outlet = useOutlet();
-  const navigate = useNavigate();
+  const isDefiniteBookPage = useMatch('/books/:id');
+  const isBookCardsPage = useMatch('/books');
+  const { id: bookId } = useParams();
 
   const {
-    data,
     totalItems,
     status,
     error,
     searchOptions,
+    data,
   } = useAppSelector((state) => state.books);
 
   const loadMoreBooks = () => {
     const {
       page,
-      bookName,
-      sortOrder,
-      category,
-      searchBy,
     } = searchOptions;
 
     dispatch(fetchBooks({
+      ...searchOptions,
       page: page + 1,
-      bookName,
-      sortOrder,
-      category,
-      searchBy,
     }));
 
     setSearchPage(page + 1);
     saveVerticalScrollPosition();
-    navigate('/books');
+  };
+
+  const refetchBooksData: ChangeEventHandler<HTMLSelectElement> = () => {
+    if (status !== 'resolved') return;
+
+    if (isBookCardsPage) {
+      dispatch(fetchBooks(searchOptions));
+    } else if (isDefiniteBookPage && bookId) {
+      dispatch(fetchDefiniteBook(bookId));
+    }
   };
 
   useEffect(() => {
@@ -73,6 +80,7 @@ const HomePage = () => {
           className={classes['home-page__quick-menu-item']}
         >
           <LanguageSelect
+            onChange={refetchBooksData}
           />
         </div>
       </div>
