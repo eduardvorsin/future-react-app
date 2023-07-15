@@ -30,7 +30,7 @@ const Title: React.FC<TitleProps> = ({
     isValidHeadingLevel(level) ? classes[`title--level-${level}`] : classes['title--level-6'],
   ].join(' ');
 
-  const Heading = component;
+  const Heading: Headings = component;
 
   return (
     <Heading
