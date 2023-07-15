@@ -5,6 +5,7 @@ type SwitcherProps = {
   className?: string,
   labelText: string
   checked: boolean,
+  inputLabels: [string, string],
   name: string,
   value: string[],
   onChange: ChangeEventHandler<HTMLInputElement>,
@@ -16,6 +17,7 @@ const Switcher: FC<SwitcherProps> = ({
   checked,
   name,
   value,
+  inputLabels,
   onChange,
 }) => (
   <fieldset
