@@ -1,0 +1,16 @@
+.language__select {
+	flex-wrap: wrap;
+}
+
+.language__select>label {
+	font-size: 0;
+}
+
+[data-theme='light'] .language__select>div,
+[data-theme='light'] .language__select select {
+	background-color: var(--dark-color-100);
+}
+
+[data-theme='light'] .language__select select {
+	color: var(--light-color-100);
+}
