@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FC } from 'react';
+import React, { ChangeEventHandler, FC, useId } from 'react';
 import classes from './Switcher.module.css';
 
 type SwitcherProps = {
@@ -19,35 +19,53 @@ const Switcher: FC<SwitcherProps> = ({
   value,
   inputLabels,
   onChange,
-}) => (
-  <fieldset
-    className={`${classes.switcher} ${className}`}
-  >
-    <legend
-      className={`${classes.switcher__label} sr-only`}
+}) => {
+  const id = useId();
+
+  return (
+    <fieldset
+      className={`${classes.switcher} ${className}`}
     >
-      {labelText}
-    </legend>
-    <input
-      className={classes.switcher__radio}
-      name={name}
-      role='switch'
-      type='radio'
-      value={value[0]}
-      checked={checked}
-      onChange={onChange}
-    />
-    <input
-      className={classes.switcher__radio}
-      name={name}
-      role='switch'
-      type='radio'
-      value={value[1]}
-      checked={!checked}
-      onChange={onChange}
-    />
-    <span className={classes.switcher__status}></span>
-  </fieldset>
-);
+      <legend
+        className={`${classes.switcher__label} sr-only`}
+      >
+        {labelText}
+      </legend>
+      <label
+        className={`${classes['switcher__input-label']} sr-only`}
+        htmlFor={`${id}-input-first`}
+      >
+        {inputLabels[0]}
+      </label>
+      <input
+        id={`${id}-input-first`}
+        className={classes.switcher__radio}
+        name={name}
+        role='switch'
+        type='radio'
+        value={value[0]}
+        checked={checked}
+        onChange={onChange}
+      />
+      <label
+        className={`${classes['switcher__input-label']} sr-only`}
+        htmlFor={`${id}-input-second`}
+      >
+        {inputLabels[1]}
+      </label>
+      <input
+        id={`${id}-input-second`}
+        className={classes.switcher__radio}
+        name={name}
+        role='switch'
+        type='radio'
+        value={value[1]}
+        checked={!checked}
+        onChange={onChange}
+      />
+      <span className={classes.switcher__status}></span>
+    </fieldset>
+  );
+};
 
 export default Switcher;
