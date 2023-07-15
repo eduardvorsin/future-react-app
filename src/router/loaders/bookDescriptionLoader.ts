@@ -7,7 +7,7 @@ interface bookDescriptionLoaderArgs extends LoaderFunctionArgs {
   params: Params<ParamParseKey<bookDescriptionPathName>>
 }
 
-const bookDescriptionLoader = async ({ params }: bookDescriptionLoaderArgs) => {
+const bookDescriptionLoader = async ({ params }: bookDescriptionLoaderArgs): Promise<null> => {
   if (params.id) {
     store.dispatch(fetchDefiniteBook(params.id));
   }
