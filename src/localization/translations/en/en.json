@@ -1,0 +1,85 @@
+{
+	"homePage": {
+		"mainTitle": "Book Search",
+		"bookSearch": {
+			"categories": {
+				"all": "All",
+				"art": "Art",
+				"biography": "Biography",
+				"computers": "Computers",
+				"history": "History",
+				"medical": "Medical",
+				"poetry": "Poetry"
+			},
+			"sortOrder": {
+				"relevance": "Relevance",
+				"newest": "Newest"
+			},
+			"searchBy": {
+				"intitle": "By title",
+				"inauthor": "By author",
+				"inpublisher": "By publisher",
+				"isbn": "By ISBN"
+			},
+			"categoriesLabel": "$t(common:categories)",
+			"sortOrderLabel": "Sort by",
+			"searchByLabel": "Search by"
+		},
+		"card": {
+			"bookPrice": "Book price"
+		},
+		"booksCount_one": "Presented {{currentBooksCount}} of ({{count}}) book",
+		"booksCount_other": "Presented {{currentBooksCount}} of ({{count}}) books"
+	},
+	"notFoundPage": {
+		"mainTitle": "Page Not Found",
+		"backToHomePage": "Back to Main Page"
+	},
+	"bookDescription": {
+		"characteristics": {
+			"publisher": "Publisher",
+			"publishedDate": "Published date",
+			"pageCount": "Page count",
+			"language": "Language",
+			"authors": "Authors",
+			"industryIdentifiers": "ISBN",
+			"maturityRating": {
+				"name": "Content 18+",
+				"trueValue": "Yes",
+				"falseValue": "No"
+			},
+			"isEbook": {
+				"name": "Book Type",
+				"trueValue": "E-book",
+				"falseValue": "Printed book"
+			}
+		},
+		"price": "Price",
+		"notAvaliableDescription": "The description is not available for this book",
+		"readBookFragment": "Read a fragment of the book",
+		"categories": "$t(common:categories)",
+		"descriptionTitle": "Description",
+		"characteristicsTitle": "Characteristics"
+	},
+	"common": {
+		"addToCart": "Add to cart",
+		"fetchDefiniteBookError": "Failed to download the book, try again",
+		"fetchBooksError": "Failed to download books, try again",
+		"showMore": "Show more",
+		"themeSwitcherLabel": "Color theme switcher",
+		"searchBar": {
+			"label": "Search Bar",
+			"placeholder": "Find a book",
+			"clear": "Clear",
+			"find": "To find"
+		},
+		"unknown": "Unknown",
+		"notAvailable": "Not available",
+		"learnMore": "Learn more",
+		"authors": "Authors",
+		"bookCover": "book cover",
+		"loading": "Loading",
+		"categories": "Categories",
+		"buy": "Buy"
+	}
+}

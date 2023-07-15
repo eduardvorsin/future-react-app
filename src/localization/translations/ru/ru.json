@@ -1,0 +1,86 @@
+{
+	"homePage": {
+		"mainTitle": "Поиск книг",
+		"bookSearch": {
+			"categories": {
+				"all": "Все",
+				"art": "Исскуство",
+				"biography": "Биография",
+				"computers": "Компьютеры",
+				"history": "История",
+				"medical": "Медицина",
+				"poetry": "Поэзия"
+			},
+			"sortOrder": {
+				"relevance": "Релевантности",
+				"newest": "Новизне"
+			},
+			"searchBy": {
+				"intitle": "По заголовку",
+				"inauthor": "По автору",
+				"inpublisher": "По издателю",
+				"isbn": "По ISBN"
+			},
+			"categoriesLabel": "$t(common:categories)",
+			"sortOrderLabel": "Отсортировать по",
+			"searchByLabel": "Искать по"
+		},
+		"card": {
+			"bookPrice": "Цена книги"
+		},
+		"booksCount_one": "Представлено {{currentBooksCount}} из ({{count}}) книги",
+		"booksCount_few": "Представлено {{currentBooksCount}} из ({{count}}) книг",
+		"booksCount_many": "$t(homePage:booksCount_few)"
+	},
+	"notFoundPage": {
+		"mainTitle": "Страница не найдена",
+		"backToHomePage": "Вернуться на главную страницу"
+	},
+	"bookDescription": {
+		"characteristics": {
+			"publisher": "Издатель",
+			"publishedDate": "Дата публикации",
+			"pageCount": "Количество страниц",
+			"authors": "Авторы",
+			"language": "Язык",
+			"industryIdentifiers": "ISBN",
+			"maturityRating": {
+				"name": "Контент 18+",
+				"trueValue": "Да",
+				"falseValue": "Нет"
+			},
+			"isEbook": {
+				"name": "Тип книги",
+				"trueValue": "Электронная книга",
+				"falseValue": "Печатная книга"
+			}
+		},
+		"price": "Цена",
+		"notAvaliableDescription": "Описание к данной книге отсутствует",
+		"readBookFragment": "Читать фрагмент книги",
+		"categories": "$t(common:categories)",
+		"descriptionTitle": "Описание",
+		"characteristicsTitle": "Характеристики"
+	},
+	"common": {
+		"addToCart": "Добавить в корзину",
+		"fetchDefiniteBookError": "Не удалось загрузить книгу, попробуйте еще раз",
+		"fetchBooksError": "Не удалось загрузить книги, попробуйте еще раз",
+		"showMore": "Смотреть еще",
+		"themeSwitcherLabel": "Переключатель цветовых тем",
+		"searchBar": {
+			"label": "Поле поиска",
+			"placeholder": "Найти книгу",
+			"clear": "Очистить",
+			"find": "Найти"
+		},
+		"unknown": "Неизвестно",
+		"notAvailable": "Нет в наличии",
+		"learnMore": "Подробнее",
+		"authors": "Авторы",
+		"bookCover": "обложка книги",
+		"loading": "Загрузка",
+		"categories": "Категории",
+		"buy": "Купить"
+	}
+}
