@@ -21,7 +21,7 @@ const imagesRegExp = /\.(jpe?g|png|gif|webp)$/i;
 const svgRegExp = /\.svg(\?.+)?$/i;
 const fontsRegExp = /\.(woff2?|eot|ttf|otf)$/i;
 const stylesRegExp = /\.(sa|sc|c)ss$/i;
-const jsRegExp = /\.[jt]sx?/i;
+const jsRegExp = /\.[jt]sx?$/i;
 
 const optimization = () => {
   const config = {
