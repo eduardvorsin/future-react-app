@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Title from '../Title/Title';
 import classes from './Card.module.css';
-import PlaceholderImage from '../../../assets/images/placeholder128x185-ru.jpeg';
+import PlaceholderImageRu from '../../../assets/images/placeholder128x185-ru.jpeg';
+import PlaceholderImageEn from '../../../assets/images/placeholder128x185-en.jpeg';
 import Link from '../Link/Link';
 import currencyFormat from '../../../localization/formatting/numbers';
+import i18n from '../../../localization/i18next';
 
 type CardProps = {
   id: string,
@@ -25,11 +28,13 @@ const Card: React.FC<CardProps> = ({
   className,
   title,
   maturityRating,
-  src = PlaceholderImage,
+  src = i18n.language === 'ru' ? PlaceholderImageRu : PlaceholderImageEn,
   alt,
   authors,
   price,
 }) => {
+  const { t } = useTranslation();
+
   const cardClasses = [
     className,
     classes.card,
@@ -41,8 +46,8 @@ const Card: React.FC<CardProps> = ({
 
   ].join(' ');
 
-  const currentAuthors = authors?.join(', ') ?? 'Неизвестно';
-  let formattedPrice = price?.amount ?? 'Нет в наличии';
+  const currentAuthors = authors?.join(', ') ?? t('unknown');
+  let formattedPrice = price?.amount ?? t('notAvailable');
 
   if (typeof formattedPrice === 'number') {
     formattedPrice = currencyFormat(formattedPrice, {
@@ -66,7 +71,7 @@ const Card: React.FC<CardProps> = ({
         <RouterLink
           to={`/books/${id}`}
         >
-          Подробнее
+          {t('learnMore')}
         </RouterLink>
       </div>
       <div
@@ -75,7 +80,9 @@ const Card: React.FC<CardProps> = ({
         <p
           className={classes.card__price}
         >
-          <span className='sr-only'>Цена книги:</span>
+          <span className='sr-only'>
+            {t('card.bookPrice', { ns: 'homePage' })}:
+          </span>
           {formattedPrice}
         </p>
         <Title
@@ -92,7 +99,7 @@ const Card: React.FC<CardProps> = ({
         <p
           className={classes.card__authors}
         >
-          Авторы: {currentAuthors}
+          {t('authors')}: {currentAuthors}
         </p>
       </div>
       <Link
@@ -101,7 +108,7 @@ const Card: React.FC<CardProps> = ({
         isRouterLink
         path={`/books/${id}`}
       >
-        Подробнее
+        {t('learnMore')}
       </Link>
     </article>
   );

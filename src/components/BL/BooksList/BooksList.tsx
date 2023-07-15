@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { IBookPartial } from '../../../model/IBook';
 import Card from '../../UI/Card/Card';
 import classes from './BooksList.module.css';
@@ -12,6 +13,7 @@ const BooksList: React.FC<BooksListProps> = ({
   className,
   data,
 }) => {
+  const { t } = useTranslation();
   const bookListClasses = [
     className,
     classes['books-list'],
@@ -31,7 +33,7 @@ const BooksList: React.FC<BooksListProps> = ({
           title={item.title}
           authors={item?.authors}
           src={item?.imageLinks?.smallThumbnail}
-          alt={`${item.title} book cover`}
+          alt={`${item.title} ${t('bookCover')}`}
         />
       ))}
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import classes from './Spinner.module.css';
 
 type SpinnerProps = {
@@ -18,6 +19,7 @@ const Spinner: React.FC<SpinnerProps> = ({
   className,
   size = 60,
 }) => {
+  const { t } = useTranslation();
   const spinnerClasses = [
     classes.spinner,
     className,
@@ -34,7 +36,7 @@ const Spinner: React.FC<SpinnerProps> = ({
   return (
     <div
       className={spinnerClasses}
-      aria-label="loading spinner"
+      aria-label={`${t('loading')}...`}
       style={spinnerStyles}
       title="loading spinner"
     >

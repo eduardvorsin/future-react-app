@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button';
 import SearchIcon from '../../../assets/images/icons/find.svg';
 import ClearIcon from '../../../assets/images/icons/clear.svg';
@@ -22,6 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
   ...props
 }) => {
+  const { t } = useTranslation();
   const SearchFormClasses = [
     className,
     classes['search-form'],
@@ -60,7 +62,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           htmlFor='search-bar'
           className={`${classes['search-bar__label']} sr-only`}
         >
-          Search bar
+          {t('searchBar.label')}
         </label>
         <input
           id='search-bar'
@@ -68,15 +70,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onChange={onChange}
           onKeyDown={keydownHandler}
           value={value}
-          placeholder='найти книгу...'
+          placeholder={`${t('searchBar.placeholder')}...`}
           {...props}
         />
         <Button
           iconButton
-          className={classes['search-bar__close']}
+          className={classes['search-bar__clear']}
           onClick={onClear}
         >
           <ClearIcon />
+          {t('searchBar.clear')}
         </Button>
         <Button
           iconButton
@@ -84,6 +87,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           type='submit'
         >
           <SearchIcon />
+          {t('searchBar.find')}
         </Button>
       </div>
     </form>

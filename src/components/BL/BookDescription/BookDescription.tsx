@@ -1,22 +1,27 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import Title from '../../UI/Title/Title';
 import classes from './BookDescription.module.css';
-import PlaceholderImage from '../../../assets/images/placeholder388x613-ru.jpeg';
+import PlaceholderImageRu from '../../../assets/images/placeholder388x613-ru.jpeg';
+import PlaceholderImageEn from '../../../assets/images/placeholder388x613-en.jpeg';
 import Link from '../../UI/Link/Link';
 import OpenBookIcon from '../../../assets/images/icons/open-book.svg';
 import currencyFormat from '../../../localization/formatting/numbers';
 import CharacteristicList from '../../UI/CharacteristicList/CharacteristicList';
 
 const BookDescription = () => {
-  const { currentBook } = useAppSelector((state) => state.books);
-  const categories = currentBook?.categories?.join(', ') ?? 'Неизвестно';
-  const imageSrc = currentBook?.imageLinks?.medium ?? PlaceholderImage;
-  const description = currentBook?.description ?? 'Описание к данной книге отсутствует';
-  const title = currentBook?.title ?? 'Неизвестно';
+  const { t, i18n } = useTranslation();
+  const localizedPlaceholder = i18n.language === 'ru' ? PlaceholderImageRu : PlaceholderImageEn;
+
+  const currentBook = useAppSelector((state) => state.books.currentBook);
+  const categories = currentBook?.categories?.join(', ') ?? t('unknown');
+  const imageSrc = currentBook?.imageLinks?.medium ?? localizedPlaceholder;
+  const description = currentBook?.description ?? t('notAvaliableDescription', { ns: 'bookDescription' });
+  const title = currentBook?.title ?? t('unknown');
   const previewLink = currentBook?.webReaderLink ?? '';
 
-  let price = currentBook?.retailPrice?.amount ?? 'Нет в наличии';
+  let price = currentBook?.retailPrice?.amount ?? t('notAvailable');
 
   if (typeof price === 'number') {
     price = currencyFormat(price, {
@@ -41,7 +46,7 @@ const BookDescription = () => {
         <img
           src={imageSrc}
           className={classes['book-description__img']}
-          alt={`${title} book cover`}
+          alt={`${title} ${t('bookCover')}`}
           width={435}
           height={632}
         />
@@ -54,12 +59,13 @@ const BookDescription = () => {
           icon={OpenBookIcon}
           path={previewLink}
         >
-          Читать фрагмент книги
+          {t('readBookFragment', { ns: 'bookDescription' })}
         </Link>
         <p
           className={classes['book-description__category']}
         >
-          Категории: <span>{categories}</span>
+          {t('categories', { ns: 'bookDescription' })}:
+          <span>{categories}</span>
         </p>
         {currentBook && (
           <>
@@ -69,7 +75,7 @@ const BookDescription = () => {
               variant='dark'
               level={4}
             >
-              Характеристики
+              {t('characteristicsTitle', { ns: 'bookDescription' })}
             </Title>
 
             <CharacteristicList
@@ -89,7 +95,7 @@ const BookDescription = () => {
           variant='tertiary'
           className={classes['book-description__buying-btn']}
         >
-          Купить
+          {t('buy')}
         </Link>
       </div>
       <div
@@ -101,7 +107,7 @@ const BookDescription = () => {
           variant='dark'
           level={4}
         >
-          Описание
+          {t('descriptionTitle', { ns: 'bookDescription' })}
         </Title>
         <p
           className={classes['book-description__text']}
