@@ -58,6 +58,7 @@
 .books-section {
 	padding: 30px 0;
 	position: relative;
+	flex-grow: 1;
 }
 
 .books-section__error {
