@@ -53,7 +53,7 @@ const HomePage = () => {
     }
   };
 
-  useEffect(() => {
+  const currentError = error ? t('fetchBooksError') : '';
     window.scrollTo(0, Number(getVerticalScrollPosition()));
   }, [data]);
   const currentBooks = currentData?.items ?? [];
