@@ -1,14 +1,10 @@
 import React, { FC, useCallback, useContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
-import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
-import { setSearchBookName, setSearchCategory, setSearchSortOrder, setSearchBy } from '../../../store/bookSlice/bookSlice';
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import classes from './BooksSearch.module.css';
-import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
-import { createOptionsFromValues, resetVerticalScrollPosition } from '../../../helpers/helpers';
-import { BookCategories, BookSearchBy, BookSortOrder, CategoryOption, SearchByOption, SorterOrderOption } from '../../../API/bookTypes';
+import { createOptionsFromValues } from '../../../helpers/helpers';
+import { BookCategories, BookSearchBy, BookSortOrder, CategoryOption, SearchByOption, SearchOptions, SorterOrderOption } from '../../../API/bookTypes';
 import { LanguageContext } from '../../../contexts/LanguageContext';
 import { MemoSelect } from '../../UI/Select/Select';
 
@@ -18,10 +14,12 @@ const searchBy: BookSearchBy[] = ['intitle', 'inauthor', 'inpublisher', 'isbn'];
 
 type BooksSearchProps = {
   className?: string,
+  onSearch: (options: SearchOptions) => void,
 }
 
 const BooksSearch: FC<BooksSearchProps> = ({
   className,
+  onSearch,
 }) => {
   const { value: language } = useContext(LanguageContext);
   const { t } = useTranslation();
@@ -43,16 +41,13 @@ const BooksSearch: FC<BooksSearchProps> = ({
   };
 
   const searchHandler: () => void = () => {
-    dispatch(setSearchBookName(searchValue));
-    dispatch(fetchBooks({
+    onSearch({
       page: 0,
       bookName: searchValue,
       sortOrder,
       category,
       searchBy: findBy,
-    }));
-
-    resetVerticalScrollPosition();
+    });
     navigate('/books');
   };
 
