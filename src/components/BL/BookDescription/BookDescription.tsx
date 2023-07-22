@@ -1,6 +1,6 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import Title from '../../UI/Title/Title';
 import classes from './BookDescription.module.css';
 import PlaceholderImageRu from '../../../assets/images/placeholder388x613-ru.jpeg';
@@ -9,10 +9,12 @@ import Link from '../../UI/Link/Link';
 import OpenBookIcon from '../../../assets/images/icons/open-book.svg';
 import currencyFormat from '../../../localization/formatting/numbers';
 import CharacteristicList from '../../UI/CharacteristicList/CharacteristicList';
+import bookDescriptionLoader from '../../../router/loaders/bookDescriptionLoader';
 
 const BookDescription = () => {
   const { t, i18n } = useTranslation();
   const localizedPlaceholder = i18n.language === 'ru' ? PlaceholderImageRu : PlaceholderImageEn;
+  const currentBook = useLoaderData() as Awaited<ReturnType<typeof bookDescriptionLoader>>;
 
   const categories = currentBook?.categories?.[0] ?? t('unknown');
   const imageSrc = currentBook?.imageLinks?.medium ?? localizedPlaceholder;
