@@ -100,16 +100,6 @@ export const createCharacteristicsData = (bookData: IBook): Characteristic[] => 
   return characteristics;
 };
 
-export const saveVerticalScrollPosition = (): void => {
-  sessionStorage.setItem('scrollY', window.scrollY.toString());
-};
-
-export const getVerticalScrollPosition = (): string | null => sessionStorage.getItem('scrollY');
-
-export const resetVerticalScrollPosition = (): void => {
-  sessionStorage.setItem('scrollY', '0');
-};
-
 export const setColorTheme = (theme: 'dark' | 'light'): void => {
   localStorage.setItem('colorTheme', theme);
 };
