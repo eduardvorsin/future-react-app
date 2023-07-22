@@ -34,9 +34,9 @@ const BooksSearch: FC<BooksSearchProps> = ({
   const searchByOptions = useMemo(() => createOptionsFromValues(searchBy, 'bookSearch.searchBy') as SearchByOption[], [language]);
 
   const [searchValue, setSearchValue] = useState<string>('');
-  const [category, setCategory] = useState<BookCategories>(searchOptions.category);
-  const [sortOrder, setSortOrder] = useState<BookSortOrder>(searchOptions.sortOrder);
-  const [findBy, setFindBy] = useState<BookSearchBy>(searchOptions.searchBy);
+  const [category, setCategory] = useState<BookCategories>('all');
+  const [sortOrder, setSortOrder] = useState<BookSortOrder>('relevance');
+  const [findBy, setFindBy] = useState<BookSearchBy>('intitle');
 
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearchValue(e.target.value);
