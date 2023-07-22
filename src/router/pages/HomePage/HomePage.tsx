@@ -57,7 +57,11 @@ const HomePage = () => {
     window.scrollTo(0, Number(getVerticalScrollPosition()));
   }, [data]);
 
-  const currentError = error ?? t('fetchBooksError');
+  const bookSectionContainerClasses = [
+    classes['books-section__container'],
+    'container',
+    (!isLoading && isFetching) ? classes['books-section__container--fetching'] : '',
+  ].join(' ');
 
   return (
     <div
@@ -105,7 +109,7 @@ const HomePage = () => {
         className={classes['books-section']}
       >
         <div
-          className={`${classes['books-section__container']} container`}
+          className={bookSectionContainerClasses}
         >
           {status === 'loading' && (
             <Spinner
