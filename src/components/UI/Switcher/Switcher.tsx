@@ -45,6 +45,7 @@ const Switcher: FC<SwitcherProps> = ({
         type='radio'
         value={value[0]}
         checked={checked}
+        aria-checked={checked}
         onChange={onChange}
       />
       <label
@@ -61,6 +62,7 @@ const Switcher: FC<SwitcherProps> = ({
         type='radio'
         value={value[1]}
         checked={!checked}
+        aria-checked={!checked}
         onChange={onChange}
       />
       <span className={classes.switcher__status}></span>
