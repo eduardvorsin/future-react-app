@@ -111,20 +111,20 @@ const HomePage = () => {
         <div
           className={bookSectionContainerClasses}
         >
-          {status === 'loading' && (
+          {isLoading && (
             <Spinner
               size={200}
             />
           )}
 
-          {status === 'rejected' && (
+          {isError && (
             <Error
               className={classes['books-section__error']}
               message={currentError}
             />
           )}
 
-          {status === 'resolved' && outlet === null && (
+          {isSuccess && outlet === null && (
             <>
               <BooksCount
                 totalItemsCount={totalBooksCount}
@@ -144,7 +144,7 @@ const HomePage = () => {
             </>
           )}
 
-          {status === 'resolved' && outlet && (
+          {isSuccess && outlet && (
             <>
               {outlet}
             </>
