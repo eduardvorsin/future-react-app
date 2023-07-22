@@ -28,6 +28,7 @@
 		"card": {
 			"bookPrice": "Цена книги"
 		},
+		"booksCount_zero": "По вашему запросу не найдено подходящих книг",
 		"booksCount_one": "Представлено {{currentBooksCount}} из ({{count}}) книги",
 		"booksCount_few": "Представлено {{currentBooksCount}} из ({{count}}) книг",
 		"booksCount_many": "$t(homePage:booksCount_few)"
@@ -81,6 +82,7 @@
 		"bookCover": "обложка книги",
 		"loading": "Загрузка",
 		"categories": "Категории",
-		"buy": "Купить"
+		"buy": "Купить",
+		"languageSelection": "Выбор языка"
 	}
 }

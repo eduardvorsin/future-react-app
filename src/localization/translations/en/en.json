@@ -28,6 +28,7 @@
 		"card": {
 			"bookPrice": "Book price"
 		},
+		"booksCount_zero": "No suitable books have been found for your request",
 		"booksCount_one": "Presented {{currentBooksCount}} of ({{count}}) book",
 		"booksCount_other": "Presented {{currentBooksCount}} of ({{count}}) books"
 	},
@@ -63,8 +64,8 @@
 	},
 	"common": {
 		"addToCart": "Add to cart",
-		"fetchDefiniteBookError": "Failed to download the book, try again",
-		"fetchBooksError": "Failed to download books, try again",
+		"fetchDefiniteBookError": "Failed to load the book, try again",
+		"fetchBooksError": "Failed to load books, try again",
 		"showMore": "Show more",
 		"themeSwitcherLabel": "Color theme switcher",
 		"searchBar": {
@@ -80,6 +81,7 @@
 		"bookCover": "book cover",
 		"loading": "Loading",
 		"categories": "Categories",
-		"buy": "Buy"
+		"buy": "Buy",
+		"languageSelection": "Language selection"
 	}
 }
