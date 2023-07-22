@@ -36,9 +36,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={themeContextValue}>
       <LanguageContext.Provider value={languageContextValue}>
-        <div className='app'>
-          <AppRouter />
-        </div>
+        <AppRouter />
       </LanguageContext.Provider>
     </ThemeContext.Provider>
   );
