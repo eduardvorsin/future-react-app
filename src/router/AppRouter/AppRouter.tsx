@@ -8,6 +8,7 @@ import BookDescription from '../../components/BL/BookDescription/BookDescription
 import HomePage from '../pages/HomePage/HomePage';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import bookDescriptionLoader from '../loaders/bookDescriptionLoader';
+import RouteError from '../../components/UI/RouteError/RouteError';
 
 export type bookDescriptionPathName = '/:id';
 const basename = process.env.NODE_ENV === 'production' ? '/future-react-app' : '';
@@ -17,9 +18,7 @@ const router = createBrowserRouter(
     {
       path: '/',
       loader: async () => redirect('/books'),
-      errorElement: (
-        <NotFoundPage />
-      ),
+      errorElement: <NotFoundPage />,
     },
     {
       path: '/books',
@@ -28,6 +27,7 @@ const router = createBrowserRouter(
         {
           path: ':id',
           element: <BookDescription />,
+          errorElement: <RouteError />,
           loader: bookDescriptionLoader,
         },
       ],
