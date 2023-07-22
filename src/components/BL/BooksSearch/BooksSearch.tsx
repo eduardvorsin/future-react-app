@@ -23,9 +23,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
 }) => {
   const { value: language } = useContext(LanguageContext);
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { searchOptions } = useAppSelector((state) => state.books);
 
   const categoriesOptions = useMemo(() => createOptionsFromValues(categories, 'bookSearch.categories') as CategoryOption[], [language]);
   const sortOrderOptions = useMemo(() => createOptionsFromValues(sortingOrder, 'bookSearch.sortOrder') as SorterOrderOption[], [language]);
@@ -58,21 +56,18 @@ const BooksSearch: FC<BooksSearchProps> = ({
   const sortOrderChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = useCallback((e) => {
     const value = e.currentTarget.value as BookSortOrder;
 
-    dispatch(setSearchSortOrder(value));
     setSortOrder(value);
   }, [sortOrder]);
 
   const categoryChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = useCallback((e) => {
     const value = e.currentTarget.value as BookCategories;
 
-    dispatch(setSearchCategory(value));
     setCategory(value);
   }, [category]);
 
   const searchByChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = useCallback((e) => {
     const value = e.currentTarget.value as BookSearchBy;
 
-    dispatch(setSearchBy(value));
     setFindBy(value);
   }, [setFindBy]);
 
