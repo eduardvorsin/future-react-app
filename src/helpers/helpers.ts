@@ -17,6 +17,10 @@ type Characteristic = {
   name: string,
   value: string | number,
 }
+type Option = {
+  label: string,
+  value: string,
+}
 
 export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 6;
 
