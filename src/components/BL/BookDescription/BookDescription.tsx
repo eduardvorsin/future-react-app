@@ -14,8 +14,7 @@ const BookDescription = () => {
   const { t, i18n } = useTranslation();
   const localizedPlaceholder = i18n.language === 'ru' ? PlaceholderImageRu : PlaceholderImageEn;
 
-  const currentBook = useAppSelector((state) => state.books.currentBook);
-  const categories = currentBook?.categories?.join(', ') ?? t('unknown');
+  const categories = currentBook?.categories?.[0] ?? t('unknown');
   const imageSrc = currentBook?.imageLinks?.medium ?? localizedPlaceholder;
   const description = currentBook?.description ?? t('notAvaliableDescription', { ns: 'bookDescription' });
   const title = currentBook?.title ?? t('unknown');
