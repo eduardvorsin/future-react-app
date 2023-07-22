@@ -1,38 +1,33 @@
 import React, { ChangeEventHandler, useEffect } from 'react';
 import { useMatch, useOutlet, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import useAppDispatch from '../../../hooks/useAppDispatch/useAppDispatch';
-import fetchBooks from '../../../store/thunks/fetchBooks/fetchBooks';
 import Title from '../../../components/UI/Title/Title';
 import classes from './HomePage.module.css';
-import useAppSelector from '../../../hooks/useAppSelector/useAppSelector';
 import BooksCount from '../../../components/BL/BooksCount/BooksCount';
 import BooksList from '../../../components/BL/BooksList/BooksList';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Error from '../../../components/UI/Error/Error';
 import Button from '../../../components/UI/Button/Button';
 import BooksSearch from '../../../components/BL/BooksSearch/BooksSearch';
-import { setSearchPage } from '../../../store/bookSlice/bookSlice';
-import { getVerticalScrollPosition, saveVerticalScrollPosition } from '../../../helpers/helpers';
 import ThemeSwitcher from '../../../components/UI/ThemeSwitcher/ThemeSwitcher';
 import LanguageSelect from '../../../components/UI/LanguageSelect/LanguageSelect';
-import fetchDefiniteBook from '../../../store/thunks/fetchDefiniteBook/fetchDefiniteBook';
+import { BooksAPI } from '../../../API/BooksAPI';
+import { SearchOptions } from '../../../API/bookTypes';
 
 const HomePage = () => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const outlet = useOutlet();
-  const isDefiniteBookPage = useMatch('/books/:id');
   const isBookCardsPage = useMatch('/books');
   const { id: bookId } = useParams();
 
-  const {
-    totalItems,
-    status,
+  const [trigger, {
+    isSuccess,
+    isLoading,
+    isFetching,
+    isError,
     error,
-    searchOptions,
-    data,
-  } = useAppSelector((state) => state.books);
+    currentData,
+  }, lastPromiseInfo] = BooksAPI.useLazyGetBooksQuery();
 
   const loadMoreBooks = () => {
     const {
@@ -44,8 +39,8 @@ const HomePage = () => {
       page: page + 1,
     }));
 
-    setSearchPage(page + 1);
-    saveVerticalScrollPosition();
+  const searchHandler = (options: SearchOptions): void => {
+    trigger(options, true);
   };
 
   const refetchBooksData: ChangeEventHandler<HTMLSelectElement> = () => {
@@ -101,6 +96,7 @@ const HomePage = () => {
           </Title>
 
           <BooksSearch
+            onSearch={searchHandler}
             className={classes['hero-section__content']}
           />
         </div>
