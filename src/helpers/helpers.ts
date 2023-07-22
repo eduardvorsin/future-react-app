@@ -129,7 +129,7 @@ export const getColorTheme = (): 'dark' | 'light' => {
   return currentTheme as 'dark' | 'light';
 };
 
-export const createOptionsFromValues = (values: string[], localizationPath: string) => {
+export const createOptionsFromValues = (values: string[], localizationPath: string): Option[] => {
   const labels: string[] = values.map((value) => i18n.t(`${localizationPath}.${value}`, { ns: 'homePage' }));
 
   const options = values.map((value, index) => {
