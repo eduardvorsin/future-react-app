@@ -1,5 +1,7 @@
 .home-page {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 .home-page__hero {
