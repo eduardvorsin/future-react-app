@@ -1,15 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import classes from './BooksCount.module.css';
 
 type BooksCountProps = {
+  itemsCount: number,
+  totalItemsCount?: number,
   className?: string,
-  children: React.ReactNode,
 }
-
 export const BooksCount: React.FC<BooksCountProps> = ({
-  className,
-  children,
+  itemsCount,
+  totalItemsCount = 0,
+  className = 0,
 }) => {
+  const { t } = useTranslation();
   const booksCountClasses = [
     className,
     classes['books-count'],
@@ -19,7 +22,11 @@ export const BooksCount: React.FC<BooksCountProps> = ({
     <p
       className={booksCountClasses}
     >
-      {children}
+      {t('booksCount', {
+        count: totalItemsCount,
+        currentBooksCount: itemsCount,
+        ns: 'homePage',
+      })}
     </p>
   );
 };

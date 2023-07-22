@@ -126,13 +126,10 @@ const HomePage = () => {
 
           {status === 'resolved' && outlet === null && (
             <>
-              <BooksCount>
-                {t('booksCount', {
-                  count: totalItems,
-                  currentBooksCount: data.length,
-                  ns: 'homePage',
-                })}
-              </BooksCount>
+              <BooksCount
+                totalItemsCount={totalBooksCount}
+                itemsCount={booksCount}
+              />
               <BooksList
                 data={data}
               />
