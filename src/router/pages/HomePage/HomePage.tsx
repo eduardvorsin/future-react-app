@@ -56,6 +56,7 @@ const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, Number(getVerticalScrollPosition()));
   }, [data]);
+  const currentBooks = currentData?.items ?? [];
 
   const bookSectionContainerClasses = [
     classes['books-section__container'],
@@ -131,9 +132,9 @@ const HomePage = () => {
                 itemsCount={booksCount}
               />
               <BooksList
-                data={data}
+                data={currentBooks}
               />
-              {totalItems - data.length > 0 && (
+              {totalBooksCount - booksCount > 0 && (
                 <Button
                   className={classes['books-section__button']}
                   onClick={loadMoreBooks}
