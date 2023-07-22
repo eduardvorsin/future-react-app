@@ -13,7 +13,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 100%;
+	width: calc(100% - (15px * 2));
 }
 
 .error__icon-wrapper {
