@@ -54,8 +54,8 @@ const HomePage = () => {
   };
 
   const currentError = error ? t('fetchBooksError') : '';
-    window.scrollTo(0, Number(getVerticalScrollPosition()));
-  }, [data]);
+  const booksCount = currentData?.items.length ?? 0;
+  const totalBooksCount = currentData?.totalItems ?? 0;
   const currentBooks = currentData?.items ?? [];
 
   const bookSectionContainerClasses = [
