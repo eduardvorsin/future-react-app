@@ -20,7 +20,7 @@
 }
 
 .not-found__title {
-	color: var(--secondary-color-200);
+	color: var(--light-color-200);
 	margin-bottom: 30px;
 }
 
@@ -30,7 +30,7 @@
 
 .not-found__link {
 	font-size: 18px;
-	color: var(--secondary-color-200);
+	color: var(--light-color-100);
 	transition:
 		color var(--transition-time) var(--transition-easing);
 }
