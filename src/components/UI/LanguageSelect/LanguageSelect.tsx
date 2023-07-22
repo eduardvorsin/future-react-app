@@ -1,4 +1,5 @@
 import React, { ChangeEventHandler, FC, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Select from '../Select/Select';
 import classes from './LanguageSelect.module.css';
 import i18n from '../../../localization/i18next';
@@ -29,6 +30,7 @@ const LanguageSelect: FC<LanguageSelect> = ({
   className,
   onChange,
 }) => {
+  const { t } = useTranslation();
   const language = useContext(LanguageContext);
   const [selectValue, setSelectValue] = useState<string>(language.value);
   const languageChangeHandler: ChangeEventHandler<HTMLSelectElement> = (e) => {
@@ -44,7 +46,7 @@ const LanguageSelect: FC<LanguageSelect> = ({
     <Select
       id='language-select'
       className={`${classes.language__select} ${className}`}
-      labelText='language selection'
+      labelText={t('languageSelection')}
       options={languagesOptions}
       value={selectValue}
       onChange={languageChangeHandler}
