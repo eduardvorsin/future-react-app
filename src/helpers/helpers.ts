@@ -18,7 +18,7 @@ type Characteristic = {
   value: string | number,
 }
 
-export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 7;
+export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 6;
 
 export const getPageIndex = (page: number) => {
   const booksPerPage = 40;
