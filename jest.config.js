@@ -1,36 +1,52 @@
 module.exports = {
-	roots: [
-		"<rootDir>/src"
-	],
+  preset: 'ts-jest',
 
-	collectCoverageFrom: [
-		"src/**/*.{js,jsx,ts,tsx}",
-		"!src/**/*.d.ts"
-	],
+  roots: [
+    "<rootDir>/src"
+  ],
 
-	setupFilesAfterEnv: [
-		"<rootDir>setup-jest.js"
-	],
+  transform: {
+    "\\.[jt]sx?$": "ts-jest"
+  },
 
-	testEnvironment: "jsdom",
+  transformIgnorePatterns: [
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+    "^.+\\.module\\.(css|sass|scss)$"
+  ],
 
-	moduleNameMapper: {
-		"\\.svg": "<rootDir>/__mocks__/svg.js"
-	},
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/**/*.d.ts"
+  ],
 
-	moduleFileExtensions: [
-		"ts",
-		"tsx",
-		"js",
-		"jsx",
-		"json",
-		"node"
-	],
+  setupFilesAfterEnv: [
+    "<rootDir>setup-jest.js"
+  ],
 
-	watchPlugins: [
-		"jest-watch-typeahead/filename",
-		"jest-watch-typeahead/testname"
-	],
+  testEnvironment: "jsdom",
 
-	resetMocks: true
+  moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif|webp|svg|ttf|woff|woff2)": "<rootDir>/src/tests/__mocks__/assets.ts"
+  },
+
+  testMatch: [
+    "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+  ],
+
+  moduleFileExtensions: [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+
+  watchPlugins: [
+    "jest-watch-typeahead/filename",
+    "jest-watch-typeahead/testname"
+  ],
+
+  resetMocks: true
 };
