@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button tests is a basic snapshot 1`] = `
+<button
+  class="button--icon-button test-btn"
+>
+  test button
+</button>
+`;
