@@ -68,6 +68,14 @@
 .books-section__container {
 	display: flex;
 	flex-direction: column;
+	transition: opacity var(--transition-time) var(--transition-easing);
+	height: 100%;
+}
+
+.books-section__container--fetching {
+	pointer-events: none;
+	transition: opacity var(--transition-time) var(--transition-easing);
+	opacity: 0.5;
 }
 
 .books-section__button.books-section__button {
