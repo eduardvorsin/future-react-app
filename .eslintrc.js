@@ -39,7 +39,18 @@ module.exports = {
       ts: 'never',
       jsx: 'never',
       tsx: 'never'
-    }]
+    }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        'devDependencies': [
+          'test.{js,jsx,ts,tsx}',
+          'test-*.{js,jsx,ts,tsx}',
+          '**/*{.,_}{test,spec}.{js,jsx,ts,tsx}',
+        ],
+        'optionalDependencies': false
+      }
+    ]
   },
   ignorePatterns: ['webpack.config.js', '.eslintrc.js', 'jest.config.js', 'setup-jest.js', 'tsconfig.json', 'babel.config.json', '.stylelintrc.json'],
 
