@@ -30,14 +30,13 @@ const HomePage = () => {
   }, lastPromiseInfo] = BooksAPI.useLazyGetBooksQuery();
 
   const loadMoreBooks = () => {
-    const {
-      page,
-    } = searchOptions;
+    const nextPage = lastPromiseInfo.lastArg.page + 1;
 
-    dispatch(fetchBooks({
-      ...searchOptions,
-      page: page + 1,
-    }));
+    trigger({
+      ...lastPromiseInfo.lastArg,
+      page: nextPage,
+    });
+  };
 
   const searchHandler = (options: SearchOptions): void => {
     trigger(options, true);
