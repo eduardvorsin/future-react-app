@@ -1,5 +1,5 @@
-import React, { ChangeEventHandler, useEffect } from 'react';
-import { useMatch, useOutlet, useParams } from 'react-router-dom';
+import React, { ChangeEventHandler } from 'react';
+import { useMatch, useOutlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Title from '../../../components/UI/Title/Title';
 import classes from './HomePage.module.css';
@@ -18,7 +18,6 @@ const HomePage = () => {
   const { t } = useTranslation();
   const outlet = useOutlet();
   const isBookCardsPage = useMatch('/books');
-  const { id: bookId } = useParams();
 
   const [trigger, {
     isSuccess,
