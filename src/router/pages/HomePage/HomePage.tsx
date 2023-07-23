@@ -43,13 +43,12 @@ const HomePage = () => {
   };
 
   const refetchBooksData: ChangeEventHandler<HTMLSelectElement> = () => {
-    if (status !== 'resolved') return;
+    if (!isSuccess || !isBookCardsPage) return;
 
-    if (isBookCardsPage) {
-      dispatch(fetchBooks(searchOptions));
-    } else if (isDefiniteBookPage && bookId) {
-      dispatch(fetchDefiniteBook(bookId));
-    }
+    trigger({
+      ...lastPromiseInfo.lastArg,
+      page: 0,
+    });
   };
 
   const currentError = error ? t('fetchBooksError') : '';
