@@ -10,6 +10,7 @@
 ![react](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![typescript](https://img.shields.io/badge/typescript-%23323330.svg?style=for-the-badge&logo=typescript&logoColor=%233178c6)
 ![redux-toolkit](https://img.shields.io/badge/redux_toolkit-%23764abc.svg?style=for-the-badge&logo=redux&logoColor=%23ffffff)
+![rtk-query](https://img.shields.io/badge/rtk_query-%23764abc.svg?style=for-the-badge&logo=redux&logoColor=%23ffffff)
 ![react router](https://img.shields.io/badge/react_router-%23252525.svg?style=for-the-badge&logo=react-router&logoColor=%23f94949)
 ![i18next](https://img.shields.io/badge/i18next-%23009788.svg?style=for-the-badge&logo=i18next&logoColor=%23ffffff)
 
@@ -52,7 +53,7 @@ $ npm run build
 ```
 
 ## ✨ Особенности
-- Возможность сортировки книг по релевантности и категориям
+- Возможность сортировки книг по релевантности и категории и другим параметрам
 - Возможность посмотреть фрагмент книги и купить ее через Google Books
 - Возможность подгрузки книг которые соответствуют введенному запросу через кнопку "cмотреть еще"
 - Возможность переключения темы приложения с темной на светлую
