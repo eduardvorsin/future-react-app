@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { BooksAPI } from '../API/BooksAPI';
 
 const setupStore = () => configureStore({
@@ -9,6 +10,8 @@ const setupStore = () => configureStore({
 });
 
 const store = setupStore();
+
+setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

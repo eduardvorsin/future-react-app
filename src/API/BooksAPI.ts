@@ -23,6 +23,7 @@ export const BooksAPI = createApi({
   reducerPath: 'booksApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://www.googleapis.com/books/v1/' }),
   tagTypes: ['Books', 'Book'],
+  refetchOnReconnect: true,
   endpoints: (builder) => ({
     getBooks: builder.query<BooksQueryData, SearchOptions>({
       query: (options) => {
