@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select tests is a basic snapshot 1`] = `
+<div
+  class=" select"
+  data-testid="test-select"
+>
+  <label
+    class="select__label"
+    for="test-select"
+  >
+    test-select
+  </label>
+  <div
+    class="select-wrapper"
+  >
+    <select
+      class="select-wrapper__select"
+      id="test-select"
+    >
+      <option
+        value="test-value-1"
+      >
+        test-label-1
+      </option>
+      <option
+        value="test-value-2"
+      >
+        test-label-2
+      </option>
+      <option
+        value="test-value-3"
+      >
+        test-label-3
+      </option>
+      <option
+        value="test-value-4"
+      >
+        test-label-4
+      </option>
+      <option
+        value="test-value-5"
+      >
+        test-label-5
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`Select tests is asnapshot with an empty array of options 1`] = `
+<div
+  class=" select"
+  data-testid="test-select"
+>
+  <label
+    class="select__label"
+    for="test-select"
+  >
+    test-select
+  </label>
+  <div
+    class="select-wrapper"
+  >
+    <select
+      class="select-wrapper__select"
+      id="test-select"
+    />
+  </div>
+</div>
+`;
