@@ -11,7 +11,8 @@ interface SelectProps extends SelectBaseProps {
   labelText: string,
   id: string,
   options: SelectOption[],
-  value: string
+  value: string,
+  testId: string,
   onChange: React.ChangeEventHandler<HTMLSelectElement>,
 }
 
@@ -21,6 +22,7 @@ const Select: React.FC<SelectProps> = ({
   id,
   options,
   value,
+  testId,
   onChange,
 }) => {
   const selectClasses = [
@@ -34,6 +36,7 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <div
+      data-testid={testId}
       className={selectClasses}
     >
       <label
