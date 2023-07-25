@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Title from '../Title/Title';
 import classes from './Error.module.css';
 
@@ -7,6 +7,7 @@ type ErrorProps = {
   message: string,
   icon?: React.ReactNode,
   isCentered?: boolean,
+  testId?: string,
 };
 
 const Error: React.FC<ErrorProps> = ({
@@ -14,6 +15,7 @@ const Error: React.FC<ErrorProps> = ({
   message,
   icon,
   isCentered,
+  testId,
 }) => {
   const errorClasses = [
     className,
@@ -27,6 +29,7 @@ const Error: React.FC<ErrorProps> = ({
     <div
       className={errorClasses}
       role="alert"
+      data-testid={testId}
     >
       <div
         className={classes['error__icon-wrapper']}
