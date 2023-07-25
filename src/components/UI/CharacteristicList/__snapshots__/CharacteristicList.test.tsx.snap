@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacteristicList tests is a basic snapshot 1`] = `
+<ul
+  class="characteristic-list "
+>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Authors
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      author1, author2
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Language
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      English
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Content 18+
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      Yes
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Page count
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      120
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Published date
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      10.12.2013
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Publisher
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      publisher
+    </span>
+  </li>
+  <li
+    class="characteristic-list__item"
+  >
+    <span
+      class="characteristic-list__property"
+    >
+      Book Type
+    </span>
+    <span
+      class="characteristic-list__value"
+    >
+      E-book
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`CharacteristicList tests is a snapshot with an empty list 1`] = `
+<ul
+  class="characteristic-list "
+/>
+`;
