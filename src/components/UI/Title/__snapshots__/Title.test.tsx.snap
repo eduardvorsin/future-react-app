@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title tests is a basic snapshot 1`] = `
+<h6
+  class="title test-title title--dark title--level-6"
+>
+  test title
+</h6>
+`;
