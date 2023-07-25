@@ -14,6 +14,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:testing-library/react',
   ],
 
   parserOptions: {
@@ -30,6 +31,7 @@ module.exports = {
     'jest-dom',
     'testing-library',
     'jsx-a11y',
+    'testing-library',
   ],
 
   rules: {
