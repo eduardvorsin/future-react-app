@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error tests is a basic snapshot 1`] = `
+<div
+  class=" error "
+  data-testid="test-error"
+  role="alert"
+>
+  <div
+    class="error__icon-wrapper"
+  />
+  <h4
+    class="title error__title title--dark title--level-5"
+  >
+    test error message
+  </h4>
+</div>
+`;
+
+exports[`Error tests is a snapshot with an icon 1`] = `
+<div
+  class=" error "
+  data-testid="test-error"
+  role="alert"
+>
+  <div
+    class="error__icon-wrapper"
+  >
+    <svgicon
+      title="test-error-icon"
+    />
+  </div>
+  <h4
+    class="title error__title title--dark title--level-5"
+  >
+    test error message
+  </h4>
+</div>
+`;
