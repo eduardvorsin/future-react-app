@@ -21,18 +21,18 @@ const Error: React.FC<ErrorProps> = ({
     isCentered ? classes['error--center'] : '',
   ].join(' ');
 
+  const Icon = icon ?? <Fragment />;
+
   return (
     <div
       className={errorClasses}
       role="alert"
     >
-      {icon && (
-        <div
-          className={classes['error__icon-wrapper']}
-        >
-          {icon}
-        </div>
-      )}
+      <div
+        className={classes['error__icon-wrapper']}
+      >
+        {Icon}
+      </div>
       <Title
         level={5}
         component='h4'
