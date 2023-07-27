@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner tests is a basic snapshot 1`] = `
+<div
+  aria-label="Loading..."
+  class="spinner "
+  style="--size: 120px;"
+  title="loading spinner"
+>
+  <div
+    class="spinner__ring"
+    style="--ring-size: 96px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 96px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 96px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 96px;"
+  />
+</div>
+`;
+
+exports[`Spinner tests is a snapshot with a component size of 150px 1`] = `
+<div
+  aria-label="Loading..."
+  class="spinner "
+  style="--size: 150px;"
+  title="loading spinner"
+>
+  <div
+    class="spinner__ring"
+    style="--ring-size: 120px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 120px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 120px;"
+  />
+  <div
+    class="spinner__ring"
+    style="--ring-size: 120px;"
+  />
+</div>
+`;
