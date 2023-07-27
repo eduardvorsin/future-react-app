@@ -12,7 +12,7 @@ interface SelectProps extends SelectBaseProps {
   id: string,
   options: SelectOption[],
   value: string,
-  testId: string,
+  testId?: string,
   onChange: React.ChangeEventHandler<HTMLSelectElement>,
 }
 
