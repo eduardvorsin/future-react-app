@@ -26,7 +26,8 @@ module.exports = {
   testEnvironment: "jsdom",
 
   moduleNameMapper: {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.ts",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.ts",
+    "\\.svg$": "<rootDir>/src/tests/__mocks__/svgMock.ts",
     "\\.(css|scss|sass)$": "identity-obj-proxy",
   },
 
