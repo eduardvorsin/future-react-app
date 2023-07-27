@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSelect tests is a basic snapshot 1`] = `
+<select
+  class="select-wrapper__select"
+  id="language-select"
+>
+  <option
+    value="en"
+  >
+    ENG
+  </option>
+  <option
+    value="ru"
+  >
+    RUS
+  </option>
+</select>
+`;
