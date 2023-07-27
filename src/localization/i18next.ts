@@ -24,4 +24,8 @@ i18n
     returnObjects: true,
   });
 
+i18n.on('languageChanged', (lng: 'ru' | 'en') => {
+  document.documentElement.setAttribute('lang', lng);
+});
+
 export default i18n;
