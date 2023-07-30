@@ -1,2 +1,2 @@
-const svgMock = 'SvgIcon';
+const svgMock = 'svg';
 export default svgMock;
