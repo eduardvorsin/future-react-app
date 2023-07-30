@@ -2,10 +2,10 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { getPageIndex } from '../helpers/helpers';
-import i18n from '../localization/i18next';
+import { getPageIndex } from '../../helpers/helpers';
+import i18n from '../../localization/i18next';
 import { BookInfo, BookPartialInfo, SearchOptions } from './bookTypes';
-import { IBook, IBookPartial } from '../model/IBook';
+import { IBook, IBookPartial } from '../../model/IBook';
 
 type BooksQueryData = {
   totalItems: number,
