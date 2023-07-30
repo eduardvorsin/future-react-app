@@ -6,8 +6,7 @@ declare module '*.png' {
 declare module '*.svg' {
   import React from 'react';
 
-  type SVGAndHTMLProps = React.SVGAttributes<SVGElement> | React.HTMLAttributes<SVGElement>
-  const ReactComponent: React.FunctionComponent<SVGAndHTMLProps>;
+  const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
   export default ReactComponent;
 }
 
