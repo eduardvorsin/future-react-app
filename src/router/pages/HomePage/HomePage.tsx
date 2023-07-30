@@ -11,8 +11,8 @@ import Button from '../../../components/UI/Button/Button';
 import BooksSearch from '../../../components/BL/BooksSearch/BooksSearch';
 import ThemeSwitcher from '../../../components/UI/ThemeSwitcher/ThemeSwitcher';
 import LanguageSelect from '../../../components/UI/LanguageSelect/LanguageSelect';
-import { BooksAPI } from '../../../API/BooksAPI';
-import { SearchOptions } from '../../../API/bookTypes';
+import { BooksAPI } from '../../../API/BooksAPI/BooksAPI';
+import { SearchOptions } from '../../../API/BooksAPI/bookTypes';
 
 const HomePage = () => {
   const { t } = useTranslation();

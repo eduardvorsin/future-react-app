@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import classes from './BooksSearch.module.css';
 import { createOptionsFromValues } from '../../../helpers/helpers';
-import { BookCategories, BookSearchBy, BookSortOrder, CategoryOption, SearchByOption, SearchOptions, SorterOrderOption } from '../../../API/bookTypes';
+import { BookCategories, BookSearchBy, BookSortOrder, CategoryOption, SearchByOption, SearchOptions, SorterOrderOption } from '../../../API/BooksAPI/bookTypes';
 import { LanguageContext } from '../../../contexts/LanguageContext';
 import { MemoSelect } from '../../UI/Select/Select';
 

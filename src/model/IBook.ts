@@ -1,4 +1,4 @@
-import { AccessInfo, SaleInfo, VolumeInfo } from '../API/bookTypes';
+import { AccessInfo, SaleInfo, VolumeInfo } from '../API/BooksAPI/bookTypes';
 
 export type IBook = VolumeInfo & AccessInfo & SaleInfo;
 

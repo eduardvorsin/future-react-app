@@ -1,7 +1,7 @@
 import { LoaderFunctionArgs, ParamParseKey, Params } from 'react-router-dom';
 import { bookDescriptionPathName } from '../AppRouter/AppRouter';
 import store from '../../store/store';
-import { BooksAPI } from '../../API/BooksAPI';
+import { BooksAPI } from '../../API/BooksAPI/BooksAPI';
 import i18n from '../../localization/i18next';
 import { IBook } from '../../model/IBook';
 
