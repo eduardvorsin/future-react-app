@@ -95,7 +95,7 @@ export const BooksAPI = createApi({
         const fields = 'id,volumeInfo(authors,title,description,categories,imageLinks,language,maturityRating,pageCount,publishedDate,publisher,industryIdentifiers),accessInfo(webReaderLink),saleInfo(buyLink,isEbook,retailPrice)';
 
         return {
-          url: `volumes/ ${id}`,
+          url: `volumes/${id}`,
           params: {
             fields: `${fields}`,
             langRestrict: `${i18n.language}`,
