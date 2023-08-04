@@ -49,6 +49,7 @@ module.exports = {
           'test.{js,jsx,ts,tsx}',
           'test-*.{js,jsx,ts,tsx}',
           '**/*{.,_}{test,spec}.{js,jsx,ts,tsx}',
+          '**/tests/**.{js,jsx,ts,tsx}',
         ],
         'optionalDependencies': false
       }
