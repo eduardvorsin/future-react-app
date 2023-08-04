@@ -7,7 +7,7 @@ import i18n from '../../localization/i18next';
 import { BookInfo, BookPartialInfo, SearchOptions } from './bookTypes';
 import { IBook, IBookPartial } from '../../model/IBook';
 
-type BooksQueryData = {
+export type BooksQueryData = {
   totalItems: number,
   items: IBookPartial[],
 };
