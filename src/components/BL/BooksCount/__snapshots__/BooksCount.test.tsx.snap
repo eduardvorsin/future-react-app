@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksCount tests is a basic snapshot 1`] = `
+<p
+  class="0 books-count"
+>
+  Presented 0 of (1) book
+</p>
+`;
+
+exports[`BooksCount tests is a snapshot when 0 books 1`] = `
+<p
+  class="0 books-count"
+>
+  No suitable books have been found for your request
+</p>
+`;
