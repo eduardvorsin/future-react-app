@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card tests is a basic snapshot 1`] = `
+<article
+  class=" card"
+>
+  <div
+    class="card__img-wrapper "
+    data-testid="image-wrapper"
+  >
+    <img
+      alt="test-card-alt-text"
+      class="card__img"
+      height="185"
+      src="test-file-stub"
+      width="128"
+    />
+    <a
+      href="/books/test-card"
+    >
+      Learn more
+    </a>
+  </div>
+  <div
+    class="card__content"
+  >
+    <p
+      class="card__price"
+    >
+      <span
+        class="sr-only"
+      >
+        Book price
+        :
+      </span>
+      Not available
+    </p>
+    <h3
+      class="title card__title title--dark title--level-6"
+    >
+      <a
+        href="/books/test-card"
+      >
+        test-card-title
+      </a>
+    </h3>
+    <p
+      class="card__authors"
+    >
+      Authors
+      : 
+      Unknown
+    </p>
+  </div>
+  <a
+    aria-disabled="false"
+    class="link card__more-link  link--secondary"
+    href="/books/test-card"
+  >
+    Learn more
+  </a>
+</article>
+`;
