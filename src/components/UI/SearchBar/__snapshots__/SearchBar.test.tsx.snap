@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar tests is a basic snapshot 1`] = `
+<form
+  class=" search-form search-form__search-bar"
+  data-testid="test-searchbar"
+>
+  <div
+    class="search-bar"
+    role="search"
+  >
+    <label
+      class="search-bar__label sr-only"
+      for="search-bar"
+    >
+      Search Bar
+    </label>
+    <input
+      class="search-bar__input"
+      id="search-bar"
+      placeholder="Find a book..."
+      value="mock value"
+    />
+    <button
+      class="button--icon-button search-bar__clear"
+    >
+      <svg />
+      Clear
+    </button>
+    <button
+      class="button--icon-button search-bar__find"
+      type="submit"
+    >
+      <svg />
+      To find
+    </button>
+  </div>
+</form>
+`;
