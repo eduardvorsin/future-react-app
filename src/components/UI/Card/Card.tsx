@@ -60,6 +60,7 @@ const Card: React.FC<CardProps> = ({
     >
       <div
         className={imgWrapperClasses}
+        data-testid='image-wrapper'
       >
         <img
           width={128}

@@ -13,6 +13,7 @@ interface SearchBarProps extends BaseSearchBarProps {
   onClear: React.MouseEventHandler<HTMLButtonElement>,
   onChange: React.ChangeEventHandler<HTMLInputElement>,
   onSearch: () => void,
+  testId?: string,
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -21,6 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onClear,
   onChange,
   onSearch,
+  testId,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -53,6 +55,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     <form
       className={SearchFormClasses}
       onSubmit={searchSubmitHandler}
+      data-testid={testId}
     >
       <div
         className={SearchBarClasses}

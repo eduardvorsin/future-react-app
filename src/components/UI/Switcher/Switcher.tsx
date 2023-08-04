@@ -9,6 +9,7 @@ type SwitcherProps = {
   name: string,
   value: [string, string],
   onChange: ChangeEventHandler<HTMLInputElement>,
+  testId?: string,
 }
 
 const Switcher: FC<SwitcherProps> = ({
@@ -19,12 +20,14 @@ const Switcher: FC<SwitcherProps> = ({
   value,
   inputLabels,
   onChange,
+  testId,
 }) => {
   const id = useId();
 
   return (
     <fieldset
       className={`${classes.switcher} ${className}`}
+      data-testid={testId}
     >
       <legend
         className={`${classes.switcher__label} sr-only`}

@@ -6,10 +6,12 @@ import { ThemeContext } from '../../../contexts/ThemeContext';
 
 type ThemeSwitcherProps = {
   className?: string,
+  testId?: string,
 }
 
 const ThemeSwitcher: FC<ThemeSwitcherProps> = ({
   className,
+  testId,
 }) => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
@@ -32,6 +34,7 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({
       className={`${classes['theme-switcher']} ${className}`}
       inputLabels={labels}
       value={themeValues}
+      testId={testId}
     />
   );
 };

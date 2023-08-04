@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Title from '../../UI/Title/Title';
@@ -11,7 +11,13 @@ import currencyFormat from '../../../localization/formatting/numbers';
 import CharacteristicList from '../../UI/CharacteristicList/CharacteristicList';
 import bookDescriptionLoader from '../../../router/loaders/bookDescriptionLoader';
 
-const BookDescription = () => {
+type BookDescriptionProps = {
+  testId?: string,
+};
+
+const BookDescription: FC<BookDescriptionProps> = ({
+  testId,
+}) => {
   const { t, i18n } = useTranslation();
   const localizedPlaceholder = i18n.language === 'ru' ? PlaceholderImageRu : PlaceholderImageEn;
   const currentBook = useLoaderData() as Awaited<ReturnType<typeof bookDescriptionLoader>>;
@@ -32,6 +38,7 @@ const BookDescription = () => {
   return (
     <div
       className={classes['book-description']}
+      data-testid={testId}
     >
       <Title
         className={classes['book-description__main-title']}
