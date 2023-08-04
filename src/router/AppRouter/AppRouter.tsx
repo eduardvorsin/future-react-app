@@ -13,26 +13,28 @@ import RouteError from '../../components/UI/RouteError/RouteError';
 export type bookDescriptionPathName = '/:id';
 const basename = process.env.NODE_ENV === 'production' ? '/future-react-app' : '';
 
+export const routes = [
+  {
+    path: '/',
+    loader: async () => redirect('/books'),
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: '/books',
+    element: <HomePage />,
+    children: [
+      {
+        path: ':id',
+        element: <BookDescription />,
+        errorElement: <RouteError />,
+        loader: bookDescriptionLoader,
+      },
+    ],
+  },
+];
+
 const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      loader: async () => redirect('/books'),
-      errorElement: <NotFoundPage />,
-    },
-    {
-      path: '/books',
-      element: <HomePage />,
-      children: [
-        {
-          path: ':id',
-          element: <BookDescription />,
-          errorElement: <RouteError />,
-          loader: bookDescriptionLoader,
-        },
-      ],
-    },
-  ],
+  routes,
   { basename },
 );
 
