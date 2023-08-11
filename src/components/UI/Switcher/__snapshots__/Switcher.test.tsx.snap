@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switcher tests is a basic snapshot 1`] = `
+<fieldset
+  class="switcher undefined"
+  data-testid="test-switcher"
+>
+  <legend
+    class="switcher__label sr-only"
+  >
+    test-switcher-label
+  </legend>
+  <label
+    class="switcher__input-label sr-only"
+    for=":r2:-input-first"
+  >
+    on
+  </label>
+  <input
+    aria-checked="true"
+    checked=""
+    class="switcher__radio"
+    id=":r2:-input-first"
+    name="test-switcher"
+    role="switch"
+    type="radio"
+    value="on"
+  />
+  <label
+    class="switcher__input-label sr-only"
+    for=":r2:-input-second"
+  >
+    off
+  </label>
+  <input
+    aria-checked="false"
+    class="switcher__radio"
+    id=":r2:-input-second"
+    name="test-switcher"
+    role="switch"
+    type="radio"
+    value="off"
+  />
+  <span
+    class="switcher__status"
+  />
+</fieldset>
+`;
