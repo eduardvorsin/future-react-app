@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link tests is a basic snapshot 1`] = `
+<a
+  aria-disabled="false"
+  class="link   link--primary"
+  href="/"
+  rel="noopener"
+>
+  test link
+</a>
+`;
+
+exports[`Link tests is a snapshot with a link from the router 1`] = `
+<a
+  aria-disabled="false"
+  class="link   link--primary"
+  href="/"
+>
+  test link
+</a>
+`;
+
+exports[`Link tests this is a snapshot with an icon on the left 1`] = `
+<a
+  aria-disabled="false"
+  class="link   link--primary"
+  href="/"
+  rel="noopener"
+>
+  <span
+    aria-hidden="true"
+    class="link__icon-wrapper link__icon-wrapper--left"
+    data-testid="icon-wrapper"
+  >
+    <svg />
+  </span>
+  test link
+</a>
+`;
+
+exports[`Link tests this is a snapshot with an icon on the right 1`] = `
+<a
+  aria-disabled="false"
+  class="link   link--primary"
+  href="/"
+  rel="noopener"
+>
+  <span
+    aria-hidden="true"
+    class="link__icon-wrapper link__icon-wrapper--left"
+    data-testid="icon-wrapper"
+  >
+    <svg />
+  </span>
+  test link
+</a>
+`;
