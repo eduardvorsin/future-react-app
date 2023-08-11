@@ -1,23 +1,9 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { I18nextProvider } from 'react-i18next';
 import Spinner from './Spinner';
 import i18n from '../../../localization/i18next';
 
 describe('Spinner tests', () => {
-  beforeAll(() => {
-    jest.mock('react-i18next', () => ({
-      ...jest.requireActual('react-i18next'),
-      useTranslation: () => ({
-        t: (str: string) => str,
-        i18n: {
-          changeLanguage: () => new Promise(() => { }),
-        },
-      }),
-    }));
-  });
-
   it('is rendered correctly', () => {
     render(
       <Spinner
@@ -67,11 +53,9 @@ describe('Spinner integration tests', () => {
     const localizedText = `${i18n.t('loading')}...`;
 
     render(
-      <I18nextProvider i18n={i18n}>
-        <Spinner
-          size={100}
-        />
-      </I18nextProvider>,
+      <Spinner
+        size={100}
+      />,
     );
 
     expect(screen.getByLabelText<HTMLDivElement>(localizedText)).toBeInTheDocument();
@@ -82,11 +66,9 @@ describe('Spinner integration tests', () => {
     const localizedText = `${i18n.t('loading')}...`;
 
     render(
-      <I18nextProvider i18n={i18n}>
-        <Spinner
-          size={100}
-        />
-      </I18nextProvider>,
+      <Spinner
+        size={100}
+      />,
     );
 
     expect(screen.getByLabelText<HTMLDivElement>(localizedText)).toBeInTheDocument();
