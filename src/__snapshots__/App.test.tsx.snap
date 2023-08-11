@@ -1,0 +1,965 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App tests is a basic snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="home-page"
+    >
+      <div
+        class="home-page__quick-menu"
+      >
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <fieldset
+            class="switcher theme-switcher undefined"
+          >
+            <legend
+              class="switcher__label sr-only"
+            >
+              Color theme switcher
+            </legend>
+            <label
+              class="switcher__input-label sr-only"
+              for=":r7:-input-first"
+            >
+              светлая тема
+            </label>
+            <input
+              aria-checked="false"
+              class="switcher__radio"
+              id=":r7:-input-first"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="light"
+            />
+            <label
+              class="switcher__input-label sr-only"
+              for=":r7:-input-second"
+            >
+              темная тема
+            </label>
+            <input
+              aria-checked="true"
+              checked=""
+              class="switcher__radio"
+              id=":r7:-input-second"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="dark"
+            />
+            <span
+              class="switcher__status"
+            />
+          </fieldset>
+        </div>
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <div
+            class="language__select undefined select"
+          >
+            <label
+              class="select__label"
+              for="language-select"
+            >
+              Language selection
+            </label>
+            <div
+              class="select-wrapper"
+            >
+              <select
+                class="select-wrapper__select"
+                id="language-select"
+              >
+                <option
+                  value="en"
+                >
+                  ENG
+                </option>
+                <option
+                  value="ru"
+                >
+                  RUS
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="home-page__hero hero-section"
+      >
+        <div
+          class="hero-section__container container"
+        >
+          <h2
+            class="title hero-section__title title--dark title--level-2"
+          >
+            Book Search
+          </h2>
+          <div
+            class="books-search hero-section__content"
+          >
+            <form
+              class="books-search__search-bar search-form search-form__search-bar"
+            >
+              <div
+                class="search-bar"
+                role="search"
+              >
+                <label
+                  class="search-bar__label sr-only"
+                  for="search-bar"
+                >
+                  Search Bar
+                </label>
+                <input
+                  class="search-bar__input"
+                  id="search-bar"
+                  placeholder="Find a book..."
+                  value=""
+                />
+                <button
+                  class="button--icon-button search-bar__clear"
+                >
+                  <svg />
+                  Clear
+                </button>
+                <button
+                  class="button--icon-button search-bar__find"
+                  type="submit"
+                >
+                  <svg />
+                  To find
+                </button>
+              </div>
+            </form>
+            <div
+              class="books-search__category-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="categories"
+              >
+                Categories
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="categories"
+                >
+                  <option
+                    value="all"
+                  >
+                    All
+                  </option>
+                  <option
+                    value="art"
+                  >
+                    Art
+                  </option>
+                  <option
+                    value="biography"
+                  >
+                    Biography
+                  </option>
+                  <option
+                    value="computers"
+                  >
+                    Computers
+                  </option>
+                  <option
+                    value="history"
+                  >
+                    History
+                  </option>
+                  <option
+                    value="medical"
+                  >
+                    Medical
+                  </option>
+                  <option
+                    value="poetry"
+                  >
+                    Poetry
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__sort-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="sortingBy"
+              >
+                Sort by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="sortingBy"
+                >
+                  <option
+                    value="relevance"
+                  >
+                    Relevance
+                  </option>
+                  <option
+                    value="newest"
+                  >
+                    Newest
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__find-by-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="findBy"
+              >
+                Search by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="findBy"
+                >
+                  <option
+                    value="intitle"
+                  >
+                    By title
+                  </option>
+                  <option
+                    value="inauthor"
+                  >
+                    By author
+                  </option>
+                  <option
+                    value="inpublisher"
+                  >
+                    By publisher
+                  </option>
+                  <option
+                    value="isbn"
+                  >
+                    By ISBN
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="books-section"
+      >
+        <div
+          class="books-section__container container "
+        />
+      </section>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`App tests is a snapshot with a fetch error message 1`] = `
+<body>
+  <div>
+    <div
+      class="home-page"
+    >
+      <div
+        class="home-page__quick-menu"
+      >
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <fieldset
+            class="switcher theme-switcher undefined"
+          >
+            <legend
+              class="switcher__label sr-only"
+            >
+              Color theme switcher
+            </legend>
+            <label
+              class="switcher__input-label sr-only"
+              for=":r9:-input-first"
+            >
+              светлая тема
+            </label>
+            <input
+              aria-checked="false"
+              class="switcher__radio"
+              id=":r9:-input-first"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="light"
+            />
+            <label
+              class="switcher__input-label sr-only"
+              for=":r9:-input-second"
+            >
+              темная тема
+            </label>
+            <input
+              aria-checked="true"
+              checked=""
+              class="switcher__radio"
+              id=":r9:-input-second"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="dark"
+            />
+            <span
+              class="switcher__status"
+            />
+          </fieldset>
+        </div>
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <div
+            class="language__select undefined select"
+          >
+            <label
+              class="select__label"
+              for="language-select"
+            >
+              Language selection
+            </label>
+            <div
+              class="select-wrapper"
+            >
+              <select
+                class="select-wrapper__select"
+                id="language-select"
+              >
+                <option
+                  value="en"
+                >
+                  ENG
+                </option>
+                <option
+                  value="ru"
+                >
+                  RUS
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="home-page__hero hero-section"
+      >
+        <div
+          class="hero-section__container container"
+        >
+          <h2
+            class="title hero-section__title title--dark title--level-2"
+          >
+            Book Search
+          </h2>
+          <div
+            class="books-search hero-section__content"
+          >
+            <form
+              class="books-search__search-bar search-form search-form__search-bar"
+            >
+              <div
+                class="search-bar"
+                role="search"
+              >
+                <label
+                  class="search-bar__label sr-only"
+                  for="search-bar"
+                >
+                  Search Bar
+                </label>
+                <input
+                  class="search-bar__input"
+                  id="search-bar"
+                  placeholder="Find a book..."
+                  value="js"
+                />
+                <button
+                  class="button--icon-button search-bar__clear"
+                >
+                  <svg />
+                  Clear
+                </button>
+                <button
+                  class="button--icon-button search-bar__find"
+                  type="submit"
+                >
+                  <svg />
+                  To find
+                </button>
+              </div>
+            </form>
+            <div
+              class="books-search__category-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="categories"
+              >
+                Categories
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="categories"
+                >
+                  <option
+                    value="all"
+                  >
+                    All
+                  </option>
+                  <option
+                    value="art"
+                  >
+                    Art
+                  </option>
+                  <option
+                    value="biography"
+                  >
+                    Biography
+                  </option>
+                  <option
+                    value="computers"
+                  >
+                    Computers
+                  </option>
+                  <option
+                    value="history"
+                  >
+                    History
+                  </option>
+                  <option
+                    value="medical"
+                  >
+                    Medical
+                  </option>
+                  <option
+                    value="poetry"
+                  >
+                    Poetry
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__sort-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="sortingBy"
+              >
+                Sort by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="sortingBy"
+                >
+                  <option
+                    value="relevance"
+                  >
+                    Relevance
+                  </option>
+                  <option
+                    value="newest"
+                  >
+                    Newest
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__find-by-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="findBy"
+              >
+                Search by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="findBy"
+                >
+                  <option
+                    value="intitle"
+                  >
+                    By title
+                  </option>
+                  <option
+                    value="inauthor"
+                  >
+                    By author
+                  </option>
+                  <option
+                    value="inpublisher"
+                  >
+                    By publisher
+                  </option>
+                  <option
+                    value="isbn"
+                  >
+                    By ISBN
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="books-section"
+      >
+        <div
+          class="books-section__container container "
+        >
+          <div
+            class="books-section__error error "
+            role="alert"
+          >
+            <h4
+              class="title error__title title--dark title--level-5"
+            >
+              Failed to load books, try again
+            </h4>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`App tests is a snapshot with a list of books 1`] = `
+<body>
+  <div>
+    <div
+      class="home-page"
+    >
+      <div
+        class="home-page__quick-menu"
+      >
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <fieldset
+            class="switcher theme-switcher undefined"
+          >
+            <legend
+              class="switcher__label sr-only"
+            >
+              Color theme switcher
+            </legend>
+            <label
+              class="switcher__input-label sr-only"
+              for=":r8:-input-first"
+            >
+              светлая тема
+            </label>
+            <input
+              aria-checked="false"
+              class="switcher__radio"
+              id=":r8:-input-first"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="light"
+            />
+            <label
+              class="switcher__input-label sr-only"
+              for=":r8:-input-second"
+            >
+              темная тема
+            </label>
+            <input
+              aria-checked="true"
+              checked=""
+              class="switcher__radio"
+              id=":r8:-input-second"
+              name="theme-switcher"
+              role="switch"
+              type="radio"
+              value="dark"
+            />
+            <span
+              class="switcher__status"
+            />
+          </fieldset>
+        </div>
+        <div
+          class="home-page__quick-menu-item"
+        >
+          <div
+            class="language__select undefined select"
+          >
+            <label
+              class="select__label"
+              for="language-select"
+            >
+              Language selection
+            </label>
+            <div
+              class="select-wrapper"
+            >
+              <select
+                class="select-wrapper__select"
+                id="language-select"
+              >
+                <option
+                  value="en"
+                >
+                  ENG
+                </option>
+                <option
+                  value="ru"
+                >
+                  RUS
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="home-page__hero hero-section"
+      >
+        <div
+          class="hero-section__container container"
+        >
+          <h2
+            class="title hero-section__title title--dark title--level-2"
+          >
+            Book Search
+          </h2>
+          <div
+            class="books-search hero-section__content"
+          >
+            <form
+              class="books-search__search-bar search-form search-form__search-bar"
+            >
+              <div
+                class="search-bar"
+                role="search"
+              >
+                <label
+                  class="search-bar__label sr-only"
+                  for="search-bar"
+                >
+                  Search Bar
+                </label>
+                <input
+                  class="search-bar__input"
+                  id="search-bar"
+                  placeholder="Find a book..."
+                  value="js"
+                />
+                <button
+                  class="button--icon-button search-bar__clear"
+                >
+                  <svg />
+                  Clear
+                </button>
+                <button
+                  class="button--icon-button search-bar__find"
+                  type="submit"
+                >
+                  <svg />
+                  To find
+                </button>
+              </div>
+            </form>
+            <div
+              class="books-search__category-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="categories"
+              >
+                Categories
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="categories"
+                >
+                  <option
+                    value="all"
+                  >
+                    All
+                  </option>
+                  <option
+                    value="art"
+                  >
+                    Art
+                  </option>
+                  <option
+                    value="biography"
+                  >
+                    Biography
+                  </option>
+                  <option
+                    value="computers"
+                  >
+                    Computers
+                  </option>
+                  <option
+                    value="history"
+                  >
+                    History
+                  </option>
+                  <option
+                    value="medical"
+                  >
+                    Medical
+                  </option>
+                  <option
+                    value="poetry"
+                  >
+                    Poetry
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__sort-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="sortingBy"
+              >
+                Sort by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="sortingBy"
+                >
+                  <option
+                    value="relevance"
+                  >
+                    Relevance
+                  </option>
+                  <option
+                    value="newest"
+                  >
+                    Newest
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="books-search__find-by-select books-search__select select"
+            >
+              <label
+                class="select__label"
+                for="findBy"
+              >
+                Search by
+              </label>
+              <div
+                class="select-wrapper"
+              >
+                <select
+                  class="select-wrapper__select"
+                  id="findBy"
+                >
+                  <option
+                    value="intitle"
+                  >
+                    By title
+                  </option>
+                  <option
+                    value="inauthor"
+                  >
+                    By author
+                  </option>
+                  <option
+                    value="inpublisher"
+                  >
+                    By publisher
+                  </option>
+                  <option
+                    value="isbn"
+                  >
+                    By ISBN
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="books-section"
+      >
+        <div
+          class="books-section__container container "
+        >
+          <p
+            class="0 books-count"
+          >
+            Presented 2 of (2) books
+          </p>
+          <div
+            class=" books-list"
+          >
+            <article
+              class="books-list__item card"
+            >
+              <div
+                class="card__img-wrapper "
+                data-testid="image-wrapper"
+              >
+                <img
+                  alt="{Вы не знаете JS} Замыкания и объекты book cover"
+                  class="card__img"
+                  height="185"
+                  src="http://books.google.com/books/content?id=6_-eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
+                  width="128"
+                />
+                <a
+                  href="/books/6_-eDwAAQBAJ"
+                >
+                  Learn more
+                </a>
+              </div>
+              <div
+                class="card__content"
+              >
+                <p
+                  class="card__price"
+                >
+                  <span
+                    class="sr-only"
+                  >
+                    Book price
+                    :
+                  </span>
+                  KZT 2,434
+                </p>
+                <h3
+                  class="title card__title title--dark title--level-6"
+                >
+                  <a
+                    href="/books/6_-eDwAAQBAJ"
+                  >
+                    {Вы не знаете JS} Замыкания и объекты
+                  </a>
+                </h3>
+                <p
+                  class="card__authors"
+                >
+                  Authors
+                  : 
+                  Симпсон Кайл
+                </p>
+              </div>
+              <a
+                aria-disabled="false"
+                class="link card__more-link  link--secondary"
+                href="/books/6_-eDwAAQBAJ"
+              >
+                Learn more
+              </a>
+            </article>
+            <article
+              class="books-list__item card"
+            >
+              <div
+                class="card__img-wrapper "
+                data-testid="image-wrapper"
+              >
+                <img
+                  alt="Мой, и только мой book cover"
+                  class="card__img"
+                  height="185"
+                  src="test-file-stub"
+                  width="128"
+                />
+                <a
+                  href="/books/Js-tOgAACAAJ"
+                >
+                  Learn more
+                </a>
+              </div>
+              <div
+                class="card__content"
+              >
+                <p
+                  class="card__price"
+                >
+                  <span
+                    class="sr-only"
+                  >
+                    Book price
+                    :
+                  </span>
+                  Not available
+                </p>
+                <h3
+                  class="title card__title title--dark title--level-6"
+                >
+                  <a
+                    href="/books/Js-tOgAACAAJ"
+                  >
+                    Мой, и только мой
+                  </a>
+                </h3>
+                <p
+                  class="card__authors"
+                >
+                  Authors
+                  : 
+                  Сьюзен Элизабет Филлипс
+                </p>
+              </div>
+              <a
+                aria-disabled="false"
+                class="link card__more-link  link--secondary"
+                href="/books/Js-tOgAACAAJ"
+              >
+                Learn more
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+`;
