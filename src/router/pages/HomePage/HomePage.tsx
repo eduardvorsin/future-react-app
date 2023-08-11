@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, FC } from 'react';
 import { useMatch, useOutlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Title from '../../../components/UI/Title/Title';
@@ -14,7 +14,13 @@ import LanguageSelect from '../../../components/UI/LanguageSelect/LanguageSelect
 import { BooksAPI } from '../../../API/BooksAPI/BooksAPI';
 import { SearchOptions } from '../../../API/BooksAPI/bookTypes';
 
-const HomePage = () => {
+type HomePageProps = {
+  testId?: string,
+}
+
+const HomePage: FC<HomePageProps> = ({
+  testId,
+}) => {
   const { t } = useTranslation();
   const outlet = useOutlet();
   const isBookCardsPage = useMatch('/books');
@@ -64,6 +70,7 @@ const HomePage = () => {
   return (
     <div
       className={`${classes['home-page']}`}
+      data-testid={testId}
     >
       <div
         className={classes['home-page__quick-menu']}

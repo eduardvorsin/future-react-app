@@ -15,11 +15,13 @@ const searchBy: BookSearchBy[] = ['intitle', 'inauthor', 'inpublisher', 'isbn'];
 type BooksSearchProps = {
   className?: string,
   onSearch: (options: SearchOptions) => void,
+  testId?: string,
 }
 
 const BooksSearch: FC<BooksSearchProps> = ({
   className,
   onSearch,
+  testId,
 }) => {
   const { value: language } = useContext(LanguageContext);
   const { t } = useTranslation();
@@ -79,6 +81,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
   return (
     <div
       className={booksSearchClasses}
+      data-testid={testId}
     >
       <SearchBar
         className={classes['books-search__search-bar']}

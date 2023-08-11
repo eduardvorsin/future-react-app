@@ -7,11 +7,13 @@ import classes from './BooksList.module.css';
 type BooksListProps = {
   className?: string,
   data: IBookPartial[],
+  testId?: string,
 }
 
 const BooksList: React.FC<BooksListProps> = ({
   className,
   data,
+  testId,
 }) => {
   const { t } = useTranslation();
   const bookListClasses = [
@@ -22,6 +24,7 @@ const BooksList: React.FC<BooksListProps> = ({
   return (
     <div
       className={bookListClasses}
+      data-testid={testId}
     >
       {data.map((item) => (
         <Card
