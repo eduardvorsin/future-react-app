@@ -8,8 +8,8 @@ export default {
         authors: ['Симпсон Кайл'],
         maturityRating: 'NOT_MATURE',
         imageLinks: {
-          smallThumbnail: 'htt://books.google.com/books/content?id=6_-eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
-          thumbnail: 'htt://books.google.com/books/content?id=6_-eDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+          smallThumbnail: 'http://books.google.com/books/content?id=6_-eDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+          thumbnail: 'http://books.google.com/books/content?id=6_-eDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
         },
       },
       saleInfo: {
