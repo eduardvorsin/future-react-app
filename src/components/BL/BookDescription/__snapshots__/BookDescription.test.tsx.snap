@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookDescription test is a basic snapshot 1`] = `
+<div
+  class="book-description"
+  data-testid="test-book-description"
+>
+  <h2
+    class="title book-description__main-title title--dark title--level-3"
+  >
+    Vue.js в действии
+  </h2>
+  <div
+    class="book-description__img-box"
+  >
+    <img
+      alt="Vue.js в действии book cover"
+      class="book-description__img"
+      height="632"
+      src="http://books.google.com/books/publisher/content?id=ZGGLDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73kEchC1gD2nAmiV_Gnyc8Fxl5nuJayRpTus8CUWPeH5E-YU9NEZmUciVSF8VpxZvuRlcRwcBkenVrC1O77GBB9QaGCM_3AB3pDNwjRDzJMVm-R77-XcoHeVQ557ksVjkWfatkA&source=gbs_api"
+      width="435"
+    />
+  </div>
+  <div
+    class="book-description__content"
+  >
+    <a
+      aria-disabled="false"
+      class="link book-description__preview-link  link--primary"
+      href="http://play.google.com/books/reader?id=ZGGLDwAAQBAJ&hl=&source=gbs_api"
+      rel="noopener"
+    >
+      <span
+        aria-hidden="true"
+        class="link__icon-wrapper link__icon-wrapper--left"
+        data-testid="icon-wrapper"
+      >
+        <svg />
+      </span>
+      Read a fragment of the book
+    </a>
+    <p
+      class="book-description__category"
+    >
+      Categories
+      :
+      <span>
+        Computers / Languages / JavaScript
+      </span>
+    </p>
+    <h3
+      class="title book-description__title title--dark title--level-4"
+    >
+      Characteristics
+    </h3>
+    <ul
+      class="characteristic-list "
+    >
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Authors
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          Henchett Eric, Listuon Benjamin
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Language
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          English
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Content 18+
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          Yes
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Page count
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          304
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Published date
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          2019-02-25
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Publisher
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          "Издательский дом ""Питер"""
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          ISBN
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          9785446110988
+        </span>
+      </li>
+      <li
+        class="characteristic-list__item"
+      >
+        <span
+          class="characteristic-list__property"
+        >
+          Book Type
+        </span>
+        <span
+          class="characteristic-list__value"
+        >
+          E-book
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="book-description__buying"
+  >
+    <p
+      class="book-description__price"
+    >
+      KZT 6,593
+    </p>
+    <a
+      aria-disabled="false"
+      class="link book-description__buying-btn  link--tertiary"
+      href="https://play.google.com/store/books/details?id=ZGGLDwAAQBAJ&rdid=book-ZGGLDwAAQBAJ&rdot=1&source=gbs_api"
+      rel="noopener"
+    >
+      Buy
+    </a>
+  </div>
+  <div
+    class="book-description__describing"
+  >
+    <h3
+      class="title book-description__title title--dark title--level-4"
+    >
+      Description
+    </h3>
+    <p
+      class="book-description__text"
+    >
+      Vue.js - this is a popular library for creating user interfaces.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`BookDescription test is a snapshot with placeholders for missing data 1`] = `
+<div
+  class="book-description"
+  data-testid="test-book-description"
+>
+  <h2
+    class="title book-description__main-title title--dark title--level-3"
+  >
+    Unknown
+  </h2>
+  <div
+    class="book-description__img-box"
+  >
+    <img
+      alt="Unknown book cover"
+      class="book-description__img"
+      height="632"
+      src="test-file-stub"
+      width="435"
+    />
+  </div>
+  <div
+    class="book-description__content"
+  >
+    <a
+      aria-disabled="true"
+      class="link book-description__preview-link link--disabled link--primary"
+      href=""
+      rel="noopener"
+      role="link"
+    >
+      <span
+        aria-hidden="true"
+        class="link__icon-wrapper link__icon-wrapper--left"
+        data-testid="icon-wrapper"
+      >
+        <svg />
+      </span>
+      Read a fragment of the book
+    </a>
+    <p
+      class="book-description__category"
+    >
+      Categories
+      :
+      <span>
+        Unknown
+      </span>
+    </p>
+  </div>
+  <div
+    class="book-description__buying"
+  >
+    <p
+      class="book-description__price"
+    >
+      Not available
+    </p>
+    <a
+      aria-disabled="true"
+      class="link book-description__buying-btn link--disabled link--tertiary"
+      rel="noopener"
+      role="link"
+    >
+      Buy
+    </a>
+  </div>
+  <div
+    class="book-description__describing"
+  >
+    <h3
+      class="title book-description__title title--dark title--level-4"
+    >
+      Description
+    </h3>
+    <p
+      class="book-description__text"
+    >
+      The description is not available for this book
+    </p>
+  </div>
+</div>
+`;
