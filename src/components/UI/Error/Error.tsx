@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Title from '../Title/Title';
 import classes from './Error.module.css';
 
@@ -23,7 +23,7 @@ const Error: React.FC<ErrorProps> = ({
     isCentered ? classes['error--center'] : '',
   ].join(' ');
 
-  const Icon = icon ?? <Fragment />;
+  const Icon = icon;
 
   return (
     <div
@@ -31,11 +31,14 @@ const Error: React.FC<ErrorProps> = ({
       role="alert"
       data-testid={testId}
     >
-      <div
-        className={classes['error__icon-wrapper']}
-      >
-        {Icon}
-      </div>
+      {icon && (
+        <div
+          className={classes['error__icon-wrapper']}
+        >
+          {Icon}
+        </div>
+      )}
+
       <Title
         level={5}
         component='h4'
