@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksList tests is a basic snapshot 1`] = `
+<div
+  class=" books-list"
+  data-testid="test-book-list"
+>
+  <article
+    class="books-list__item card"
+  >
+    <div
+      class="card__img-wrapper "
+      data-testid="image-wrapper"
+    >
+      <img
+        alt="title book cover"
+        class="card__img"
+        height="185"
+        src=""
+        width="128"
+      />
+      <a
+        href="/books/123"
+      >
+        Learn more
+      </a>
+    </div>
+    <div
+      class="card__content"
+    >
+      <p
+        class="card__price"
+      >
+        <span
+          class="sr-only"
+        >
+          Book price
+          :
+        </span>
+        $12
+      </p>
+      <h3
+        class="title card__title title--dark title--level-6"
+      >
+        <a
+          href="/books/123"
+        >
+          title
+        </a>
+      </h3>
+      <p
+        class="card__authors"
+      >
+        Authors
+        : 
+        authors
+      </p>
+    </div>
+    <a
+      aria-disabled="false"
+      class="link card__more-link  link--secondary"
+      href="/books/123"
+    >
+      Learn more
+    </a>
+  </article>
+</div>
+`;
+
+exports[`BooksList tests is a snapshot with an empty data array 1`] = `
+<div
+  class=" books-list"
+  data-testid="test-book-list"
+/>
+`;
