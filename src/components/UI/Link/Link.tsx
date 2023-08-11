@@ -1,7 +1,6 @@
-import React, { FC, Fragment, FunctionComponent, MouseEventHandler, ReactNode } from 'react';
+import React, { FC, Fragment, MouseEventHandler, ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import classes from './Link.module.css';
-import { SVGAndHTMLProps } from '../../../types/shared';
 
 type BaseLinkProps = Partial<React.AnchorHTMLAttributes<HTMLAnchorElement>>;
 
@@ -10,7 +9,7 @@ interface ButtonProps extends BaseLinkProps {
   path?: string,
   className?: string,
   onClick?: MouseEventHandler<HTMLAnchorElement>,
-  icon?: FunctionComponent<SVGAndHTMLProps>,
+  icon?: React.ReactNode,
   iconPosition?: 'left' | 'right',
   isRouterLink?: boolean,
   variant?: 'primary' | 'secondary' | 'tertiary',
@@ -39,14 +38,14 @@ const Link: FC<ButtonProps> = ({
     iconPosition === 'left' ? classes['link__icon-wrapper--left'] : classes['link__icon-wrapper--right'],
   ].join(' ');
 
-  const Icon = icon ?? Fragment;
+  const Icon = icon ?? <Fragment />;
 
   const IconWrapper: JSX.Element = (
     <span
       className={iconClasses}
       aria-hidden='true'
     >
-      <Icon />
+      {Icon}
     </span>
   );
 
