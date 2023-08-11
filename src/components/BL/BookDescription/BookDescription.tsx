@@ -64,7 +64,7 @@ const BookDescription: FC<BookDescriptionProps> = ({
       >
         <Link
           className={classes['book-description__preview-link']}
-          icon={OpenBookIcon}
+          icon={<OpenBookIcon />}
           path={previewLink}
         >
           {t('readBookFragment', { ns: 'bookDescription' })}
