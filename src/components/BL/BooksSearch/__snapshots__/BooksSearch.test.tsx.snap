@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksSearch tests is a basic snapshot 1`] = `
+<div
+  class="books-search "
+  data-testid="test-book-search"
+>
+  <form
+    class="books-search__search-bar search-form search-form__search-bar"
+  >
+    <div
+      class="search-bar"
+      role="search"
+    >
+      <label
+        class="search-bar__label sr-only"
+        for="search-bar"
+      >
+        Search Bar
+      </label>
+      <input
+        class="search-bar__input"
+        id="search-bar"
+        placeholder="Find a book..."
+        value=""
+      />
+      <button
+        class="button--icon-button search-bar__clear"
+      >
+        <svg />
+        Clear
+      </button>
+      <button
+        class="button--icon-button search-bar__find"
+        type="submit"
+      >
+        <svg />
+        To find
+      </button>
+    </div>
+  </form>
+  <div
+    class="books-search__category-select books-search__select select"
+  >
+    <label
+      class="select__label"
+      for="categories"
+    >
+      Categories
+    </label>
+    <div
+      class="select-wrapper"
+    >
+      <select
+        class="select-wrapper__select"
+        id="categories"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+        <option
+          value="art"
+        >
+          Art
+        </option>
+        <option
+          value="biography"
+        >
+          Biography
+        </option>
+        <option
+          value="computers"
+        >
+          Computers
+        </option>
+        <option
+          value="history"
+        >
+          History
+        </option>
+        <option
+          value="medical"
+        >
+          Medical
+        </option>
+        <option
+          value="poetry"
+        >
+          Poetry
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    class="books-search__sort-select books-search__select select"
+  >
+    <label
+      class="select__label"
+      for="sortingBy"
+    >
+      Sort by
+    </label>
+    <div
+      class="select-wrapper"
+    >
+      <select
+        class="select-wrapper__select"
+        id="sortingBy"
+      >
+        <option
+          value="relevance"
+        >
+          Relevance
+        </option>
+        <option
+          value="newest"
+        >
+          Newest
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    class="books-search__find-by-select books-search__select select"
+  >
+    <label
+      class="select__label"
+      for="findBy"
+    >
+      Search by
+    </label>
+    <div
+      class="select-wrapper"
+    >
+      <select
+        class="select-wrapper__select"
+        id="findBy"
+      >
+        <option
+          value="intitle"
+        >
+          By title
+        </option>
+        <option
+          value="inauthor"
+        >
+          By author
+        </option>
+        <option
+          value="inpublisher"
+        >
+          By publisher
+        </option>
+        <option
+          value="isbn"
+        >
+          By ISBN
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;
