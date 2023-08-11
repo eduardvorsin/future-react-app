@@ -44,6 +44,7 @@ const Link: FC<ButtonProps> = ({
     <span
       className={iconClasses}
       aria-hidden='true'
+      data-testid='icon-wrapper'
     >
       {Icon}
     </span>
