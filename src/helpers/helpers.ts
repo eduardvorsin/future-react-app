@@ -22,14 +22,30 @@ type Option = {
   value: string,
 }
 
-export const isValidHeadingLevel = (value: number): boolean => value >= 1 && value <= 6;
+export const isValidHeadingLevel = (value: number): boolean => {
+  if (Number.isNaN(+value)) {
+    throw new Error('The value argument must be a number');
+  }
+
+  return value >= 1 && value <= 6;
+};
 
 export const getPageIndex = (page: number) => {
+  if (Number.isNaN(+page)) {
+    throw new Error('The page argument must be a number');
+  }
+
+  if (page < 0) return 0;
+
   const booksPerPage = 40;
   return page * booksPerPage;
 };
 
-const isCharacteristicField = (field: string): field is keyof Characterstics => {
+export const isCharacteristicField = (field: string): field is keyof Characterstics => {
+  if (typeof field !== 'string') {
+    return false;
+  }
+
   const characteristicFields = new Set([
     'authors',
     'language',
@@ -45,6 +61,10 @@ const isCharacteristicField = (field: string): field is keyof Characterstics => 
 };
 
 export const createCharacteristicsData = (bookData: IBook): Characteristic[] => {
+  if (typeof bookData !== 'object') {
+    throw new Error('the bookData parameter should only be an object');
+  }
+
   const characteristics = [] as Characteristic[];
   const fields = Object.keys(bookData) as (keyof IBook)[];
 
@@ -105,6 +125,12 @@ export const createCharacteristicsData = (bookData: IBook): Characteristic[] => 
 };
 
 export const setColorTheme = (theme: 'dark' | 'light'): void => {
+  if (typeof theme !== 'string') return;
+
+  if (theme !== 'light' && theme !== 'dark') {
+    throw new Error('The theme parameter should only be equal to light or dark');
+  }
+
   localStorage.setItem('colorTheme', theme);
 };
 
@@ -123,7 +149,11 @@ export const getColorTheme = (): 'dark' | 'light' => {
   return currentTheme as 'dark' | 'light';
 };
 
-export const createOptionsFromValues = (values: string[], localizationPath: string): Option[] => {
+export const createOptionsFromValues = (values: string[], localizationPath = ''): Option[] => {
+  if (!Array.isArray(values)) {
+    throw new Error('the values parameter must be an array');
+  }
+
   const labels: string[] = values.map((value) => i18n.t(`${localizationPath}.${value}`, { ns: 'homePage' }));
 
   const options = values.map((value, index) => {
