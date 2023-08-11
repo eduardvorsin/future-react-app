@@ -33,11 +33,11 @@ describe('Error tests', () => {
       <Error
         testId='test-error'
         message='test error message'
-        icon={<SunIcon title='test-error-icon' />}
+        icon={<SunIcon data-testid='test-error-icon' />}
       />,
     );
 
-    expect(screen.getByTitle<HTMLElement>(/test-error-icon/i)).toBeInTheDocument();
+    expect(screen.getByTestId<HTMLElement>(/test-error-icon/i)).toBeInTheDocument();
   });
 
   it('is a basic snapshot', () => {
@@ -56,10 +56,10 @@ describe('Error tests', () => {
       <Error
         testId='test-error'
         message='test error message'
-        icon={<SunIcon title='test-error-icon' />}
+        icon={<SunIcon data-testid='test-error-icon' />}
       />,
     );
 
-    expect(screen.getByTestId<HTMLDivElement>(/test-error/i)).toMatchSnapshot();
+    expect(screen.getByTestId<HTMLDivElement>(/^test-error$/i)).toMatchSnapshot();
   });
 });
