@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage tests is a basic snapshot 1`] = `
+<div
+  class="not-found"
+  data-testid="test-not-found-page"
+>
+  <div
+    class="not-found__container container"
+  >
+    <h1
+      class="title not-found__title title--dark title--level-1"
+    >
+      <span>
+        404
+      </span>
+      Page Not Found
+    </h1>
+    <a
+      class="not-found__link"
+      href="/books"
+    >
+      Back to Main Page
+    </a>
+  </div>
+</div>
+`;
