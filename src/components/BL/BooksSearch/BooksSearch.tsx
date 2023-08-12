@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SearchBar from '../../UI/SearchBar/SearchBar';
@@ -23,7 +23,7 @@ const BooksSearch: FC<BooksSearchProps> = ({
   onSearch,
   testId,
 }) => {
-  const { value: language } = useContext(LanguageContext);
+  const { value: language } = useLanguageContext();
   const { t } = useTranslation();
   const navigate = useNavigate();
 
