@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, FC, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Switcher from '../Switcher/Switcher';
 import classes from './ThemeSwitcher.module.css';
-import { ThemeContext } from '../../../contexts/ThemeContext';
+import { useThemeContext } from '../ThemeProvider/ThemeProvider';
 
 type ThemeSwitcherProps = {
   className?: string,

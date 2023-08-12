@@ -1,7 +1,7 @@
 import React from 'react';
 import { isValidHeadingLevel } from '../../../helpers/helpers';
 import classes from './Title.module.css';
-import { Theme } from '../../../contexts/ThemeContext';
+import { Theme } from '../ThemeProvider/ThemeProvider';
 
 type BaseTitleProps = Partial<React.HTMLAttributes<HTMLHeadingElement>>;
 type HeadingLevels = 1 | 2 | 3 | 4 | 5 | 6;

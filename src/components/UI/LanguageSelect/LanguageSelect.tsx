@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Select from '../Select/Select';
 import classes from './LanguageSelect.module.css';
 import i18n from '../../../localization/i18next';
-import { LanguageContext, Languages } from '../../../contexts/LanguageContext';
+import { Languages, useLanguageContext } from '../LanguageProvider/LanguageProvider';
 
 type LanguageOption = {
   value: Languages,

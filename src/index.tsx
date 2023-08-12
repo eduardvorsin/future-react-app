@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './store/store';
 import './index.css';
-import { defaultTheme } from './contexts/ThemeContext';
+import { defaultTheme } from './components/UI/ThemeProvider/ThemeProvider';
 import './localization/i18next';
 
 document.documentElement.setAttribute('data-theme', defaultTheme);
