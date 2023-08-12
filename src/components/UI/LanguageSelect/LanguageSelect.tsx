@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FC, useContext, useState } from 'react';
+import React, { ChangeEventHandler, FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Select from '../Select/Select';
 import classes from './LanguageSelect.module.css';
@@ -31,7 +31,7 @@ const LanguageSelect: FC<LanguageSelect> = ({
   onChange,
 }) => {
   const { t } = useTranslation();
-  const language = useContext(LanguageContext);
+  const language = useLanguageContext();
   const [selectValue, setSelectValue] = useState<string>(language.value);
   const languageChangeHandler: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const currentLanguage = e.target.value as Languages;
