@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FC, useContext, useState } from 'react';
+import React, { ChangeEventHandler, FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Switcher from '../Switcher/Switcher';
 import classes from './ThemeSwitcher.module.css';
@@ -14,7 +14,7 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({
   testId,
 }) => {
   const { t } = useTranslation();
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const [checked, setChecked] = useState<boolean>(theme.value === 'light');
 
   const themeChangeHandler: ChangeEventHandler<HTMLInputElement> = () => {
